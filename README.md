@@ -1,25 +1,35 @@
-# CODING AGENTS: READ THIS FIRST
+# Royal Eagle Web & Marketing — Website
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Static marketing site for Royal Eagle Web Design & Marketing (Fort Lauderdale, FL).
+Plain HTML + client-side React/Babel. **No build step.**
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Deploy (Cloudflare Pages)
 
-## What you should do — IMPORTANT
+Connected to this repo via Cloudflare Pages. Every push to `main` auto-deploys.
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+- **Build command:** _(none)_
+- **Build output directory:** `/`
+- **Framework preset:** None
 
-**Read `project/index.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Editing
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+- Small text edits: press `.` on this repo in GitHub to open github.dev (browser VS Code), edit, commit.
+- Bigger changes are produced in the design tool, then committed here.
 
-## About the design files
+## Structure
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+- `index.html` + `*.html` — pages (some are templates driven by `?s=` / `?c=` query params)
+- `*.jsx` — React components, compiled in-browser by Babel (load order matters; see each HTML `<head>`)
+- `styles.css` — all styles
+- `site-data.jsx`, `site-cities.jsx` — content data (services, blog, cases, FAQs, cities)
+- `lib-*.jsx` — shared libraries (SEO, effects, conversion, content engine)
+- `sitemap*.xml`, `robots.txt` — SEO
+- `_headers`, `_redirects` — Cloudflare Pages config
+- favicon / og-image / logo / manifest — brand assets
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+## Post-deploy checklist
 
-## Bundle contents
-
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Website REW` project files (HTML prototypes, assets, components)
+1. Confirm `https://royaleagleweb.com/sitemap_index.xml` loads
+2. Submit `sitemap_index.xml` in Google Search Console
+3. Set www → non-www redirect (handled by `_redirects`)
+4. Cloudflare: enable Brotli + Auto Minify
