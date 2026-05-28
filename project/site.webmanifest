@@ -1,0 +1,21 @@
+{
+  "name": "Royal Eagle Web Design & Marketing",
+  "short_name": "Royal Eagle",
+  "description": "Hands-on web design, web development, and digital marketing for South Florida businesses. Fort Lauderdale-area studio, founded 2014.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A1428",
+  "theme_color": "#0A1428",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "600x200",
+      "type": "image/png"
+    }
+  ]
+}
