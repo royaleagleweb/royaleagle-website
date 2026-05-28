@@ -1,0 +1,18 @@
+# Cloudflare Pages headers
+# Serve JSX as JavaScript so Babel can fetch them
+/*.jsx
+  Content-Type: application/javascript; charset=utf-8
+
+# Long cache for static assets
+/*.css
+  Cache-Control: public, max-age=3600
+/*.png
+  Cache-Control: public, max-age=86400
+/*.svg
+  Cache-Control: public, max-age=86400
+
+# Security headers (applied to all pages)
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN

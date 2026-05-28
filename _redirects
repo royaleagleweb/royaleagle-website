@@ -1,0 +1,5 @@
+# Canonical host: force www -> non-www (matches canonical tags)
+https://www.royaleagleweb.com/* https://royaleagleweb.com/:splat 301
+
+# Friendly root
+/home /index.html 301
