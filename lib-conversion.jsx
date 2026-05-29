@@ -94,7 +94,7 @@ function ServiceFinder() {
             </svg>
           </div>
           <h2 className="sf-success-h">Thanks, {(answers.name || '').split(' ')[0] || 'friend'} 👋</h2>
-          <p className="sf-success-p">We've got your brief. Based on your answers we think <strong>{recSvc.title}</strong> is your best fit — typically delivered in <strong>{rec.wks}</strong>.</p>
+          <p className="sf-success-p">We've got your brief. Based on your answers we think <strong>{recSvc.title}</strong> is your best fit.</p>
           <p className="sf-success-p sf-success-p-quiet">Sam will reach out within one business day with a tailored proposal and a calendar link. In the meantime — feel free to read up on what's coming.</p>
           <div className="sf-success-actions">
             <a href={`service.html?s=${recSvc.slug}`} className="btn btn-gold">Read about {recSvc.title} →</a>
