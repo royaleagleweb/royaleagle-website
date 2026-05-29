@@ -3,11 +3,24 @@
 // feed, and "vs the alternatives" comparison table.
 // =============================================================
 
+const W3F_KEY = "0b2db5c7-f37b-4cda-bf34-95fcf2ba59c3";
+
+async function submitToWeb3Forms(data) {
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({ access_key: W3F_KEY, ...data }),
+  });
+  return res.json();
+}
+
 // ---- 60-second service finder quiz ----
 function ServiceFinder() {
   const [step, setStep] = React.useState(0);
   const [answers, setAnswers] = React.useState({});
   const [submitted, setSubmitted] = React.useState(false);
+  const [sending, setSending] = React.useState(false);
+  const [formError, setFormError] = React.useState("");
 
   const STEPS = [
     {
@@ -131,7 +144,21 @@ function ServiceFinder() {
           )}
 
           {current.form && (
-            <form className="sf-form" onSubmit={e => { e.preventDefault(); setSubmitted(true); }}>
+            <form className="sf-form" onSubmit={async e => {
+              e.preventDefault(); setSending(true); setFormError("");
+              const result = await submitToWeb3Forms({
+                subject: `Service finder lead — ${answers.name || 'Anonymous'} (${recSvc?.title || answers.goal})`,
+                from_name: answers.name, replyto: answers.email,
+                goal: STEPS[0].options.find(o => o.id === answers.goal)?.t,
+                timeline: STEPS[1].options.find(o => o.id === answers.timeline)?.t,
+                scale: STEPS[2].options.find(o => o.id === answers.scale)?.t,
+                suggested_service: recSvc?.title,
+                name: answers.name, email: answers.email, phone: answers.phone, notes: answers.notes,
+              });
+              setSending(false);
+              if (result.success) setSubmitted(true);
+              else setFormError("Something went wrong — please try again.");
+            }}>
               <div className="sf-recap">
                 <div className="sf-recap-h">Your project at a glance</div>
                 <div className="sf-recap-grid">
@@ -147,7 +174,8 @@ function ServiceFinder() {
               </div>
               <label><span>Phone (optional but helpful)</span><input type="tel" value={answers.phone || ''} onChange={e => setAnswers({...answers, phone: e.target.value})}/></label>
               <label><span>Anything else we should know?</span><textarea rows="3" placeholder="A few sentences about your business or what you're trying to do"></textarea></label>
-              <button type="submit" className="btn btn-gold sf-submit">Get my tailored plan →</button>
+              {formError && <p style={{ color: '#e55', fontSize: '0.85rem', margin: '0' }}>{formError}</p>}
+              <button type="submit" className="btn btn-gold sf-submit" disabled={sending}>{sending ? "Sending…" : "Get my tailored plan →"}</button>
               <div className="sf-form-foot">
                 <span className="kicker-dot"></span>
                 <span>No spam, ever. Avg first reply: <strong>14 min</strong> during business hours.</span>

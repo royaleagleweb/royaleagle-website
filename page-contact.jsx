@@ -1,5 +1,34 @@
+const W3F_KEY = "0b2db5c7-f37b-4cda-bf34-95fcf2ba59c3";
+
+async function submitToWeb3Forms(data) {
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({ access_key: W3F_KEY, ...data }),
+  });
+  return res.json();
+}
+
 function ContactForm() {
   const [submitted, setSubmitted] = React.useState(false);
+  const [sending, setSending] = React.useState(false);
+  const [error, setError] = React.useState("");
+  const [fields, setFields] = React.useState({ name: "", company: "", email: "", phone: "", service: "", message: "" });
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true); setError("");
+    const result = await submitToWeb3Forms({
+      subject: `New enquiry from ${fields.name} — Royal Eagle`,
+      from_name: fields.name,
+      replyto: fields.email,
+      ...fields,
+    });
+    setSending(false);
+    if (result.success) { setSubmitted(true); }
+    else { setError("Something went wrong. Please try again or call us at 754-233-4037."); }
+  }
+
   return (
     <section className="section contact-section">
       <div className="contact-grid">
@@ -13,7 +42,7 @@ function ContactForm() {
             </div>
             <div className="cm-row">
               <div className="cm-label">Email</div>
-              <a href="mailto:hello@royaleagleweb.com" className="cm-val">hello@royaleagleweb.com</a>
+              <a href="mailto:roy@royaleagleweb.com" className="cm-val">roy@royaleagleweb.com</a>
             </div>
             <div className="cm-row">
               <div className="cm-label">Office</div>
@@ -29,7 +58,7 @@ function ContactForm() {
             <span>30-day money-back guarantee on every plan</span>
           </div>
         </div>
-        <form className="contact-form" onSubmit={e => { e.preventDefault(); setSubmitted(true); }}>
+        <form className="contact-form" onSubmit={handleSubmit}>
           {submitted ? (
             <div className="contact-success">
               <EagleCrest size={100} glow={false}/>
@@ -41,24 +70,24 @@ function ContactForm() {
               <div className="field-row">
                 <label>
                   <span>Your name</span>
-                  <input type="text" placeholder="Jane Smith" required/>
+                  <input type="text" placeholder="Jane Smith" required value={fields.name} onChange={e => setFields({...fields, name: e.target.value})}/>
                 </label>
                 <label>
                   <span>Company</span>
-                  <input type="text" placeholder="Acme Co." />
+                  <input type="text" placeholder="Acme Co." value={fields.company} onChange={e => setFields({...fields, company: e.target.value})}/>
                 </label>
               </div>
               <label>
                 <span>Email</span>
-                <input type="email" placeholder="you@yourbrand.com" required/>
+                <input type="email" placeholder="you@yourbrand.com" required value={fields.email} onChange={e => setFields({...fields, email: e.target.value})}/>
               </label>
               <label>
                 <span>Phone (optional)</span>
-                <input type="tel" placeholder="(555) 123-4567"/>
+                <input type="tel" placeholder="(555) 123-4567" value={fields.phone} onChange={e => setFields({...fields, phone: e.target.value})}/>
               </label>
               <label>
                 <span>My project needs help with…</span>
-                <select defaultValue="" required>
+                <select required value={fields.service} onChange={e => setFields({...fields, service: e.target.value})}>
                   <option value="" disabled>Pick one</option>
                   <option>Web Design</option>
                   <option>Web Development</option>
@@ -74,11 +103,12 @@ function ContactForm() {
               </label>
               <label>
                 <span>Tell us a bit more</span>
-                <textarea rows="5" placeholder="What are you trying to do? What's working? What isn't?"></textarea>
+                <textarea rows="5" placeholder="What are you trying to do? What's working? What isn't?" value={fields.message} onChange={e => setFields({...fields, message: e.target.value})}></textarea>
               </label>
-              <button type="submit" className="btn btn-gold" style={{ width: '100%', justifyContent: 'center' }}>
-                Send message
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              {error && <p style={{ color: '#e55', fontSize: '0.9rem', margin: '0' }}>{error}</p>}
+              <button type="submit" className="btn btn-gold" style={{ width: '100%', justifyContent: 'center' }} disabled={sending}>
+                {sending ? "Sending…" : "Send message"}
+                {!sending && <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>}
               </button>
             </>
           )}
