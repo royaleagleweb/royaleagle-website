@@ -1,10 +1,8 @@
-const W3F_KEY = "0b2db5c7-f37b-4cda-bf34-95fcf2ba59c3";
-
-async function submitToWeb3Forms(data) {
-  const res = await fetch("https://api.web3forms.com/submit", {
+async function submitForm(data) {
+  const res = await fetch("https://formsubmit.co/ajax/roy@royaleagleweb.com", {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({ access_key: W3F_KEY, ...data }),
+    body: JSON.stringify(data),
   });
   return res.json();
 }
@@ -18,10 +16,8 @@ function ContactForm() {
   async function handleSubmit(e) {
     e.preventDefault();
     setSending(true); setError("");
-    const result = await submitToWeb3Forms({
-      subject: `New enquiry from ${fields.name} — Royal Eagle`,
-      from_name: fields.name,
-      replyto: fields.email,
+    const result = await submitForm({
+      _subject: `New enquiry from ${fields.name} — Royal Eagle`,
       ...fields,
     });
     setSending(false);
