@@ -26,6 +26,7 @@ Connected to this repo via Cloudflare Pages. Every push to `main` auto-deploys.
 - `sitemap*.xml`, `robots.txt` — SEO
 - `_headers`, `_redirects` — Cloudflare Pages config
 - favicon / og-image / logo / manifest — brand assets
+- `project/` — unused archive of an older copy. **Root files are what deploy.** Do not treat `project/` as source of truth.
 
 ## Post-deploy checklist
 

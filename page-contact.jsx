@@ -46,7 +46,7 @@ function ContactForm() {
             </div>
             <div className="cm-row">
               <div className="cm-label">Hours</div>
-              <div className="cm-val">Sat – Thu · 8am – 5pm ET</div>
+              <div className="cm-val">Mon – Fri · 9am – 6pm ET</div>
             </div>
           </div>
           <div className="contact-guarantee">
@@ -119,8 +119,8 @@ function ContactPage() {
     <PageShell active="contact">
       <PageHero
         kicker="Start a project"
-        title='Ready to <em>soar?</em><br/>'
-        sub="One short form, one quick conversation, one clear plan. That's the whole process."
+        title='Book 20 minutes.<br/><span class="gradient-text">Roy answers.</span>'
+        sub="One short form or a phone call. Mon–Fri, 9am–6pm ET. roy@royaleagleweb.com · 754-233-4037."
       />
       <ContactForm/>
       <section className="section contact-map-section">

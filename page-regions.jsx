@@ -1,8 +1,8 @@
 function Regions() {
   const regions = [
-    { n: "Broward", c: "Fort Lauderdale · Hollywood · Pompano · Coral Springs · Plantation · Davie", coord: "26.19°N", count: "120+ sites" },
-    { n: "Miami-Dade", c: "Miami · Aventura · Doral · Coral Gables · Brickell · Miami Beach", coord: "25.76°N", count: "180+ sites" },
-    { n: "West Palm Beach", c: "WPB · Boca Raton · Delray · Boynton Beach · Jupiter · Wellington", coord: "26.71°N", count: "90+ sites" },
+    { n: "Broward", c: "Fort Lauderdale · Hollywood · Pompano · Coral Springs · Plantation · Davie", coord: "26.19°N", count: "Home county" },
+    { n: "Miami-Dade", c: "Miami · Aventura · Doral · Coral Gables · Brickell · Miami Beach", coord: "25.76°N", count: "We work here" },
+    { n: "West Palm Beach", c: "WPB · Boca Raton · Delray · Boynton Beach · Jupiter · Wellington", coord: "26.71°N", count: "We work here" },
   ];
   return (
     <section className="section regions-section">
@@ -19,8 +19,7 @@ function Regions() {
             <h3 className="region-n">{r.n}</h3>
             <p className="region-c">{r.c}</p>
             <div className="region-meta">
-              <span>{r.count} · Servicing now</span>
-              <span className="pulse"></span>
+              <span>{r.count}</span>
             </div>
           </div>
         ))}

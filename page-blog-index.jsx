@@ -16,7 +16,7 @@ function BlogIndex() {
       <PageHero
         kicker="The Royal Eagle blog"
         title='Writing on web, marketing,<br/>and <span class="gradient-text">AI in 2026.</span>'
-        sub="20+ articles from our team on the questions that come up most often in client engagements — from headless commerce to accessibility to AI strategy."
+        sub="Notes from Roy on the questions that come up most often — from WordPress to accessibility to AI."
       />
       <section className="section">
         <div className="blog-filters">

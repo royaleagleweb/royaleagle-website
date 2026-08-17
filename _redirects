@@ -1,2 +1,7 @@
 # Friendly root
 /home /index.html 301
+
+# Stale / missing paths
+/wordpress-hosting /service.html?s=domains-hosting 301
+/wordpress-hosting/ /service.html?s=domains-hosting 301
+/wordpress-hosting.html /service.html?s=domains-hosting 301

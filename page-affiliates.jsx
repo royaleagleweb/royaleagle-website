@@ -22,8 +22,8 @@ function AffiliatesPage() {
         <div className="aff-stats">
           <div><div className="bn-n">15%</div><div className="bn-l">Commission rate</div></div>
           <div><div className="bn-n">12 mo</div><div className="bn-l">Earnings window</div></div>
-          <div><div className="bn-n">5.0★</div><div className="bn-l">Affiliate satisfaction</div></div>
-          <div><div className="bn-n">142</div><div className="bn-l">Active affiliates</div></div>
+          <div><div className="bn-n">5.0★</div><div className="bn-l">Google rating</div></div>
+          <div><div className="bn-n">Roy</div><div className="bn-l">Pays you himself</div></div>
         </div>
       </section>
       <section className="section">

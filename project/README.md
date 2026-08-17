@@ -1,35 +1,9 @@
-# Royal Eagle Web & Marketing — Website
+# Unused copy — do not deploy
 
-Static marketing site for Royal Eagle Web Design & Marketing (Fort Lauderdale, FL).
-Plain HTML + client-side React/Babel. **No build step.**
+This `project/` tree is a **stale duplicate** of an earlier site build. It is **not** what Cloudflare deploys.
 
-## Deploy (Cloudflare Pages)
+The live site is the **repository root** (`index.html`, `*.jsx`, `styles.css`). Root deploys with no build step.
 
-Connected to this repo via Cloudflare Pages. Every push to `main` auto-deploys.
+Do not edit files here expecting them to go live. After the August 2026 honesty pass, root and `project/` intentionally diverge: `project/` still contains the fabricated agency copy (fake team, fake case studies) and should be treated as archive-only.
 
-- **Build command:** _(none)_
-- **Build output directory:** `/`
-- **Framework preset:** None
-
-## Editing
-
-- Small text edits: press `.` on this repo in GitHub to open github.dev (browser VS Code), edit, commit.
-- Bigger changes are produced in the design tool, then committed here.
-
-## Structure
-
-- `index.html` + `*.html` — pages (some are templates driven by `?s=` / `?c=` query params)
-- `*.jsx` — React components, compiled in-browser by Babel (load order matters; see each HTML `<head>`)
-- `styles.css` — all styles
-- `site-data.jsx`, `site-cities.jsx` — content data (services, blog, cases, FAQs, cities)
-- `lib-*.jsx` — shared libraries (SEO, effects, conversion, content engine)
-- `sitemap*.xml`, `robots.txt` — SEO
-- `_headers`, `_redirects` — Cloudflare Pages config
-- favicon / og-image / logo / manifest — brand assets
-
-## Post-deploy checklist
-
-1. Confirm `https://royaleagleweb.com/sitemap_index.xml` loads
-2. Submit `sitemap_index.xml` in Google Search Console
-3. Set www → non-www redirect (handled by `_redirects`)
-4. Cloudflare: enable Brotli + Auto Minify
+See the root `README.md` for the real deploy notes.
