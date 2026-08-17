@@ -95,7 +95,7 @@ function ServiceFinder() {
           </div>
           <h2 className="sf-success-h">Thanks, {(answers.name || '').split(' ')[0] || 'friend'} 👋</h2>
           <p className="sf-success-p">We've got your brief. Based on your answers we think <strong>{recSvc.title}</strong> is your best fit.</p>
-          <p className="sf-success-p sf-success-p-quiet">Sam will reach out within one business day with a tailored proposal and a calendar link. In the meantime — feel free to read up on what's coming.</p>
+          <p className="sf-success-p sf-success-p-quiet">Roy will reach out within one business day. In the meantime — feel free to read up on what's coming, or call 754-233-4037.</p>
           <div className="sf-success-actions">
             <a href={`service.html?s=${recSvc.slug}`} className="btn btn-gold">Read about {recSvc.title} →</a>
             <a href="tel:+17542334037" className="btn btn-ghost">Or call now: 754-233-4037</a>
@@ -175,7 +175,7 @@ function ServiceFinder() {
               <button type="submit" className="btn btn-gold sf-submit" disabled={sending}>{sending ? "Sending…" : "Get my tailored plan →"}</button>
               <div className="sf-form-foot">
                 <span className="kicker-dot"></span>
-                <span>No spam, ever. Avg first reply: <strong>14 min</strong> during business hours.</span>
+                <span>No spam. Roy replies himself — usually the same day.</span>
               </div>
             </form>
           )}
@@ -189,53 +189,9 @@ function ServiceFinder() {
   );
 }
 
-// ---- Social proof activity feed (bottom-left, cycles) ----
+// Removed: fake "someone in Boca booked a call 9 min ago" toast.
 function SocialProofFeed() {
-  const ITEMS = [
-    { who: "Sarah K.", where: "Coral Gables", what: "asked about a brand refresh", when: "9 min ago" },
-    { who: "A dental office", where: "Aventura", what: "booked a call with Roy", when: "23 min ago" },
-    { who: "Priya R.", where: "Boca Raton", what: "downloaded the AI brief PDF", when: "an hour ago" },
-    { who: "James L.", where: "Fort Lauderdale", what: "asked us to take over their hosting", when: "2 hours ago" },
-    { who: "A law firm", where: "Brickell", what: "started their second redesign with us", when: "yesterday" },
-    { who: "David W.", where: "Plantation", what: "renewed for year three", when: "yesterday" },
-  ];
-  const [i, setI] = React.useState(0);
-  const [visible, setVisible] = React.useState(false);
-  const [dismissed, setDismissed] = React.useState(false);
-
-  React.useEffect(() => {
-    if (dismissed) return;
-    const showT = setTimeout(() => setVisible(true), 6000);
-    return () => clearTimeout(showT);
-  }, [dismissed]);
-
-  React.useEffect(() => {
-    if (!visible || dismissed) return;
-    const t = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
-        setI(x => (x + 1) % ITEMS.length);
-        setVisible(true);
-      }, 350);
-    }, 7000);
-    return () => clearInterval(t);
-  }, [visible, dismissed]);
-
-  if (dismissed) return null;
-  const item = ITEMS[i];
-  const initials = item.who.split(' ').map(w => w[0]).join('');
-  return (
-    <div className={`spf ${visible ? 'spf-visible' : ''}`}>
-      <div className="spf-pulse"></div>
-      <div className="spf-av">{initials}</div>
-      <div className="spf-body">
-        <div className="spf-t"><strong>{item.who}</strong> from {item.where}</div>
-        <div className="spf-s">{item.what}</div>
-        <div className="spf-when">· {item.when}</div>
-      </div>
-      <button className="spf-close" onClick={() => setDismissed(true)} aria-label="Dismiss">×</button>
-    </div>
-  );
+  return null;
 }
 
 // ---- Vs the alternatives table ----
@@ -244,9 +200,9 @@ function ComparisonTable() {
     { f: "Time to start", h: "2 – 4 months hiring cycle", fl: "1 – 2 weeks", us: "First call this week" },
     { f: "First-year commitment", h: "Full-time salary + benefits", fl: "Project-by-project", us: "Quoted to scope, milestone-billed" },
     { f: "Specialist breadth", h: "1 – 2 disciplines", fl: "Usually one", us: "Design · Eng · Paid · AI" },
-    { f: "Senior-only on your project", h: "Whoever you hired", fl: "Coin-flip", us: "Guaranteed, in writing" },
-    { f: "Coverage if someone's sick", h: "Project stops", fl: "Project stops", us: "Always covered" },
-    { f: "Accountability if it underperforms", h: "Internal HR problem", fl: "Best effort", us: "Contractual KPI SLA" },
+    { f: "Who does the work", h: "Whoever you hired", fl: "Coin-flip", us: "Roy — plus specialists he names" },
+    { f: "If someone is out", h: "Project stops", fl: "Project stops", us: "You still have Roy's number" },
+    { f: "If it isn't a fit", h: "Internal HR problem", fl: "Best effort", us: "We'll say so up front" },
     { f: "30-day money-back guarantee", h: "—", fl: "—", us: "✓ Standard" },
   ];
   return (

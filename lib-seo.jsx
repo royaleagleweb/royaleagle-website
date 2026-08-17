@@ -11,7 +11,7 @@ const SITE = {
   domain: "https://royaleagleweb.com",
   phone: "+1-754-233-4037",
   phoneDisplay: "(754) 233-4037",
-  email: "hello@royaleagleweb.com",
+  email: "roy@royaleagleweb.com",
   address: {
     street: "4440 Inverrary Blvd",
     city: "Lauderhill",
@@ -20,7 +20,7 @@ const SITE = {
     country: "US",
   },
   geo: { lat: 26.156, lng: -80.218 },
-  founder: "Roy",
+  founder: "Roy Bachar",
   founded: "2014",
   socials: ["https://share.google/1081gc2LSDc6FXpcZ"],
   defaultOgImage: "https://royaleagleweb.com/og-image.png",
@@ -159,9 +159,10 @@ function applyPageSeo(opts) {
     extraLd = {},
   } = opts || {};
 
-  // Build absolute canonical
-  const path = (canonical || (location.pathname + location.search)).replace(/^\.?\//, "");
-  const canonicalUrl = path.startsWith("http") ? path : `${SITE.domain}/${path}`;
+  // Build absolute canonical — homepage is / not index.html
+  let path = (canonical || (location.pathname + location.search)).replace(/^\.?\//, "");
+  if (!path || path === "index.html" || path === "/index.html") path = "";
+  const canonicalUrl = path.startsWith("http") ? path : (path ? `${SITE.domain}/${path}` : `${SITE.domain}/`);
 
   // Document title — strip duplicated brand
   const finalTitle = title

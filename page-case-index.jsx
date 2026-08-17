@@ -1,4 +1,4 @@
-// CASE STUDIES INDEX page
+// CASE STUDIES INDEX — real live sites, no invented metrics
 
 function CaseIndex() {
   const tags = ["All", ...new Set(CASE_STUDIES.map(c => c.tag))];
@@ -7,9 +7,9 @@ function CaseIndex() {
   return (
     <PageShell active="case-studies">
       <PageHero
-        kicker="Case studies"
-        title='Documented outcomes,<br/><span class="gradient-text">not promises.</span>'
-        sub="Ten in-depth case studies covering web design, e-commerce, B2B SaaS, healthcare, hospitality, and more. Each one with full metrics."
+        kicker="Work"
+        title='Live client sites,<br/><span class="gradient-text">not invented metrics.</span>'
+        sub="These are sites Roy built that are on the public web today. Click through and look at the real thing."
       />
       <section className="section">
         <div className="blog-filters">
@@ -17,28 +17,8 @@ function CaseIndex() {
             <button key={t} onClick={() => setActive(t)} className={`bf-chip ${active === t ? 'is-active' : ''}`}>{t}</button>
           ))}
         </div>
-        <div className="case-index-grid">
-          {shown.map(c => (
-            <a key={c.slug} href={`case.html?s=${c.slug}`} className="ci-card" style={{ "--cs-color": c.color }}>
-              <figure className="ci-img"><img src={c.imgs[0]} alt={c.brand} loading="lazy"/></figure>
-              <div className="ci-body">
-                <div className="ci-meta">
-                  <span className="ci-tag">{c.tag}</span>
-                  <span>{c.year}</span>
-                </div>
-                <h3 className="ci-brand">{c.brand}</h3>
-                <p className="ci-summary">{c.summary}</p>
-                <div className="ci-impact">
-                  {c.impact.slice(0, 2).map(([n, l], k) => (
-                    <div key={k} className="ci-impact-cell">
-                      <div className="ci-n">{n}</div>
-                      <div className="ci-l">{l}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </a>
-          ))}
+        <div className="work-card-grid">
+          {shown.map(c => <WorkCard key={c.slug} cs={c}/>)}
         </div>
       </section>
       <CTA/>

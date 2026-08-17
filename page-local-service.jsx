@@ -24,7 +24,7 @@ function LocalServicePage() {
       image: svc.img,
       keywords: `${svc.title.toLowerCase()} ${city.n}, ${svc.title.toLowerCase()} ${city.c} County, ${svc.title.toLowerCase()} near me, ${city.n} ${svc.cat.toLowerCase()}`,
       breadcrumbs: [
-        { name: "Home", url: "index.html" },
+        { name: "Home", url: "/" },
         { name: "Locations", url: "locations.html" },
         { name: city.n, url: `city.html?c=${city.slug}` },
         { name: svc.title }

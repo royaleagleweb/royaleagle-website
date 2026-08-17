@@ -48,12 +48,12 @@ const NAV_GROUPS = [
       { h: "About", items: [
         { t: "About Us", h: "about.html", d: "Who we are" },
         { t: "Our Story", h: "our-story.html", d: "Founded in Fort Lauderdale, 2014" },
-        { t: "Team", h: "team.html", d: "Meet the 38 senior practitioners" },
+        { t: "Team", h: "team.html", d: "Meet Roy — founder since 2014" },
         { t: "Regions Served", h: "regions.html", d: "Broward · Miami-Dade · WPB" },
       ]},
       { h: "Social proof", items: [
         { t: "Testimonials", h: "testimonials.html", d: "What clients say" },
-        { t: "Case Studies", h: "case-studies.html", d: "10+ documented engagements" },
+        { t: "Case Studies", h: "case-studies.html", d: "Real live client sites" },
         { t: "Portfolio", h: "portfolio.html", d: "Visual showcase" },
       ]},
     ],
@@ -211,7 +211,7 @@ function Footer() {
           <p className="footer-tag">From concept to conversion. Your all-in-one web design, AI, and marketing partner — Fort Lauderdale, since 2014.</p>
           <div className="footer-contact">
             <a href="tel:+17542334037">📞 754-233-4037</a>
-            <a href="mailto:hello@royaleagleweb.com">✉ hello@royaleagleweb.com</a>
+            <a href="mailto:roy@royaleagleweb.com">✉ roy@royaleagleweb.com</a>
             <a href="https://share.google/idV4zjUrBGsrRtZ19" target="_blank" rel="noopener">📍 4440 Inverrary Blvd, Lauderhill, FL</a>
           </div>
         </div>
@@ -298,15 +298,13 @@ function FloatingCTA() {
       {open && (
         <div className="fcta-panel">
           <div className="fcta-head">
-            <div className="fcta-avatars">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" alt=""/>
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80" alt=""/>
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80" alt=""/>
+            <div className="fcta-avatars fcta-avatars-mark">
+              <EagleMark/>
             </div>
             <button className="fcta-close" onClick={() => setOpen(false)} aria-label="Close">×</button>
           </div>
           <div className="fcta-greeting">
-            <strong>Hi, I'm Sam.</strong> I lead client services at Royal Eagle. Ask us anything — we usually reply within an hour during business hours.
+            <strong>Hi, I'm Roy.</strong> I founded Royal Eagle in 2014. Ask anything — I answer the phone and the inbox.
           </div>
           <div className="fcta-actions">
             <a href="tel:+17542334037" className="fcta-action">
@@ -316,11 +314,11 @@ function FloatingCTA() {
                 <div className="fcta-action-s">754-233-4037</div>
               </div>
             </a>
-            <a href="mailto:hello@royaleagleweb.com" className="fcta-action">
+            <a href="mailto:roy@royaleagleweb.com" className="fcta-action">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 8l9 6 9-6M3 7h18v10c0 1-.4 1.4-1.4 1.4H4.4C3.4 18.4 3 18 3 17z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
               <div>
-                <div className="fcta-action-t">Email us</div>
-                <div className="fcta-action-s">hello@royaleagleweb.com</div>
+                <div className="fcta-action-t">Email Roy</div>
+                <div className="fcta-action-s">roy@royaleagleweb.com</div>
               </div>
             </a>
             <a href="contact.html" className="fcta-action fcta-action-primary">
@@ -333,7 +331,7 @@ function FloatingCTA() {
           </div>
           <div className="fcta-foot">
             <span className="kicker-dot"></span>
-            <span>Average reply time today: <strong>14 min</strong></span>
+            <span>Roy replies himself — usually the same day</span>
           </div>
         </div>
       )}
@@ -371,11 +369,11 @@ function CTAStrip({ variant = "default", heading, sub, primary, secondary, prima
 }
 
 // ---- Inline "ask a human" callout — drop mid-content in long pages ----
-function MeetYourLead({ name = "Sam Kowalski", role = "Director of Client Services", img = "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80", quote = "I personally answer every new-business inquiry. Send us a note and you'll hear back from me — not an automated workflow — within one business day." }) {
+function MeetYourLead({ name = "Roy Bachar", role = "Founder", quote = "I answer the phone. Send a note and you'll hear back from me — not a chatbot — within one business day." }) {
   return (
     <aside className="meet-lead">
-      <figure className="ml-photo">
-        <img src={img} alt={name}/>
+      <figure className="ml-photo ml-photo-mark">
+        <EagleMark/>
       </figure>
       <div className="ml-body">
         <div className="kicker"><span className="kicker-dot"></span>Skip the form — talk to a human</div>
@@ -387,7 +385,7 @@ function MeetYourLead({ name = "Sam Kowalski", role = "Director of Client Servic
           </div>
           <div className="ml-actions">
             <a href="tel:+17542334037" className="ml-action">📞 754-233-4037</a>
-            <a href="mailto:hello@royaleagleweb.com" className="ml-action">✉ hello@royaleagleweb.com</a>
+            <a href="mailto:roy@royaleagleweb.com" className="ml-action">✉ roy@royaleagleweb.com</a>
           </div>
         </div>
       </div>
@@ -395,9 +393,31 @@ function MeetYourLead({ name = "Sam Kowalski", role = "Director of Client Servic
   );
 }
 
+function WorkCard({ cs }) {
+  return (
+    <article className="work-card" style={{ "--brand-color": cs.color }}>
+      <div className="work-card-mark">
+        <span>{cs.brand}</span>
+      </div>
+      <div className="work-card-body">
+        <div className="work-card-meta">
+          <span>{cs.tag}</span>
+          {cs.location ? <span>{cs.location}</span> : null}
+        </div>
+        <h3 className="work-card-brand">{cs.brand}</h3>
+        <p className="work-card-summary">{cs.summary}</p>
+        <div className="work-card-services">{(cs.services || []).join(" · ")}</div>
+        <div className="work-card-actions">
+          {cs.url && <a href={cs.url} target="_blank" rel="noopener" className="link-arrow">Visit live site →</a>}
+          <a href={`case.html?s=${cs.slug}`} className="link-arrow">Details</a>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 function PageShell({ active, children }) {
-  const [t, set] = useTweaks(TWEAK_DEFAULTS);
-  React.useEffect(() => { applyPalette(PALETTES[t.palette] || PALETTES.light, t.palette); }, [t.palette]);
+  React.useEffect(() => { applyPalette(PALETTES[TWEAK_DEFAULTS.palette] || PALETTES.light, TWEAK_DEFAULTS.palette); }, []);
   return (
     <>
       <ScrollProgress/>
@@ -406,21 +426,10 @@ function PageShell({ active, children }) {
       <main>{children}</main>
       <Footer/>
       <FloatingCTA/>
-      <TweaksPanel title="Tweaks">
-        <TweakSection title="Palette">
-          <TweakRadio label="Theme" value={t.palette} onChange={v => set('palette', v)}
-            options={[
-              { value: 'light', label: 'Light' },
-              { value: 'midnight', label: 'Midnight' },
-              { value: 'obsidian', label: 'Obsidian' },
-              { value: 'imperial', label: 'Imperial' },
-            ]}/>
-        </TweakSection>
-      </TweaksPanel>
     </>
   );
 }
 
 applyPalette(PALETTES[TWEAK_DEFAULTS.palette], TWEAK_DEFAULTS.palette);
 
-Object.assign(window, { EagleCrest, EagleMark, Nav, Footer, PageHero, CTA, CTAStrip, MeetYourLead, FloatingCTA, PageShell, PALETTES, applyPalette, TWEAK_DEFAULTS, getSlug });
+Object.assign(window, { EagleCrest, EagleMark, Nav, Footer, PageHero, CTA, CTAStrip, MeetYourLead, FloatingCTA, WorkCard, PageShell, PALETTES, applyPalette, TWEAK_DEFAULTS, getSlug });

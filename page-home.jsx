@@ -136,36 +136,6 @@ function useParallax(ratio = 0.3) {
   return ref;
 }
 
-// Live activity ticker — cycles through "right now" updates
-function LiveTicker() {
-  const lines = [
-    { icon: '🟢', t: '6 active clients online right now' },
-    { icon: '✦', t: 'Just shipped: AI Strategy for IntegraMed Orthopedics' },
-    { icon: '⚡', t: 'New WordPress build kickoff: Boca Raton dental group' },
-    { icon: '★', t: 'Latest 5-star Google review · 2 days ago' },
-    { icon: '◐', t: 'Open delivery slots: 2 in July, 3 in August' },
-    { icon: '◉', t: 'Avg first reply this week: 11 minutes' },
-  ];
-  const [i, setI] = React.useState(0);
-  React.useEffect(() => {
-    const t = setInterval(() => setI(x => (x + 1) % lines.length), 3200);
-    return () => clearInterval(t);
-  }, [lines.length]);
-  return (
-    <div className="live-ticker" aria-live="polite">
-      <div className="lt-pulse"></div>
-      <div className="lt-track">
-        {lines.map((l, k) => (
-          <div key={k} className={`lt-line ${k === i ? 'is-active' : ''}`}>
-            <span className="lt-i">{l.icon}</span>
-            <span className="lt-t">{l.t}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function Hero() {
   const bgRef = useParallax(0.25);
   return (
@@ -201,19 +171,12 @@ function Hero() {
               754-233-4037 (we answer)
             </a>
           </div>
-          <LiveTicker/>
           <div className="hero-luxe-badges hero-luxe-badges-light">
             <a href="https://share.google/1081gc2LSDc6FXpcZ" target="_blank" rel="noopener" className="hlb hlb-link">
               <div className="hlb-icon">{SFIcon.star}</div>
               <div className="hlb-t">5.0 / 5</div>
               <div className="hlb-s">Google verified →</div>
             </a>
-            <div className="hlb-sep"></div>
-            <div className="hlb">
-              <div className="hlb-icon">{SFIcon.google}</div>
-              <div className="hlb-t">Google Partner</div>
-              <div className="hlb-s">Ads certified</div>
-            </div>
             <div className="hlb-sep"></div>
             <div className="hlb">
               <div className="hlb-icon">{SFIcon.pin}</div>
@@ -246,7 +209,7 @@ function SignatureCollections() {
         <div className="sig-head">
           <div>
             <div className="kicker"><span className="kicker-dot"></span>Signature work</div>
-            <h2 className="sig-h">A handful of things we do<br/>better than just about anyone.</h2>
+            <h2 className="sig-h">The work we do<br/>most often.</h2>
           </div>
           <a href="services.html" className="sig-all">View all services →</a>
         </div>
@@ -278,7 +241,7 @@ function BigNumbers() {
   const items = [
     { n: 12, suffix: " yrs", l: "On Inverrary Blvd", sub: "Same office, same phone number, same Roy answering it" },
     { n: 100, suffix: "%", l: "Of inquiries answered by a human", sub: "No chatbots, no overseas BPO" },
-    { n: 1, suffix: " business day", l: "Reply window we promise", sub: "Most replies land inside two hours" },
+    { n: 1, suffix: " business day", l: "Reply window we promise", sub: "Usually the same day — Roy answers" },
     { n: 5, decimals: 1, suffix: " / 5", l: "Google rating", sub: "Every review verified — read them yourself" },
   ];
   return (
@@ -303,12 +266,12 @@ function BigNumbers() {
 }
 
 function ClientStrip() {
-  const logos = ["IntegraMed", "SEEQ", "Sea Walk'n", "DLE Lawyers", "United Nursery", "Big Lu", "Pristinit", "Akita Partners", "Coastal Realty", "Palmetto Co.", "Atlantic Bank", "Sunbelt"];
+  const logos = CASE_STUDIES.map(c => c.brand);
   return (
     <section className="client-strip">
       <div className="cs-label">
         <span className="kicker-dot"></span>
-        Trusted by 800+ ambitious businesses across South Florida
+        Recent live sites Roy built
       </div>
       <div className="cs-grid">
         {logos.map((l, i) => <div key={i} className="cs-logo">{l}</div>)}
@@ -321,21 +284,21 @@ function Capabilities() {
   const caps = [
     {
       n: "01", t: "Web Design & Development",
-      d: "Custom WordPress, headless, and bespoke builds. Every site we ship is responsive, accessible (WCAG 2.1 AA), and performance-audited before launch.",
+      d: "WordPress, custom, and the occasional headless or Shopify build. Sites are built to work on a phone, stay maintainable, and be something you can actually update.",
       img: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=900&q=85",
-      pts: ["Custom WordPress themes & plugins", "Headless CMS architecture", "E-commerce (WooCommerce, Shopify)", "Performance & accessibility audits"]
+      pts: ["Custom WordPress themes & plugins", "Custom and marketing sites", "E-commerce (WooCommerce, Shopify)", "Performance & accessibility checks"]
     },
     {
       n: "02", t: "Paid Media & Search",
-      d: "Google Ads, Meta Ads, LinkedIn, and programmatic. Certified specialists who treat your budget like our own — every dollar accounted for, every campaign reported on.",
+      d: "Google Ads and Meta campaigns with reporting you can read. Roy treats the budget like it's his — no Premier Partner theater, no mystery markups.",
       img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=85",
-      pts: ["Google Ads Premier Partner team", "Meta Business Partner agency", "Conversion tracking & attribution", "Monthly performance reviews"]
+      pts: ["Google Ads & Meta campaigns", "Clear monthly reporting", "Conversion tracking", "Budget treated like our own"]
     },
     {
       n: "03", t: "WordPress Maintenance",
-      d: "24/7 monitoring, automated backups, security hardening, and proactive updates. The unglamorous work that keeps your site fast, safe, and online.",
+      d: "Backups, updates, security, and a person you can call when something breaks. The unglamorous work that keeps a site online.",
       img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=900&q=85",
-      pts: ["Automated daily backups", "Security firewall & malware scans", "Core, theme & plugin updates", "Uptime monitoring & response"]
+      pts: ["Automated backups", "Security & malware scans", "Core, theme & plugin updates", "A human when something breaks"]
     },
     {
       n: "04", t: "Automation & Data",
@@ -349,9 +312,9 @@ function Capabilities() {
       <div className="section-head section-head-row">
         <div>
           <div className="kicker"><span className="kicker-dot"></span>Capabilities</div>
-          <h2 className="section-title">A full-service partner,<br/>not a single-discipline shop.</h2>
+          <h2 className="section-title">Web, marketing, and<br/>the unglamorous upkeep.</h2>
         </div>
-        <p className="meth-aside">Most agencies do one thing well. Our clients hire us because we connect design, development, and marketing into one accountable team — with one project manager and one invoice.</p>
+        <p className="meth-aside">Clients hire Roy because design, development, and marketing stay in one conversation — one person accountable, one invoice.</p>
       </div>
       <div className="caps-grid caps-grid-v2">
         {caps.map((c, i) => (
@@ -383,43 +346,32 @@ function Capabilities() {
 }
 
 function FeaturedCS() {
+  const cs = CASE_STUDIES[0];
   return (
     <section className="featured-cs">
-      <div className="fcs-bg">
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1800&q=85" alt="IntegraMed Orthopedics case study" loading="lazy"/>
+      <div className="fcs-bg fcs-bg-solid" style={{ background: cs.color }}>
         <div className="fcs-overlay"></div>
       </div>
       <div className="fcs-inner">
         <div className="fcs-left">
-          <div className="kicker fcs-kicker"><span className="kicker-dot"></span>Featured case study · 2026</div>
-          <h2 className="fcs-title">IntegraMed Orthopedics<br/><em>Spine & Wellness</em></h2>
-          <p className="fcs-lede">South Florida's largest orthopedic and spine wellness practice needed a digital rebuild that could compete with hospital systems. We delivered a multilingual WordPress build, a content engine targeting 40+ procedure keywords, and a paid-search program that now drives 60% of new-patient bookings.</p>
+          <div className="kicker fcs-kicker"><span className="kicker-dot"></span>Featured work · live site</div>
+          <h2 className="fcs-title">{cs.brand}<br/><em>{cs.location || cs.tag}</em></h2>
+          <p className="fcs-lede">{cs.summary} Visit the live site — that's the proof. We don't invent traffic percentages to dress it up.</p>
           <div className="fcs-metas">
-            <span className="fcs-meta">Healthcare</span>
-            <span className="fcs-meta">WordPress</span>
-            <span className="fcs-meta">Local SEO</span>
-            <span className="fcs-meta">Paid Search</span>
-            <span className="fcs-meta">Photography</span>
+            {cs.services.map(s => <span key={s} className="fcs-meta">{s}</span>)}
           </div>
-          <a href="work.html" className="btn btn-gold">Read the full case study →</a>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <a href={cs.url} target="_blank" rel="noopener" className="btn btn-gold">Visit the live site →</a>
+            <a href="work.html" className="btn btn-ghost">See more work</a>
+          </div>
         </div>
         <div className="fcs-right">
-          <div className="fcs-stat">
-            <div className="fcs-n"><Counter to={184} suffix="%" prefix="+"/></div>
-            <div className="fcs-l">Organic traffic in 6 months</div>
-          </div>
-          <div className="fcs-stat">
-            <div className="fcs-n">2.1s <span className="fcs-arr">→</span> 0.8s</div>
-            <div className="fcs-l">Largest Contentful Paint</div>
-          </div>
-          <div className="fcs-stat">
-            <div className="fcs-n"><Counter to={3.4} decimals={1} suffix="x"/></div>
-            <div className="fcs-l">Marketing-qualified leads</div>
-          </div>
-          <div className="fcs-stat">
-            <div className="fcs-n"><Counter to={184} suffix="% MRR"/></div>
-            <div className="fcs-l">From paid search, month 6</div>
-          </div>
+          {(cs.facts || []).map(([n, l], i) => (
+            <div key={i} className="fcs-stat">
+              <div className="fcs-n">{n}</div>
+              <div className="fcs-l">{l}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -429,10 +381,10 @@ function FeaturedCS() {
 function Methodology() {
   const phases = [
     { n: "01", t: "Understand", d: "We start by getting to know you. Two-week diagnostic across your site, analytics, ad accounts, and competitive landscape. Deliverable: a written audit with prioritized opportunities.", img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=85" },
-    { n: "02", t: "Assemble", d: "A specialized team tailored to your project — design, engineering, UX, SEO, and brand. Senior practitioners, not subcontractors. One project manager, one accountable owner.", img: "https://images.unsplash.com/photo-1551836022-deb4ffc60277?w=600&q=85" },
+    { n: "02", t: "Assemble", d: "Roy stays on the project. When extra hands are needed — design, a specialist developer, photography — he brings in people he trusts and tells you first. One accountable owner.", img: "https://images.unsplash.com/photo-1551836022-deb4ffc60277?w=600&q=85" },
     { n: "03", t: "Define", d: "We translate the audit into a 90-day plan with budgets, milestones, owner assignments, and forecasted KPIs. Reviewed and signed off before any production work begins.", img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=85" },
     { n: "04", t: "Execute", d: "Strategy meets craft. Thoughtful design and responsive development. Weekly check-ins, Friday demos, no surprises at handoff. Every page audited for performance and accessibility.", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=85" },
-    { n: "05", t: "Support", d: "Launch with monitoring on day one, 30-day stabilization window included. Then ongoing optimization — quarterly experiments, continuous improvements, an average 32% YoY lift on key metrics.", img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=85" },
+    { n: "05", t: "Support", d: "Launch with monitoring on day one, 30-day stabilization window included. Then optional ongoing care — updates, hosting, small edits — on a monthly plan if you want it.", img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=85" },
   ];
   return (
     <section className="section methodology meth-v2">
@@ -441,7 +393,7 @@ function Methodology() {
           <div className="kicker"><span className="kicker-dot"></span>Methodology</div>
           <h2 className="section-title">A predictable process<br/>for unpredictable problems.</h2>
         </div>
-        <p className="meth-aside">Five phases refined across 800+ engagements. Predictable timeline, budget, and communication — the unglamorous discipline that makes ambitious projects actually ship.</p>
+        <p className="meth-aside">A simple process: understand the business, agree the plan, build it, launch it, stay reachable. Predictable timeline, budget, and communication.</p>
       </div>
       <div className="meth-v2-list">
         {phases.map((p, i) => (
@@ -487,8 +439,8 @@ function Industries() {
     <section className="section industries industries-lux">
       <div className="section-head">
         <div className="kicker"><span className="kicker-dot"></span>Industries we serve</div>
-        <h2 className="section-title">Specialists,<br/>not <em>generalists.</em></h2>
-        <p className="section-sub">A decade of pattern recognition across six categories where we do our best work. We know the buyer journey, the competitive dynamics, and the unspoken expectations of each.</p>
+        <h2 className="section-title">The kinds of<br/>businesses we help.</h2>
+        <p className="section-sub">South Florida shops, practices, and companies that need a site and marketing that a real person stands behind.</p>
       </div>
       <div className="ind-grid ind-grid-lux">
         {ind.map((it, k) => (
@@ -515,37 +467,27 @@ function Industries() {
   );
 }
 
-function Team() {
-  const team = [
-    { n: "Marcus Reyes", r: "Founder & CEO", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=85" },
-    { n: "Priya Sharma", r: "Head of Engineering", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=85" },
-    { n: "Diego Alvarez", r: "Creative Director", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=85" },
-    { n: "Elena Vargas", r: "Director, Performance", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=85" },
-    { n: "Jordan Thompson", r: "Lead WordPress Engineer", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&q=85" },
-    { n: "Sam Kowalski", r: "Client Services Director", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=85" },
-  ];
+function Founder() {
   return (
     <section className="section team-section team-section-v2">
       <div className="meth-head">
         <div>
-          <div className="kicker"><span className="kicker-dot"></span>Leadership</div>
-          <h2 className="section-title">A senior team.<br/>Every project, every day.</h2>
+          <div className="kicker"><span className="kicker-dot"></span>Who you'll work with</div>
+          <h2 className="section-title">Roy Bachar.<br/>Founder, since 2014.</h2>
         </div>
-        <p className="meth-aside">No junior hand-offs, no offshore subcontracting. The same people you meet on the pitch are the ones doing the work.</p>
+        <p className="meth-aside">No stock-photo leadership grid. Roy answers the phone, sits on the discovery calls, and stays in the work through launch.</p>
       </div>
-      <div className="team-photo-grid team-photo-grid-v2">
-        {team.map((t, i) => (
-          <div key={i} className="team-pc team-pc-v2">
-            <div className="team-photo">
-              <img src={t.img} alt={t.n} loading="lazy"/>
-              <div className="team-photo-overlay"></div>
-            </div>
-            <div className="team-pc-info">
-              <div className="team-pc-n">{t.n}</div>
-              <div className="team-pc-r">{t.r}</div>
-            </div>
+      <div className="founder-card">
+        <div className="founder-mark"><EagleMark/></div>
+        <div>
+          <div className="team-pc-n">Roy Bachar</div>
+          <div className="team-pc-r">Founder · 4440 Inverrary Blvd, Lauderhill</div>
+          <p className="team-pc-bio-txt">WordPress, custom sites, marketing, and AI when it actually helps. When a project needs extra hands, he works with senior specialists — and tells you first.</p>
+          <div className="founder-actions">
+            <a href="tel:+17542334037" className="btn btn-gold">754-233-4037</a>
+            <a href="about.html" className="btn btn-ghost">About the shop</a>
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
@@ -620,7 +562,7 @@ function SEOBlock() {
             Royal Eagle is a <strong>web design and web development studio</strong> based at 4440 Inverrary Blvd in Lauderhill, FL — eight minutes from the Sawgrass Expressway and twenty from downtown Fort Lauderdale. Since 2014 we've built <strong>custom websites, WordPress sites, Shopify stores, and digital marketing engines</strong> for small businesses, professional service firms, and growing brands across South Florida.
           </p>
           <p>
-            Every engagement is hands-on. Roy answers the phone, sits on the discovery calls, reviews every design, and stays in the work through launch. We're a small team on purpose — six senior practitioners covering web design, WordPress development, SEO, PPC, brand, and AI consultation.
+            Every engagement is hands-on. Roy answers the phone, sits on the discovery calls, reviews every design, and stays in the work through launch. It's a small shop on purpose — web design, WordPress, SEO, PPC, brand, and AI when it helps.
           </p>
           <p>
             <strong>Looking for "web design near me" in Fort Lauderdale?</strong> Most of our clients are within 30 minutes of our office. We work on-site for kickoffs, photography, and team training when it makes sense — and remotely the rest of the time.
@@ -659,7 +601,7 @@ function HomePage() {
     applyPageSeo({
       title: "Web Design in Fort Lauderdale, FL | Royal Eagle Web Design & Marketing",
       description: "Hands-on web design, web development, and digital marketing for South Florida businesses. Fort Lauderdale-area studio, founded 2014. WordPress, custom builds, SEO, PPC, and AI. Rated 5.0 on Google.",
-      canonical: "index.html",
+      canonical: "/",
       keywords: "web design fort lauderdale, web development fort lauderdale, wordpress fort lauderdale, digital marketing fort lauderdale, seo fort lauderdale, ppc fort lauderdale",
       breadcrumbs: [{ name: "Home" }]
     });
@@ -668,12 +610,11 @@ function HomePage() {
     <PageShell active="home">
       <Hero/>
       <SignatureCollections/>
-      <SocialProofFeed/>
       <CTAStrip
         variant="warm"
         heading="Not sure where to start? Most folks aren't."
-        sub="Twenty minutes on the phone with Roy usually sorts it out. If we're not the right fit we'll point you to someone who is — happens roughly once a month."
-        primary="Book the 20-min call"
+        sub="Twenty minutes on the phone with Roy usually sorts it out. If we're not the right fit we'll say so."
+        primary="Book a call"
         secondary="Browse services first"
         secondaryHref="services.html"
       />
@@ -681,12 +622,14 @@ function HomePage() {
       <Capabilities/>
       <CTAStrip
         variant="urgent"
-        heading="Roy's calendar — June 2026"
-        sub="Two open kickoff slots this month (one mid-June, one the week of the 22nd). After that the next opening is mid-July."
-        primary="Grab a slot"
+        heading="Want to talk to Roy?"
+        sub="Call 754-233-4037 or send a note. He answers. No fake calendar theater."
+        primary="Book a call"
         secondary="See pricing"
       />
       <FeaturedCS/>
+      <ClientStrip/>
+      <Founder/>
       <Methodology/>
       <ComparisonTable/>
       <CTAStrip

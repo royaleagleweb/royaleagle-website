@@ -25,9 +25,7 @@ function CityPage() {
             <em>in {city.n}.</em>
           </h1>
           <p className="city-sub">
-            {city.anchor
-              ? `${city.n} — ${city.anchor} — is one of the ${city.c} County markets we serve every day. Whether you're a new business launching, a long-standing local brand looking to modernize, or a multi-location operation expanding into the area, we build the websites and run the campaigns that actually drive {city.n} customers.`
-              : `${city.n}, ${city.c} County is one of our home markets. We've built websites, run paid campaigns, and managed marketing operations for ${city.n} businesses across professional services, real estate, healthcare, hospitality, and retail.`}
+            {city.n}{city.anchor ? ` — ${city.anchor} —` : ","} {city.c} County is in our home market. Roy builds websites and marketing for South Florida businesses. Call 754-233-4037 if you want the same in {city.n}.
           </p>
           <div className="city-cta-row">
             <a href={`contact.html?city=${city.slug}`} className="btn btn-gold btn-lg">Get a {city.n} quote →</a>
@@ -65,10 +63,10 @@ function CityPage() {
         <div className="city-facts-grid">
           <div>
             <div className="kicker"><span className="kicker-dot"></span>Why local matters in {city.n}</div>
-            <h2 className="section-title">We work with {city.n}<br/>businesses every week.</h2>
+            <h2 className="section-title">A Fort Lauderdale shop<br/>that works in {city.n}.</h2>
             <div className="about-prose">
-              <p>{city.n} customers don't search the same way customers do in other Florida markets. Local intent, neighborhood awareness, and {city.c} County-specific competitive dynamics all shape what works — and we know them because we live here.</p>
-              <p>Every {city.n} engagement gets local-SEO setup with Google Business Profile optimization, neighborhood-specific landing pages, and review-acquisition flows tailored to your industry's typical buyer journey in this part of {city.c}.</p>
+              <p>Royal Eagle is based in Lauderhill. {city.n} is in the same South Florida market — same time zone, same phone number, same person on the other end.</p>
+              <p>If you need a site, WordPress help, or marketing in {city.n}, call 754-233-4037. Roy answers. Local SEO and Google Business Profile work are part of the job when they fit — not a packaged theater.</p>
             </div>
           </div>
           <aside className="city-facts-card">

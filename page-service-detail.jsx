@@ -46,7 +46,7 @@ function ServiceDetail() {
       image: svc.img,
       keywords: `${svc.title.toLowerCase()}, ${svc.title.toLowerCase()} Fort Lauderdale, ${svc.cat.toLowerCase()}, web design Fort Lauderdale, web development South Florida`,
       breadcrumbs: [
-        { name: "Home", url: "index.html" },
+        { name: "Home", url: "/" },
         { name: "Services", url: "services.html" },
         { name: svc.title }
       ],
@@ -73,8 +73,8 @@ function ServiceDetail() {
                 <div className="sd-meta-v">{svc.cat}</div>
               </div>
               <div className="sd-meta-cell">
-                <div className="sd-meta-l">Team size</div>
-                <div className="sd-meta-v">3–6 senior</div>
+                <div className="sd-meta-l">Who does the work</div>
+                <div className="sd-meta-v">Roy + specialists as needed</div>
               </div>
               <div className="sd-meta-cell">
                 <div className="sd-meta-l">Local rating</div>
@@ -138,7 +138,7 @@ function ServiceDetail() {
             <div className="sd-stack">
               {svc.stack.map(t => <span key={t} className="tag">{t}</span>)}
             </div>
-            <p className="sd-tech-p">We're platform-agnostic by philosophy but we maintain deep specialization in the tools above — certified, in production, and battle-tested across hundreds of engagements.</p>
+            <p className="sd-tech-p">We're platform-agnostic by philosophy. The tools above are the ones we actually use in production — picked for the job, not for a partner badge.</p>
           </div>
           <div className="sd-tech-card">
             <div className="kicker"><span className="kicker-dot"></span>Deliverables</div>
