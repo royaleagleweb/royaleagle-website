@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
-
 :root {
   --bg: #07080B;
   --bg2: #0C0D11;
@@ -8910,7 +8908,7 @@ body.nav-lock { overflow: hidden; }
 .re-hero {
   position: relative;
   padding: 140px 40px 72px;
-  overflow: hidden;
+  overflow: visible;
   max-width: 100%;
 }
 .re-hero-inner {
@@ -8959,23 +8957,26 @@ body.nav-lock { overflow: hidden; }
   position: relative;
   perspective: 1400px;
   max-width: 100%;
+  padding: 8px 32px 28px 4px;
 }
 .re-device-frame {
+  display: block;
   background: #111318;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 18px;
   padding: 10px 10px 14px;
   box-shadow: 0 30px 80px rgba(0,0,0,0.45);
-  transform: rotateY(-12deg) rotateX(4deg);
-  overflow: hidden;
+  transform: rotateY(-6deg) rotateX(2deg);
+  transform-origin: left center;
+  overflow: visible;
 }
 .re-device-frame img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 10px;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  aspect-ratio: 14 / 9;
+  object-fit: contain;
   object-position: top center;
 }
 
