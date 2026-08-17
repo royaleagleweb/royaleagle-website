@@ -8927,8 +8927,8 @@ body.nav-lock { overflow: hidden; }
   letter-spacing: -0.03em;
   color: var(--ink);
   margin: 0 0 22px;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  overflow-wrap: break-word;
+  word-break: normal;
   max-width: 100%;
 }
 .re-hero-title .gold { color: var(--gold); display: block; }
@@ -8955,19 +8955,15 @@ body.nav-lock { overflow: hidden; }
 }
 .re-device {
   position: relative;
-  perspective: 1400px;
   max-width: 100%;
-  padding: 8px 32px 28px 4px;
 }
 .re-device-frame {
   display: block;
   background: #111318;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
   border-radius: 18px;
   padding: 10px 10px 14px;
   box-shadow: 0 30px 80px rgba(0,0,0,0.45);
-  transform: rotateY(-6deg) rotateX(2deg);
-  transform-origin: left center;
   overflow: visible;
 }
 .re-device-frame img {
