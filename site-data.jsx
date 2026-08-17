@@ -206,32 +206,36 @@ const CASE_STUDIES = [
     slug: "doctor-yachts", brand: "Doctor Yachts", tag: "Marine", year: "2026", color: "#1F4A6B",
     url: "https://doctoryachts.com/", location: "Fort Lauderdale, FL",
     services: ["Web Design", "Custom Build"],
-    summary: "Live site for a mobile boat mechanic serving Fort Lauderdale and South Florida waterways.",
+    summary: "Mobile boat mechanic serving Fort Lauderdale and South Florida waterways.",
     facts: [["Fort Lauderdale", "Home port"], ["Live site", "doctoryachts.com"], ["Custom build", "Shipped"]],
+    shot: "work/doctor-yachts.png",
     imgs: []
   },
   {
-    slug: "florida-impact-windows", brand: "Florida Impact Windows & Doors", tag: "Home services", year: "2026", color: "#3A6B7A",
+    slug: "florida-impact-windows", brand: "Florida Impact Windows & Doors", tag: "Home", year: "2026", color: "#3A6B7A",
     url: "https://floridaimpactwindowsdoors.com/", location: "Hollywood, FL",
     services: ["Web Design", "Marketing site"],
-    summary: "Live marketing site for an impact windows and doors installer in Hollywood / South Florida.",
+    summary: "Impact windows and doors for Florida homes. Hollywood, FL.",
     facts: [["Hollywood, FL", "Based"], ["Live site", "floridaimpactwindowsdoors.com"], ["Marketing site", "Lead-gen"]],
+    shot: "work/florida-impact.png",
     imgs: []
   },
   {
     slug: "space-garage-door", brand: "Space Garage Door Repair", tag: "Home services", year: "2026", color: "#5C2A1A",
-    url: "https://spacegaragedoorrepair.com/", location: "Los Angeles, CA",
+    url: "https://spacegaragedoorrepair.com/", location: "",
     services: ["WordPress", "Web Design"],
-    summary: "Live WordPress site for a garage door repair company.",
+    summary: "Garage door repair, installs, and opener solutions.",
     facts: [["Live site", "spacegaragedoorrepair.com"], ["WordPress", "Build"]],
+    shot: "work/space-garage.png",
     imgs: []
   },
   {
     slug: "green-coast-capital", brand: "Green Coast Capital", tag: "Finance", year: "2026", color: "#2C4A2E",
     url: "https://greencoastcapital.co/", location: "",
     services: ["Web Design"],
-    summary: "Live site for a business-funding company.",
+    summary: "Business funding site — working capital, live at greencoastcapital.co.",
     facts: [["Live site", "greencoastcapital.co"]],
+    shot: "work/green-coast.png",
     imgs: []
   },
 ];

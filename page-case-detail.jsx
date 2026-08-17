@@ -26,8 +26,10 @@ function CaseDetail() {
             </p>
           )}
         </div>
-        <div className="case-hero-img work-card-mark" style={{ "--brand-color": cs.color, minHeight: 280 }}>
-          <span>{cs.brand}</span>
+        <div className="case-hero-img" style={{ minHeight: 280, overflow: "hidden" }}>
+          {cs.shot
+            ? <img src={cs.shot} alt={`${cs.brand} live website`} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }}/>
+            : <div className="work-card-mark" style={{ "--brand-color": cs.color, minHeight: 280 }}><span>{cs.brand}</span></div>}
         </div>
       </section>
 

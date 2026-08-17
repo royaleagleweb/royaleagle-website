@@ -123,7 +123,7 @@ const LOCAL_BUSINESS_LD = {
 // Stamp <head> with all global SEO tags + LocalBusiness schema
 function applyBaseSeo() {
   // Theme + viewport (will be no-op if already set in HTML)
-  setOrReplaceMeta("name", "theme-color", "#0A1428");
+  setOrReplaceMeta("name", "theme-color", "#07080B");
   setOrReplaceMeta("name", "color-scheme", "dark");
   setOrReplaceMeta("name", "format-detection", "telephone=no");
   setOrReplaceMeta("name", "author", SITE.name);

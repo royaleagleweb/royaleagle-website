@@ -1,14 +1,14 @@
 // Shared chrome — mega-menu nav + sitemap footer + page shell
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "palette": "light"
+  "palette": "obsidian"
 }/*EDITMODE-END*/;
 
 const PALETTES = {
   light: { bg: "#FAF7F0", bg2: "#FFFFFF", surface: "#F2EEDF", ink: "#1A1410", inkDim: "#6B5B3F", gold: "#B8893A", goldHi: "#D4A845", accent: "#B8893A", line: "rgba(26, 20, 16, 0.10)" },
-  midnight: { bg: "#0A1428", bg2: "#0F1B36", surface: "#13224A", ink: "#F5F1E6", inkDim: "#A8B3CC", gold: "#D4A845", goldHi: "#F4CB6B", accent: "#E8C547", line: "rgba(212,168,69,0.18)" },
-  obsidian: { bg: "#0B0B0F", bg2: "#15151C", surface: "#1E1E28", ink: "#F8F4E8", inkDim: "#A09988", gold: "#C9A24A", goldHi: "#E8C66E", accent: "#E0B84A", line: "rgba(201,162,74,0.2)" },
-  imperial: { bg: "#1A0F2E", bg2: "#241640", surface: "#2D1B52", ink: "#F5EFE0", inkDim: "#B5A8CC", gold: "#E0B84A", goldHi: "#F2CE6D", accent: "#F2CE6D", line: "rgba(224,184,74,0.18)" },
+  midnight: { bg: "#07080B", bg2: "#0C0D11", surface: "#121318", ink: "#F4F1EA", inkDim: "#A8A59C", gold: "#E8B84A", goldHi: "#F2C85C", accent: "#E8B84A", line: "rgba(232,184,74,0.18)" },
+  obsidian: { bg: "#07080B", bg2: "#0C0D11", surface: "#121318", ink: "#F4F1EA", inkDim: "#A8A59C", gold: "#E8B84A", goldHi: "#F2C85C", accent: "#E8B84A", line: "rgba(232,184,74,0.18)" },
+  imperial: { bg: "#07080B", bg2: "#0C0D11", surface: "#121318", ink: "#F4F1EA", inkDim: "#A8A59C", gold: "#E8B84A", goldHi: "#F2C85C", accent: "#E8B84A", line: "rgba(232,184,74,0.18)" },
 };
 
 function applyPalette(p, name) {
@@ -40,201 +40,83 @@ const EagleMark = () => (
   </svg>
 );
 
-// ---------- MEGA-MENU NAV ----------
-const NAV_GROUPS = [
-  {
-    label: "Company", active: ["about", "our-story", "team", "regions", "testimonials"],
-    cols: [
-      { h: "About", items: [
-        { t: "About Us", h: "about.html", d: "Who we are" },
-        { t: "Our Story", h: "our-story.html", d: "Founded in Fort Lauderdale, 2014" },
-        { t: "Team", h: "team.html", d: "Meet Roy — founder since 2014" },
-        { t: "Regions Served", h: "regions.html", d: "Broward · Miami-Dade · WPB" },
-      ]},
-      { h: "Social proof", items: [
-        { t: "Testimonials", h: "testimonials.html", d: "What clients say" },
-        { t: "Case Studies", h: "case-studies.html", d: "Real live client sites" },
-        { t: "Portfolio", h: "portfolio.html", d: "Visual showcase" },
-      ]},
-    ],
-  },
-  {
-    label: "Services", active: ["services", "service"],
-    cols: [
-      { h: "Website Builds", items: [
-        { t: "Website Builds", h: "service.html?s=website-builds", d: "Custom marketing sites" },
-        { t: "AI Websites", h: "service.html?s=ai-websites", d: "Personalized & AI-powered" },
-        { t: "WordPress / Elementor", h: "service.html?s=wordpress-elementor", d: "WordPress experts since 2014" },
-        { t: "Custom Themes", h: "service.html?s=custom-themes", d: "Hand-coded WP themes" },
-        { t: "E-commerce", h: "service.html?s=ecommerce", d: "Shopify Plus & WooCommerce" },
-      ]},
-      { h: "Infrastructure", items: [
-        { t: "Domains & Hosting", h: "service.html?s=domains-hosting", d: "Managed hosting + DNS" },
-        { t: "Email Services", h: "service.html?s=email-services", d: "Workspace + deliverability" },
-        { t: "Maintenance", h: "service.html?s=maintenance", d: "Updates, security, support" },
-      ]},
-      { h: "Marketing", items: [
-        { t: "Marketing", h: "service.html?s=marketing", d: "Full-funnel programs" },
-        { t: "PPC (Google + Meta)", h: "service.html?s=ppc", d: "Paid search & social" },
-        { t: "Automation", h: "service.html?s=automation", d: "HubSpot, Zapier, Make" },
-        { t: "Design", h: "service.html?s=design", d: "Brand & marketing creative" },
-        { t: "Data", h: "service.html?s=data", d: "GA4, BigQuery, Looker" },
-      ]},
-    ],
-  },
-  {
-    label: "AI Consultation", active: ["ai"],
-    cols: [
-      { h: "AI services", items: [
-        { t: "AI Strategy", h: "service.html?s=ai-strategy", d: "Where AI moves the needle" },
-        { t: "AI Tools Setup", h: "service.html?s=ai-tools-setup", d: "Claude, ChatGPT, Copilot rollout" },
-        { t: "AI Automation", h: "service.html?s=ai-automation", d: "Agents that handle real work" },
-        { t: "AI Content", h: "service.html?s=ai-content", d: "Brand-trained AI writers" },
-      ]},
-      { h: "Resources", items: [
-        { t: "Blog: AI category", h: "blog.html?cat=AI", d: "Our latest writing on AI" },
-        { t: "AI Strategy template", h: "resources.html", d: "Download the engagement template" },
-      ]},
-    ],
-  },
-  {
-    label: "Locations", active: ["regions", "city", "locations", "local-service"],
-    cols: [
-      { h: "Major markets", items: [
-        { t: "All Service Areas (104 cities)", h: "locations.html", d: "Broward · Miami-Dade · Palm Beach" },
-        { t: "Fort Lauderdale", h: "city.html?c=fort-lauderdale", d: "Our hometown · all 18 services" },
-        { t: "Miami", h: "city.html?c=miami", d: "Magic City · all 18 services" },
-        { t: "West Palm Beach", h: "city.html?c=west-palm-beach", d: "Palm Beach County hub" },
-      ]},
-      { h: "Broward", items: [
-        { t: "Hollywood", h: "city.html?c=hollywood", d: "Between Miami & Lauderdale" },
-        { t: "Pembroke Pines", h: "city.html?c=pembroke-pines", d: "172K residents · 18 services" },
-        { t: "Coral Springs", h: "city.html?c=coral-springs", d: "134K residents · 18 services" },
-        { t: "Pompano Beach", h: "city.html?c=pompano-beach", d: "113K residents · 18 services" },
-        { t: "Plantation", h: "city.html?c=plantation", d: "Professional hub · 18 services" },
-        { t: "Weston", h: "city.html?c=weston", d: "Premier planned community" },
-      ]},
-      { h: "Miami-Dade & Palm Beach", items: [
-        { t: "Miami Beach", h: "city.html?c=miami-beach", d: "Iconic barrier-island city" },
-        { t: "Coral Gables", h: "city.html?c=coral-gables", d: "The City Beautiful" },
-        { t: "Aventura", h: "city.html?c=aventura", d: "North Miami-Dade luxury" },
-        { t: "Boca Raton", h: "city.html?c=boca-raton", d: "Palm Beach professional hub" },
-        { t: "Delray Beach", h: "city.html?c=delray-beach", d: "Most fun small town in America" },
-        { t: "Jupiter", h: "city.html?c=jupiter", d: "North county growth market" },
-      ]},
-    ],
-  },
-  {
-    label: "Resources", active: ["blog", "case-studies", "resources", "pricing", "faq"],
-    cols: [
-      { h: "Read", items: [
-        { t: "Blog", h: "blog.html", d: "20+ articles on web & marketing" },
-        { t: "Case Studies", h: "case-studies.html", d: "Documented client outcomes" },
-        { t: "Resources", h: "resources.html", d: "Templates, guides, checklists" },
-      ]},
-      { h: "Plan", items: [
-        { t: "Pricing", h: "pricing.html", d: "Published, transparent rates" },
-        { t: "FAQ", h: "faq.html", d: "Common questions answered" },
-        { t: "Affiliates", h: "affiliates.html", d: "15% referral commission" },
-        { t: "White Label", h: "white-label.html", d: "Agency partnership program" },
-      ]},
-    ],
-  },
+const NAV_LINKS = [
+  { t: "Work", h: "work.html", keys: ["work", "case-studies", "portfolio"] },
+  { t: "Services", h: "services.html", keys: ["services", "service"] },
+  { t: "About", h: "about.html", keys: ["about", "our-story", "team"] },
+  { t: "Contact", h: "contact.html", keys: ["contact"] },
 ];
 
 function Nav({ active }) {
-  const [scrolled, setScrolled] = React.useState(false);
-  const [openMenu, setOpenMenu] = React.useState(null);
+  const [open, setOpen] = React.useState(false);
   React.useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    document.body.classList.toggle("nav-lock", open);
+    return () => document.body.classList.remove("nav-lock");
+  }, [open]);
+  React.useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") setOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, []);
   return (
-    <nav className={`nav ${scrolled ? 'nav-scrolled' : ''}`} onMouseLeave={() => setOpenMenu(null)}>
-      <div className="nav-inner">
-        <a href="index.html" className="brand">
-          <EagleMark/>
-          <span className="brand-text">
-            <span className="brand-royal">ROYAL</span>
-            <span className="brand-eagle">EAGLE</span>
-          </span>
-        </a>
-        <div className="nav-links nav-links-mega">
-          {NAV_GROUPS.map(g => (
-            <div key={g.label} className="nav-mega-trigger" onMouseEnter={() => setOpenMenu(g.label)}>
-              <button className={`nav-mega-btn ${g.active.includes(active) ? 'is-active' : ''}`}>
-                {g.label}
-                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </button>
-            </div>
-          ))}
-        </div>
-        <a href="contact.html" className="nav-cta">
-          <span>Start a project</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-        </a>
-      </div>
-      {openMenu && (
-        <div className="nav-mega-panel">
-          <div className="nav-mega-panel-inner">
-            {NAV_GROUPS.find(g => g.label === openMenu).cols.map((c, ci) => (
-              <div key={ci} className="nav-mega-col">
-                <div className="nav-mega-h">{c.h}</div>
-                {c.items.map(it => (
-                  <a key={it.t} href={it.h} className="nav-mega-item">
-                    <div className="nmi-t">{it.t}</div>
-                    <div className="nmi-d">{it.d}</div>
-                  </a>
-                ))}
-              </div>
+    <>
+      <nav className="site-nav" aria-label="Primary">
+        <div className="site-nav-inner">
+          <a href="index.html" className="brand">
+            <EagleMark/>
+            <span className="brand-lockup">Royal Eagle</span>
+          </a>
+          <div className="site-nav-links">
+            {NAV_LINKS.map(l => (
+              <a key={l.t} href={l.h} className={l.keys.includes(active) ? "is-active" : ""}>{l.t}</a>
             ))}
           </div>
+          <a href="tel:+17542334037" className="site-nav-cta">Call Roy</a>
+          <button
+            type="button"
+            className={`nav-burger ${open ? "is-open" : ""}`}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen(v => !v)}
+          >
+            <span></span>
+          </button>
         </div>
-      )}
-    </nav>
+      </nav>
+      <div className={`nav-drawer ${open ? "is-open" : ""}`} hidden={!open}>
+        {NAV_LINKS.map(l => (
+          <a key={l.t} href={l.h} className={l.keys.includes(active) ? "is-active" : ""} onClick={() => setOpen(false)}>{l.t}</a>
+        ))}
+        <a href="tel:+17542334037" className="nav-drawer-call">Call 754-233-4037</a>
+      </div>
+    </>
   );
 }
 
 function Footer() {
   return (
-    <footer className="footer footer-v2">
-      <div className="footer-top">
-        <div className="footer-brand">
-          <a href="index.html" className="brand">
-            <EagleMark/>
-            <span className="brand-text">
-              <span className="brand-royal">ROYAL</span>
-              <span className="brand-eagle">EAGLE</span>
-            </span>
-          </a>
-          <p className="footer-tag">From concept to conversion. Your all-in-one web design, AI, and marketing partner — Fort Lauderdale, since 2014.</p>
-          <div className="footer-contact">
-            <a href="tel:+17542334037">📞 754-233-4037</a>
-            <a href="mailto:roy@royaleagleweb.com">✉ roy@royaleagleweb.com</a>
-            <a href="https://share.google/idV4zjUrBGsrRtZ19" target="_blank" rel="noopener">📍 4440 Inverrary Blvd, Lauderhill, FL</a>
-          </div>
-        </div>
-        <div className="footer-cols footer-cols-v2">
-          {SITE_MAP.map(col => (
-            <div key={col.title}>
-              <h4>{col.title}</h4>
-              {col.links.map(l => <a key={l.t} href={l.h}>{l.t}</a>)}
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <span>© 2026 Royal Eagle Web Design & Marketing</span>
-        <span className="footer-meta">
-          <a href="legal.html?s=privacy">Privacy</a>
-          <span>·</span>
-          <a href="legal.html?s=terms">Terms</a>
-          <span>·</span>
-          <a href="legal.html?s=accessibility">Accessibility</a>
-          <span>·</span>
-          <a href="sitemap.html">Sitemap</a>
+    <footer className="site-foot">
+      <div className="site-foot-row">
+        <span className="site-foot-ico" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22s-7-6-7-13a7 7 0 0 1 14 0c0 7-7 13-7 13z" stroke="currentColor" strokeWidth="1.6"/><circle cx="12" cy="9" r="2.2" stroke="currentColor" strokeWidth="1.6"/></svg>
         </span>
+        <a href="https://share.google/idV4zjUrBGsrRtZ19" target="_blank" rel="noopener">4440 Inverrary Blvd</a>
+        <span className="site-foot-dot">·</span>
+        <span className="site-foot-ico" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="1.6"/></svg>
+        </span>
+        <a href="tel:+17542334037">754-233-4037</a>
+        <span className="site-foot-dot">·</span>
+        <span className="site-foot-ico" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 8l9 6 9-6M3 7h18v10c0 1-.4 1.4-1.4 1.4H4.4C3.4 18.4 3 18 3 17z" stroke="currentColor" strokeWidth="1.6"/></svg>
+        </span>
+        <a href="mailto:roy@royaleagleweb.com">roy@royaleagleweb.com</a>
+      </div>
+      <div className="site-foot-legal">
+        <span>© 2026 Royal Eagle · Mon–Fri 9–6 ET</span>
+        <a href="legal.html?s=privacy">Privacy</a>
+        <a href="legal.html?s=terms">Terms</a>
+        <a href="sitemap.html">Sitemap</a>
       </div>
     </footer>
   );
@@ -257,7 +139,7 @@ function PageHero({ kicker, title, sub, eyebrow }) {
   );
 }
 
-function CTA({ title = "Ready to <em>soar?</em>", sub = "Tell us about your project. We'll come back within one business day with a real plan — not a sales pitch." } = {}) {
+function CTA({ title = "Want to talk to Roy?", sub = "Call 754-233-4037 or send a note. He answers." } = {}) {
   return (
     <section className="section cta">
       <div className="cta-card">
@@ -266,11 +148,8 @@ function CTA({ title = "Ready to <em>soar?</em>", sub = "Tell us about your proj
         <h2 className="cta-title" dangerouslySetInnerHTML={{ __html: title }}></h2>
         <p className="cta-sub">{sub}</p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap', position: 'relative', zIndex: 2 }}>
-          <a href="contact.html" className="btn btn-gold">
-            Schedule a consultation
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </a>
-          <a href="pricing.html" className="btn btn-ghost">See pricing</a>
+          <a href="contact.html" className="btn btn-gold">Book 20 minutes</a>
+          <a href="tel:+17542334037" className="btn btn-ghost">Call Roy</a>
         </div>
       </div>
     </section>
@@ -393,31 +272,39 @@ function MeetYourLead({ name = "Roy Bachar", role = "Founder", quote = "I answer
   );
 }
 
-function WorkCard({ cs }) {
+function WorkCard({ cs, index }) {
+  const n = String((index ?? 0) + 1).padStart(2, "0");
   return (
-    <article className="work-card" style={{ "--brand-color": cs.color }}>
-      <div className="work-card-mark">
-        <span>{cs.brand}</span>
+    <a href={cs.url} target="_blank" rel="noopener" className="re-card" style={{ "--brand-color": cs.color }}>
+      <div className="re-card-label">{n} {cs.brand}</div>
+      <div className="re-card-shot">
+        {cs.shot
+          ? <img src={cs.shot} alt={`${cs.brand} live website`} loading="lazy"/>
+          : <div className="re-card-shot-fallback">{cs.brand}</div>}
       </div>
-      <div className="work-card-body">
-        <div className="work-card-meta">
-          <span>{cs.tag}</span>
-          {cs.location ? <span>{cs.location}</span> : null}
+      <div className="re-card-body">
+        <div className="re-card-top">
+          <div>
+            <h3 className="re-card-brand">{cs.brand}</h3>
+            <p className="re-card-sum">{cs.summary}</p>
+          </div>
         </div>
-        <h3 className="work-card-brand">{cs.brand}</h3>
-        <p className="work-card-summary">{cs.summary}</p>
-        <div className="work-card-services">{(cs.services || []).join(" · ")}</div>
-        <div className="work-card-actions">
-          {cs.url && <a href={cs.url} target="_blank" rel="noopener" className="link-arrow">Visit live site →</a>}
-          <a href={`case.html?s=${cs.slug}`} className="link-arrow">Details</a>
+        <div className="re-card-meta">
+          <span className="re-card-tag">{cs.tag}</span>
+          <span className="re-card-visit">Visit →</span>
         </div>
       </div>
-    </article>
+    </a>
   );
 }
 
+function Counter({ to, prefix = "", suffix = "", decimals = 0 }) {
+  const formatted = decimals > 0 ? Number(to).toFixed(decimals) : Math.round(to).toLocaleString();
+  return <span>{prefix}{formatted}{suffix}</span>;
+}
+
 function PageShell({ active, children }) {
-  React.useEffect(() => { applyPalette(PALETTES[TWEAK_DEFAULTS.palette] || PALETTES.light, TWEAK_DEFAULTS.palette); }, []);
+  React.useEffect(() => { applyPalette(PALETTES.obsidian, "obsidian"); }, []);
   return (
     <>
       <ScrollProgress/>
@@ -430,6 +317,6 @@ function PageShell({ active, children }) {
   );
 }
 
-applyPalette(PALETTES[TWEAK_DEFAULTS.palette], TWEAK_DEFAULTS.palette);
+applyPalette(PALETTES.obsidian, "obsidian");
 
-Object.assign(window, { EagleCrest, EagleMark, Nav, Footer, PageHero, CTA, CTAStrip, MeetYourLead, FloatingCTA, WorkCard, PageShell, PALETTES, applyPalette, TWEAK_DEFAULTS, getSlug });
+Object.assign(window, { EagleCrest, EagleMark, Nav, Footer, PageHero, CTA, CTAStrip, MeetYourLead, FloatingCTA, WorkCard, Counter, PageShell, PALETTES, applyPalette, TWEAK_DEFAULTS, getSlug });

@@ -9,8 +9,8 @@ function PortfolioPage() {
         sub="The same real client sites as the work page. Visit them. We don't use stock photos as a portfolio."
       />
       <section className="section">
-        <div className="work-card-grid">
-          {CASE_STUDIES.map(c => <WorkCard key={c.slug} cs={c}/>)}
+        <div className="re-work-grid">
+          {CASE_STUDIES.map((c, i) => <WorkCard key={c.slug} cs={c} index={i}/>)}
         </div>
       </section>
       <CTA/>

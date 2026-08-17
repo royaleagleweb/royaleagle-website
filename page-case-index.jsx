@@ -17,8 +17,8 @@ function CaseIndex() {
             <button key={t} onClick={() => setActive(t)} className={`bf-chip ${active === t ? 'is-active' : ''}`}>{t}</button>
           ))}
         </div>
-        <div className="work-card-grid">
-          {shown.map(c => <WorkCard key={c.slug} cs={c}/>)}
+        <div className="re-work-grid">
+          {shown.map((c, i) => <WorkCard key={c.slug} cs={c} index={i}/>)}
         </div>
       </section>
       <CTA/>

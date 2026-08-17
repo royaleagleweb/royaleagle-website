@@ -6,8 +6,8 @@ function ServicesHub() {
     <PageShell active="services">
       <PageHero
         kicker="Services"
-        title='Everything you need<br/>to build, <span class="gradient-text">grow, and retain.</span>'
-        sub="Eighteen services across five categories — all delivered by one senior team under one project manager and one invoice."
+        title='Web, WordPress,<br/><span class="gradient-text">marketing, upkeep.</span>'
+        sub="The work Roy actually does. One person accountable. Specialists join when a project needs extra hands."
       />
       {cats.map(cat => {
         const items = SERVICES.filter(s => s.cat === cat);
