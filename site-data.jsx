@@ -221,15 +221,6 @@ const CASE_STUDIES = [
     imgs: []
   },
   {
-    slug: "space-garage-door", brand: "Space Garage Door Repair", tag: "Home services", year: "2026", color: "#5C2A1A",
-    url: "https://spacegaragedoorrepair.com/", location: "",
-    services: ["WordPress", "Web Design"],
-    summary: "Garage door repair, installs, and opener solutions.",
-    facts: [["Live site", "spacegaragedoorrepair.com"], ["WordPress", "Build"]],
-    shot: "work/space-garage.png",
-    imgs: []
-  },
-  {
     slug: "green-coast-capital", brand: "Green Coast Capital", tag: "Finance", year: "2026", color: "#2C4A2E",
     url: "https://greencoastcapital.co/", location: "",
     services: ["Web Design"],
