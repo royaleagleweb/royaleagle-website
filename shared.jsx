@@ -1,11 +1,11 @@
 // Shared chrome — mega-menu nav + sitemap footer + page shell
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "palette": "obsidian"
+  "palette": "light"
 }/*EDITMODE-END*/;
 
 const PALETTES = {
-  light: { bg: "#FAF7F0", bg2: "#FFFFFF", surface: "#F2EEDF", ink: "#1A1410", inkDim: "#6B5B3F", gold: "#B8893A", goldHi: "#D4A845", accent: "#B8893A", line: "rgba(26, 20, 16, 0.10)" },
+  light: { bg: "#FAF7F0", bg2: "#FFFFFF", surface: "#F2EEDF", ink: "#1A1410", inkDim: "#6B5B3F", gold: "#B8893A", goldHi: "#C9A227", accent: "#B8893A", line: "rgba(26, 20, 16, 0.10)" },
   midnight: { bg: "#07080B", bg2: "#0C0D11", surface: "#121318", ink: "#F4F1EA", inkDim: "#A8A59C", gold: "#E8B84A", goldHi: "#F2C85C", accent: "#E8B84A", line: "rgba(232,184,74,0.18)" },
   obsidian: { bg: "#07080B", bg2: "#0C0D11", surface: "#121318", ink: "#F4F1EA", inkDim: "#A8A59C", gold: "#E8B84A", goldHi: "#F2C85C", accent: "#E8B84A", line: "rgba(232,184,74,0.18)" },
   imperial: { bg: "#07080B", bg2: "#0C0D11", surface: "#121318", ink: "#F4F1EA", inkDim: "#A8A59C", gold: "#E8B84A", goldHi: "#F2C85C", accent: "#E8B84A", line: "rgba(232,184,74,0.18)" },
@@ -276,23 +276,18 @@ function WorkCard({ cs, index }) {
   const n = String((index ?? 0) + 1).padStart(2, "0");
   return (
     <a href={cs.url} target="_blank" rel="noopener" className="re-card" style={{ "--brand-color": cs.color }}>
-      <div className="re-card-label">{n} {cs.brand}</div>
       <div className="re-card-shot">
         {cs.shot
           ? <img src={cs.shot} alt={`${cs.brand} live website`} loading="lazy"/>
           : <div className="re-card-shot-fallback">{cs.brand}</div>}
       </div>
       <div className="re-card-body">
-        <div className="re-card-top">
-          <div>
-            <h3 className="re-card-brand">{cs.brand}</h3>
-            <p className="re-card-sum">{cs.summary}</p>
-          </div>
+        <div className="re-card-title-row">
+          <span className="re-card-num">{n}</span>
+          <h3 className="re-card-brand">{cs.brand}</h3>
         </div>
-        <div className="re-card-meta">
-          <span className="re-card-tag">{cs.tag}</span>
-          <span className="re-card-visit">Visit →</span>
-        </div>
+        <p className="re-card-sum">{cs.summary}</p>
+        <span className="re-card-visit">Visit →</span>
       </div>
     </a>
   );
@@ -304,7 +299,7 @@ function Counter({ to, prefix = "", suffix = "", decimals = 0 }) {
 }
 
 function PageShell({ active, children }) {
-  React.useEffect(() => { applyPalette(PALETTES.obsidian, "obsidian"); }, []);
+  React.useEffect(() => { applyPalette(PALETTES.light, "light"); }, []);
   return (
     <>
       <ScrollProgress/>
@@ -317,6 +312,6 @@ function PageShell({ active, children }) {
   );
 }
 
-applyPalette(PALETTES.obsidian, "obsidian");
+applyPalette(PALETTES.light, "light");
 
 Object.assign(window, { EagleCrest, EagleMark, Nav, Footer, PageHero, CTA, CTAStrip, MeetYourLead, FloatingCTA, WorkCard, Counter, PageShell, PALETTES, applyPalette, TWEAK_DEFAULTS, getSlug });

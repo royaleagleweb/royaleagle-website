@@ -265,6 +265,15 @@ const CASE_STUDIES = [
     shot: "work/yellow-plumbing.png",
     imgs: []
   },
+  {
+    slug: "space-roofing", brand: "Space Roofing", tag: "Roofing", year: "2026", color: "#3D4A2A",
+    url: "https://spaceroofing.com/", location: "Flower Mound, TX",
+    services: ["Web Design"],
+    summary: "Residential and commercial roofing, gutters, and fencing in Flower Mound, TX.",
+    facts: [["Flower Mound, TX", "Based"], ["(469) 397-4600", "Phone"], ["Live site", "spaceroofing.com"]],
+    shot: "work/space-roofing.png",
+    imgs: []
+  },
 ];
 
 const BLOG_POSTS = [

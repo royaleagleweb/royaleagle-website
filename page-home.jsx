@@ -17,6 +17,7 @@ function Hero() {
         </div>
         <div className="re-device">
           <a href={featured.url} target="_blank" rel="noopener" className="re-device-frame" aria-label={`Visit ${featured.brand}`}>
+            <div className="re-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
             <img src={featured.shot} alt={`${featured.brand} live website`}/>
           </a>
         </div>
