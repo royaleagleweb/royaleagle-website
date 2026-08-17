@@ -4,8 +4,8 @@
   "description": "Hands-on web design, web development, and digital marketing for South Florida businesses. Fort Lauderdale-area studio, founded 2014.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0A1428",
-  "theme_color": "#0A1428",
+  "background_color": "#F4F0E6",
+  "theme_color": "#F4F0E6",
   "icons": [
     {
       "src": "/apple-touch-icon.png",
