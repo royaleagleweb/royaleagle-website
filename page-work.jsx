@@ -3,7 +3,7 @@ function WorkPage() {
     <PageShell active="work">
       <section className="re-work-page">
         <h1>Real sites. Live links.</h1>
-        <p className="re-work-lede">Eight we shipped. Click through.</p>
+        <p className="re-work-lede">Seven we shipped. Click through.</p>
         <div className="re-work-grid">
           {CASE_STUDIES.map((cs, i) => <WorkCard key={cs.slug} cs={cs} index={i}/>)}
         </div>
