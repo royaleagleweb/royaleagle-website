@@ -221,24 +221,6 @@ const CASE_STUDIES = [
     imgs: []
   },
   {
-    slug: "green-coast-capital", brand: "Green Coast Capital", tag: "Finance", year: "2026", color: "#2C4A2E",
-    url: "https://greencoastcapital.co/", location: "",
-    services: ["Web Design"],
-    summary: "Business funding site — working capital, live at greencoastcapital.co.",
-    facts: [["Live site", "greencoastcapital.co"]],
-    shot: "work/green-coast.png",
-    imgs: []
-  },
-  {
-    slug: "capital-business-funding", brand: "Capital Business Funding", tag: "Finance", year: "2026", color: "#24382C",
-    url: "https://capitalbusinessfunding.com/", location: "",
-    services: ["Web Design"],
-    summary: "Business-funding site for small and mid-size companies. Fast online apply.",
-    facts: [["Live site", "capitalbusinessfunding.com"], ["Business funding", "Online apply"]],
-    shot: "work/capital-business-funding.png",
-    imgs: []
-  },
-  {
     slug: "construction-95", brand: "Construction 95", tag: "Construction", year: "2026", color: "#3A2C1A",
     url: "https://construction95.com/", location: "Lauderhill / South Florida",
     services: ["Web Design"],
@@ -254,6 +236,24 @@ const CASE_STUDIES = [
     summary: "Connecticut plumbing based in New Haven. Emergency, drain, leak detection, water heater, basement. Founded by Avi Meer.",
     facts: [["New Haven, CT", "Based"], ["Avi Meer", "Founder"], ["Live site", "yellowplumbing.com"]],
     shot: "work/yellow-plumbing.png",
+    imgs: []
+  },
+  {
+    slug: "capital-business-funding", brand: "Capital Business Funding", tag: "Finance", year: "2026", color: "#24382C",
+    url: "https://capitalbusinessfunding.com/", location: "",
+    services: ["Web Design"],
+    summary: "Business-funding site for small and mid-size companies. Fast online apply.",
+    facts: [["Live site", "capitalbusinessfunding.com"], ["Business funding", "Online apply"]],
+    shot: "work/capital-business-funding.png",
+    imgs: []
+  },
+  {
+    slug: "green-coast-capital", brand: "Green Coast Capital", tag: "Finance", year: "2026", color: "#2C4A2E",
+    url: "https://greencoastcapital.co/", location: "",
+    services: ["Web Design"],
+    summary: "Business funding site — working capital, live at greencoastcapital.co.",
+    facts: [["Live site", "greencoastcapital.co"]],
+    shot: "work/green-coast.png",
     imgs: []
   },
 ];

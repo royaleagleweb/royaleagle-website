@@ -277,27 +277,20 @@ function MeetYourLead({ name = "Royal Eagle", role = "Fort Lauderdale studio", q
 
 function WorkCard({ cs, index }) {
   const n = String((index ?? 0) + 1).padStart(2, "0");
-  const host = (cs.url || "").replace(/^https?:\/\//, "").replace(/\/$/, "");
   return (
     <a href={cs.url} target="_blank" rel="noopener" className="re-card" style={{ "--brand-color": cs.color }}>
-      <div className="re-card-frame">
-        <div className="re-chrome" aria-hidden="true">
-          <span></span><span></span><span></span>
-          {host && <div className="re-chrome-url">{host}</div>}
-        </div>
-        <div className="re-card-shot">
-          {cs.shot
-            ? <img src={cs.shot} alt={`${cs.brand} live website`} loading="lazy"/>
-            : <div className="re-card-shot-fallback">{cs.brand}</div>}
-        </div>
+      <div className="re-card-shot">
+        {cs.shot
+          ? <img src={cs.shot} alt={`${cs.brand} live website`} loading="lazy"/>
+          : <div className="re-card-shot-fallback">{cs.brand}</div>}
       </div>
       <div className="re-card-body">
-        <div className="re-card-title-row">
-          <span className="re-card-num">{n}</span>
+        <span className="re-card-num">{n}</span>
+        <div className="re-card-copy">
           <h3 className="re-card-brand">{cs.brand}</h3>
+          <p className="re-card-sum">{cs.summary}</p>
+          <span className="re-card-visit">Visit →</span>
         </div>
-        <p className="re-card-sum">{cs.summary}</p>
-        <span className="re-card-visit">Visit →</span>
       </div>
     </a>
   );

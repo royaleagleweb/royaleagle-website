@@ -8815,10 +8815,10 @@ html[data-pal="light"] .fcta-btn {
   gap: 36px;
 }
 .site-nav-links a {
-  font-family: var(--sans);
-  font-size: 13px;
+  font-family: var(--serif);
+  font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink);
   padding: 6px 0;
@@ -8956,11 +8956,16 @@ body.nav-lock { overflow: hidden; }
   max-width: 100%;
   text-transform: uppercase;
 }
-.re-hero-title .gold { color: var(--gold); display: block; }
+.re-hero-title .gold {
+  color: var(--gold);
+  display: block;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
 .re-hero-sub {
   font-size: 17px;
   line-height: 1.55;
-  color: var(--ink-dim);
+  color: var(--ink);
   margin: 0 0 32px;
   max-width: 460px;
 }
@@ -8972,24 +8977,24 @@ body.nav-lock { overflow: hidden; }
 }
 .re-hero-phone {
   display: inline-block;
-  color: var(--ink);
+  color: var(--gold);
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 5px;
   font-size: 16px;
   font-weight: 500;
 }
 .re-device {
   position: relative;
   max-width: 100%;
-  background: color-mix(in srgb, var(--gold) 10%, #111318);
-  border: 1px solid color-mix(in srgb, var(--gold) 32%, transparent);
-  border-radius: 2px;
-  padding: 26px 20px 28px;
+  background: none;
+  border: 0;
+  padding: 0;
 }
 .re-device-frame {
   display: block;
   background: #0B0C0F;
-  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  border: 1px solid var(--gold);
   border-radius: 2px;
   overflow: hidden;
 }
@@ -8997,29 +9002,21 @@ body.nav-lock { overflow: hidden; }
   display: flex;
   align-items: center;
   gap: 6px;
-  height: 36px;
+  height: 28px;
   padding: 0 12px;
-  background: #16181E;
-  border-bottom: 1px solid color-mix(in srgb, var(--gold) 18%, transparent);
+  background: #0B0C0F;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 28%, transparent);
 }
 .re-chrome span {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   display: block;
-  background: color-mix(in srgb, var(--gold) 35%, #2A2C32);
+  background: color-mix(in srgb, var(--gold) 55%, #2A2C32);
   flex-shrink: 0;
 }
 .re-chrome-url {
-  margin-left: 10px;
-  min-width: 0;
-  flex: 1;
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  color: var(--ink-dim);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  display: none;
 }
 .re-device-frame img {
   display: block;
@@ -9045,14 +9042,23 @@ body.nav-lock { overflow: hidden; }
   padding-bottom: 14px;
   border-bottom: 1px solid var(--gold);
 }
-.re-select-k,
-.re-select-all {
-  font-size: 12px;
+.re-select-k {
+  font-family: var(--serif);
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
 }
+.re-select-all {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--ink);
+}
+.re-select-all:hover { color: var(--gold); }
 .re-work-grid {
   max-width: 1280px;
   margin: 0 auto;
@@ -9061,18 +9067,16 @@ body.nav-lock { overflow: hidden; }
   gap: 20px;
 }
 .re-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   color: inherit;
   min-width: 0;
   background: var(--bg2);
-  border: 1px solid var(--line);
+  border: 1px solid var(--gold);
   border-radius: 2px;
   overflow: hidden;
 }
-.re-card:hover { border-color: color-mix(in srgb, var(--gold) 40%, var(--line)); }
-.re-card-frame {
-  border-bottom: 1px solid var(--line);
-}
+.re-card:hover { border-color: var(--gold-hi); }
 .re-card-shot {
   background: #0B0C0F;
   overflow: hidden;
@@ -9099,21 +9103,29 @@ body.nav-lock { overflow: hidden; }
   text-align: center;
   padding: 24px;
 }
-.re-card-body { padding: 18px 20px 20px; }
-.re-card-title-row {
+.re-card-body {
   display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 8px;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px 20px 18px;
+  flex: 1;
 }
 .re-card-num {
   font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 40px;
+  font-weight: 700;
   letter-spacing: 0.02em;
-  line-height: 1;
+  line-height: 0.9;
   color: var(--gold);
   flex-shrink: 0;
+  min-width: 48px;
+}
+.re-card-copy {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 92px;
 }
 .re-card-brand {
   font-family: var(--serif);
@@ -9122,18 +9134,21 @@ body.nav-lock { overflow: hidden; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink);
-  margin: 0;
+  margin: 0 0 6px;
 }
 .re-card-sum {
   color: var(--ink-dim);
   font-size: 14px;
   line-height: 1.45;
-  margin: 0 0 12px;
+  margin: 0;
 }
 .re-card-visit {
   color: var(--gold);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
+  margin-top: auto;
+  align-self: flex-end;
+  padding-top: 16px;
 }
 
 /* --- Work page --- */

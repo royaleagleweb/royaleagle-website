@@ -1,6 +1,5 @@
 function Hero() {
   const featured = CASE_STUDIES[0];
-  const host = (featured.url || "").replace(/^https?:\/\//, "").replace(/\/$/, "");
   return (
     <section className="re-hero">
       <div className="re-hero-inner">
@@ -21,7 +20,6 @@ function Hero() {
           <a href={featured.url} target="_blank" rel="noopener" className="re-device-frame" aria-label={`Visit ${featured.brand}`}>
             <div className="re-chrome" aria-hidden="true">
               <span></span><span></span><span></span>
-              <div className="re-chrome-url">{host}</div>
             </div>
             <img src={featured.shot} alt={`${featured.brand} live website`}/>
           </a>
