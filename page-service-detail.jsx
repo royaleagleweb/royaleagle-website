@@ -55,7 +55,8 @@ function ServiceDetail() {
         description: svc.hero,
         offers: svc.price && svc.price !== 'Custom quote' ? { "@type": "Offer", description: svc.price } : undefined,
       },
-      faq: svc.faqs || []
+      faq: svc.index === false ? undefined : (svc.faqs || []),
+      noindex: svc.index === false,
     });
   }, [svc.slug]);
 

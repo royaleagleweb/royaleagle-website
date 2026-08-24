@@ -93,21 +93,21 @@ function SEOBlock() {
         <div>
           <h2>Web Design in Fort Lauderdale, FL</h2>
           <p>
-            Royal Eagle is a <strong>web design and web development studio</strong> based at 4440 Inverrary Blvd in Lauderhill, FL. Since 2014 the studio has built <strong>custom websites, WordPress sites, and marketing</strong> for South Florida businesses.
+            Royal Eagle is a <strong>web design and web development studio</strong> based at 4440 Inverrary Blvd in Lauderhill, FL. Since 2014 the studio has built <strong>custom websites, WordPress sites, and marketing</strong> for South Florida businesses. Rated 5.0 on Google.
           </p>
           <p>
             Every engagement is hands-on. It is a small practice on purpose.
           </p>
         </div>
         <div>
-          <h2>South Florida</h2>
-          <p>Based in Lauderhill, working across Broward, Miami-Dade, and Palm Beach.</p>
+          <h2>What we actually ship</h2>
+          <p>Based in Lauderhill. Working across Broward, Miami-Dade, and Palm Beach — without a city-page mill.</p>
           <ul>
-            <li><a href="city.html?c=fort-lauderdale">Web Design Fort Lauderdale</a></li>
-            <li><a href="city.html?c=hollywood">Web Design Hollywood</a></li>
-            <li><a href="city.html?c=miami">Web Design Miami</a></li>
-            <li><a href="city.html?c=plantation">Web Design Plantation</a></li>
-            <li><a href="locations.html">All service areas →</a></li>
+            <li><a href="wordpress.html">WordPress web design</a></li>
+            <li><a href="contractor-websites.html">Contractor websites</a></li>
+            <li><a href="yacht-websites.html">Yacht websites</a></li>
+            <li><a href="work.html">Selected work</a></li>
+            <li><a href="contact.html">Book a conversation →</a></li>
           </ul>
         </div>
       </div>
@@ -119,7 +119,7 @@ function HomePage() {
   React.useEffect(() => {
     applyPageSeo({
       title: "Web Design in Fort Lauderdale, FL | Royal Eagle",
-      description: "Websites that work. Built for South Florida. A Fort Lauderdale studio, since 2014. WordPress, custom sites, marketing. 754-233-4037.",
+      description: "Websites that work. Built for South Florida. A Fort Lauderdale studio, since 2014. WordPress, custom sites, marketing. Rated 5.0 on Google. 754-233-4037.",
       canonical: "/",
       keywords: "web design fort lauderdale, wordpress fort lauderdale, royal eagle",
       breadcrumbs: [{ name: "Home" }]

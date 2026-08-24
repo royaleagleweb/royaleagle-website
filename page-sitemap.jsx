@@ -24,7 +24,7 @@ function SitemapPage() {
             </div>
           ))}
           <div className="sitemap-col">
-            <h3 className="sitemap-col-t">Case studies</h3>
+            <h3 className="sitemap-col-t">Selected work</h3>
             <div className="sitemap-links">
               {CASE_STUDIES.map(c => (
                 <a key={c.slug} href={`case.html?s=${c.slug}`} className="sitemap-link">
@@ -32,20 +32,6 @@ function SitemapPage() {
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
               ))}
-            </div>
-          </div>
-          <div className="sitemap-col">
-            <h3 className="sitemap-col-t">Blog</h3>
-            <div className="sitemap-links">
-              {BLOG_POSTS.slice(0, 12).map(p => (
-                <a key={p.slug} href={`blog-post.html?s=${p.slug}`} className="sitemap-link">
-                  <span>{p.title}</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </a>
-              ))}
-              <a href="blog.html" className="sitemap-link sitemap-more">
-                <span>+ {BLOG_POSTS.length - 12} more articles →</span>
-              </a>
             </div>
           </div>
         </div>

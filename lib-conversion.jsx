@@ -48,7 +48,7 @@ function ServiceFinder() {
     {
       key: 'scale',
       q: "How big is the project, roughly?",
-      sub: "A rough sense of scale helps us match you with the right team and timeline. No commitment — just orientation.",
+      sub: "A rough sense of scale helps us match you with the studio and a realistic timeline. No commitment — just orientation.",
       options: [
         { id: 'small', t: 'Small / single-page', d: 'Landing page or quick refresh', emoji: '🌱', icon: 'dollar1' },
         { id: 'medium', t: 'Standard marketing site', d: '5 – 15 pages, brand-driven', emoji: '🪴', icon: 'dollar2' },

@@ -18,7 +18,7 @@ const SERVICES = [
     faqs: [{"q":"How long does a custom website project take from kickoff to launch?","a":"Most marketing websites take 4 to 8 weeks. A larger build with custom integrations, multi-language content, or e-commerce typically runs 10 to 16 weeks. We publish a week-by-week schedule on day one so you can see every milestone."},{"q":"Will I own the website after it launches?","a":"Yes. Upon final payment, the design files, code, content, and accounts are 100% yours. We hand off everything, including admin access, source files, and a documented walkthrough so you can take it elsewhere if you ever need to."},{"q":"Do you use templates, or is every site custom?","a":"Every site is designed from scratch in Figma based on your brand and goals. We don't recycle layouts. We will sometimes start with a familiar pattern when it makes sense — but the visual system, components, and content structure are always built specifically for you."},{"q":"Will my new site be mobile-friendly and accessible?","a":"Yes — responsive design across every breakpoint and WCAG 2.1 AA accessibility are standard, not upgrades. Every site we ship runs through automated and manual accessibility audits before launch."},{"q":"What about ongoing maintenance after launch?","a":"We include 30 days of post-launch stabilization at no additional cost. After that, ongoing maintenance is optional on a monthly plan — see our Maintenance service for details."}],
   },
   {
-    slug: "ai-websites", cat: "Website Builds", title: "AI Websites",
+    slug: "ai-websites", index: false, cat: "Website Builds", title: "AI Websites",
     hero: "AI-powered sites that personalize content, qualify leads, and answer questions 24/7.",
     img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1400&q=85",
     intro: "We embed Claude- and GPT-powered assistants directly into your marketing site — answering product questions, qualifying inbound leads, generating personalized landing pages, and routing high-intent visitors to your sales team in real time.",
@@ -121,7 +121,7 @@ const SERVICES = [
     faqs: [{"q":"What's your average client cost-per-lead?","a":"It varies dramatically by industry — legal cost-per-lead averages many times what a service business might pay. The honest answer is we'll benchmark against your industry, set a target CPL on day one, and report against it every two weeks."},{"q":"Do you charge a percentage of ad spend?","a":"No — we charge a flat management retainer based on the work involved, not a percentage of media spend. That keeps incentives aligned: we benefit when you grow profitably, not when you spend more on ads."},{"q":"How is media spend billed?","a":"Media (Google, Meta, etc.) is billed directly to your credit card by the ad platform, not by us. No markups, no kickbacks, total transparency."},{"q":"What if my ads aren't performing?","a":"We optimize bi-weekly with documented changes, and we hold a 60-day diagnostic period at the start of every engagement to confirm we can hit target metrics. If we can't, we'll tell you — and refund the previous month if needed."},{"q":"Do you handle TikTok and LinkedIn as well as Google and Meta?","a":"Yes. We run paid campaigns on Google Ads (Search, Shopping, Display, YouTube), Meta (Facebook + Instagram), LinkedIn (B2B), and TikTok."}],
   },
   {
-    slug: "automation", cat: "Marketing", title: "Automation",
+    slug: "automation", index: false, cat: "Marketing", title: "Automation",
     hero: "Connect the systems that should already be talking to each other.",
     img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=85",
     intro: "Lead from a form should land in your CRM, alert the right rep, and start a nurture sequence — automatically. We design and build the HubSpot, Zapier, and Make.com workflows that turn your marketing stack into one machine.",
@@ -143,7 +143,7 @@ const SERVICES = [
     faqs: [{"q":"Do you do brand identity and logo design, or just website design?","a":"Both. Full brand identity work — logo, type system, color palette, voice, brand guidelines — is a core service. About a third of our website projects start with a brand refresh first."},{"q":"How long does a brand identity engagement take?","a":"Full brand identity work runs 6 to 10 weeks: discovery, strategy and positioning, creative exploration and refinement, final guidelines documentation. Faster timelines are possible for tighter scopes."},{"q":"Will I get editable Figma files?","a":"Yes. Every engagement ends with a complete handoff of Figma files, brand guidelines (PDF + web-based), exported assets in every format, and a brand library you can extend over time."},{"q":"Can you design marketing creative on a retainer?","a":"Yes. Many of our clients keep us on a monthly creative retainer for ongoing campaign work: ad creative, landing pages, email graphics, sales collateral, packaging."},{"q":"What if I'm not sure what kind of brand my business needs?","a":"Then we start with discovery. We'll interview you, your team, and a sample of customers; audit your competitive landscape; and present a written brand strategy before any visual work begins."}],
   },
   {
-    slug: "data", cat: "Marketing", title: "Data",
+    slug: "data", index: false, cat: "Marketing", title: "Data",
     hero: "Clean data, clear dashboards, decisions you can defend.",
     img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=85",
     intro: "If your team is making decisions on screenshots from GA4, we can do better. We architect modern analytics stacks — GA4, Segment, BigQuery, Looker — so your dashboards finally tell you something useful.",
@@ -156,7 +156,7 @@ const SERVICES = [
 
   // ── AI Consultation (NEW) ───────────────────────────────
   {
-    slug: "ai-strategy", cat: "AI Consultation", title: "AI Strategy",
+    slug: "ai-strategy", index: false, cat: "AI Consultation", title: "AI Strategy",
     hero: "Where AI actually moves the needle for your business — and where it won't.",
     img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1400&q=85",
     intro: "Most AI initiatives fail because they start with technology, not value. We run a structured 4-week engagement to identify the 3 highest-ROI AI use cases for your business, validate them with prototypes, and produce a 12-month roadmap your CFO can sign off on.",
@@ -167,7 +167,7 @@ const SERVICES = [
     faqs: [{"q":"What do I actually get from a 4-week AI strategy engagement?","a":"A written 30-page opportunity assessment, an ROI model for the top 10 AI use cases in your business, working prototypes of the top 3 priorities, a 12-month implementation roadmap, and vendor/build-vs-buy recommendations for each priority."},{"q":"Is my business too small for AI?","a":"Probably not. The right use cases scale with the business. If AI is just hype for your situation, we'll say so."},{"q":"What if AI strategy is just hype for my industry?","a":"It might be. About 1 in 5 strategy engagements end with us recommending limited AI adoption because the ROI just isn't there yet. We'd rather tell you honestly than sell you a roadmap that won't pay back."},{"q":"Who from my team needs to be involved?","a":"Two or three people, typically: a senior leader who can make decisions on direction, an operational leader who knows where the team's time goes, and ideally an IT or data person who can speak to your current stack."},{"q":"What happens after the strategy engagement ends?","a":"Many clients choose to have us implement the recommended roadmap. Many take it in-house. Some hire a different vendor to execute. All three outcomes are fine."}],
   },
   {
-    slug: "ai-tools-setup", cat: "AI Consultation", title: "AI Tools Setup",
+    slug: "ai-tools-setup", index: false, cat: "AI Consultation", title: "AI Tools Setup",
     hero: "Roll out Claude, ChatGPT Enterprise, and Copilot to your team — with guardrails.",
     img: "https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=1400&q=85",
     intro: "Buying AI seats is easy. Getting your team to actually use them — safely, productively, and consistently — is the hard part. We handle deployment, governance, training, and measurement.",
@@ -178,7 +178,7 @@ const SERVICES = [
     faqs: [{"q":"Which AI tools do you help deploy?","a":"Claude for Work, ChatGPT Enterprise, Microsoft Copilot, Notion AI, Cursor, Linear AI, and a growing list of vertical AI tools. We assess your team's workflows and recommend the right tools — usually 2 to 4."},{"q":"Why pay you to set this up? Can't my team just buy seats?","a":"You can. Most teams that do see 30% adoption and abandon the program within 6 months. The work that drives lasting adoption — governance policies, role-specific prompt libraries, training, measurement — is what we do."},{"q":"What does governance look like for AI tools?","a":"Defined approved-use cases, data-handling policies, SSO and access controls, audit logging, and an AI usage policy that meets your industry's compliance requirements."},{"q":"How do you measure whether AI tool adoption is working?","a":"Adoption rate, task time savings, output quality scoring, and qualitative team feedback. We dashboard all four and review monthly."},{"q":"How long does an AI tools rollout take?","a":"Typical timeline is 6 to 8 weeks: assessment and tool selection, governance and policy setup, training and rollout, and stabilization with usage tracking."}],
   },
   {
-    slug: "ai-automation", cat: "AI Consultation", title: "AI Automation",
+    slug: "ai-automation", index: false, cat: "AI Consultation", title: "AI Automation",
     hero: "AI-powered workflows that handle work your team shouldn't be doing.",
     img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1400&q=85",
     intro: "Document processing, customer support triage, content generation, lead enrichment — anywhere you have repetitive cognitive work, we build AI agents that handle it 24/7 with measurable accuracy.",
@@ -189,7 +189,7 @@ const SERVICES = [
     faqs: [{"q":"How is AI automation different from regular automation?","a":"Regular automation handles rule-based work — if X then Y. AI automation handles judgment-based work — read this email and classify the intent, then route accordingly. The right answer for most businesses is both."},{"q":"What kinds of work can AI agents handle reliably?","a":"Document extraction and classification, support ticket triage and first-response drafting, lead enrichment, content drafting, code review, meeting note summarization, customer email categorization, internal Q&A on company documents."},{"q":"How do you handle AI making mistakes?","a":"Every AI agent we ship has a confidence-threshold gate — uncertain outputs route to human review. We instrument every workflow with logging, sampling, and quality scoring so you have visibility into accuracy over time."},{"q":"Is this a black-box system, or can I see how it works?","a":"Fully observable. Every AI decision is logged with the inputs, the prompt, the model output, and the confidence score. You can audit any individual decision and review trends across time."},{"q":"Will AI agents take jobs from my team?","a":"In practice, they redirect work, not eliminate it. The goal is to take repetitive judgment work off your plate — not to sell a layoff story."}],
   },
   {
-    slug: "ai-content", cat: "AI Consultation", title: "AI Content",
+    slug: "ai-content", index: false, cat: "AI Consultation", title: "AI Content",
     hero: "AI-assisted content production — at human quality, machine speed.",
     img: "https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=1400&q=85",
     intro: "We build content production systems that pair your subject-matter experts with AI co-writers — producing blog posts, ad creative, and product copy 5x faster without sacrificing voice or quality.",
@@ -310,54 +310,35 @@ const GOOGLE_REVIEWS = [
 const SITE_MAP = [
   { title: "Company", links: [
     { t: "Home", h: "index.html" },
-    { t: "About Us", h: "about.html" },
-    { t: "Our Story", h: "our-story.html" },
+    { t: "Studio", h: "about.html" },
     { t: "Team", h: "team.html" },
-    { t: "Regions", h: "regions.html" },
     { t: "Testimonials", h: "testimonials.html" },
-    { t: "Affiliates", h: "affiliates.html" },
-    { t: "White Label", h: "white-label.html" },
-    { t: "Contact", h: "contact.html" },
-  ]},
-  { title: "Website Builds", links: [
-    { t: "All Services", h: "services.html" },
-    { t: "Website Builds", h: "service.html?s=website-builds" },
-    { t: "AI Websites", h: "service.html?s=ai-websites" },
-    { t: "WordPress / Elementor", h: "service.html?s=wordpress-elementor" },
-    { t: "Custom Themes", h: "service.html?s=custom-themes" },
-    { t: "E-commerce", h: "service.html?s=ecommerce" },
-  ]},
-  { title: "Infrastructure", links: [
-    { t: "Domains & Hosting", h: "service.html?s=domains-hosting" },
-    { t: "Email Services", h: "service.html?s=email-services" },
-    { t: "Maintenance", h: "service.html?s=maintenance" },
-  ]},
-  { title: "Marketing", links: [
-    { t: "Marketing", h: "service.html?s=marketing" },
-    { t: "PPC (Google & Meta)", h: "service.html?s=ppc" },
-    { t: "Automation", h: "service.html?s=automation" },
-    { t: "Design", h: "service.html?s=design" },
-    { t: "Data", h: "service.html?s=data" },
-  ]},
-  { title: "AI Consultation", links: [
-    { t: "AI Strategy", h: "service.html?s=ai-strategy" },
-    { t: "AI Tools Setup", h: "service.html?s=ai-tools-setup" },
-    { t: "AI Automation", h: "service.html?s=ai-automation" },
-    { t: "AI Content", h: "service.html?s=ai-content" },
-  ]},
-  { title: "Resources", links: [
-    { t: "Portfolio", h: "portfolio.html" },
-    { t: "Case Studies", h: "case-studies.html" },
-    { t: "Blog", h: "blog.html" },
-    { t: "Resources", h: "resources.html" },
     { t: "Pricing", h: "pricing.html" },
     { t: "FAQ", h: "faq.html" },
+    { t: "Contact", h: "contact.html" },
+  ]},
+  { title: "Services", links: [
+    { t: "All services", h: "services.html" },
+    { t: "WordPress", h: "wordpress.html" },
+    { t: "Contractor websites", h: "contractor-websites.html" },
+    { t: "Yacht websites", h: "yacht-websites.html" },
+    ...SERVICES.filter((s) => s.index !== false).map((s) => ({ t: s.title, h: `service.html?s=${s.slug}` })),
+  ]},
+  { title: "Work", links: [
+    { t: "Selected work", h: "work.html" },
   ]},
   { title: "Legal", links: [
     { t: "Privacy Policy", h: "legal.html?s=privacy" },
     { t: "Terms of Service", h: "legal.html?s=terms" },
     { t: "Accessibility", h: "legal.html?s=accessibility" },
     { t: "Sitemap", h: "sitemap.html" },
+  ]},
+  { title: "Other pages", links: [
+    { t: "Affiliates", h: "affiliates.html" },
+    { t: "White label", h: "white-label.html" },
+    { t: "Regions", h: "regions.html" },
+    { t: "Blog", h: "blog.html" },
+    { t: "Resources", h: "resources.html" },
   ]},
 ];
 

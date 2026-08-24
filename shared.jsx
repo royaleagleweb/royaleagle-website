@@ -45,7 +45,17 @@ const EagleMark = () => (
 
 const NAV_LINKS = [
   { t: "Work", h: "work.html", keys: ["work", "case-studies", "portfolio"] },
-  { t: "Services", h: "services.html", keys: ["services", "service"] },
+  {
+    t: "Services",
+    h: "services.html",
+    keys: ["services", "service", "wordpress", "contractor-websites", "yacht-websites"],
+    children: [
+      { t: "All services", h: "services.html" },
+      { t: "WordPress", h: "wordpress.html" },
+      { t: "Contractor websites", h: "contractor-websites.html" },
+      { t: "Yacht websites", h: "yacht-websites.html" },
+    ],
+  },
   { t: "Studio", h: "about.html", keys: ["about", "our-story", "team"] },
   { t: "Contact", h: "contact.html", keys: ["contact"] },
 ];
@@ -71,7 +81,16 @@ function Nav({ active }) {
           </a>
           <div className="site-nav-links">
             {NAV_LINKS.map(l => (
-              <a key={l.t} href={l.h} className={l.keys.includes(active) ? "is-active" : ""}>{l.t}</a>
+              <div key={l.t} className={l.children ? "site-nav-item has-drop" : "site-nav-item"}>
+                <a href={l.h} className={`site-nav-top${l.keys.includes(active) ? " is-active" : ""}`}>{l.t}</a>
+                {l.children && (
+                  <div className="site-nav-drop">
+                    {l.children.map(c => (
+                      <a key={c.h} href={c.h}>{c.t}</a>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
           <a href="tel:+17542334037" className="site-nav-cta">Call the studio</a>
@@ -87,8 +106,8 @@ function Nav({ active }) {
         </div>
       </nav>
       <div className={`nav-drawer ${open ? "is-open" : ""}`} hidden={!open}>
-        {NAV_LINKS.map(l => (
-          <a key={l.t} href={l.h} className={l.keys.includes(active) ? "is-active" : ""} onClick={() => setOpen(false)}>{l.t}</a>
+        {NAV_LINKS.flatMap(l => l.children ? l.children : [{ t: l.t, h: l.h }]).map(l => (
+          <a key={l.t} href={l.h} onClick={() => setOpen(false)}>{l.t}</a>
         ))}
         <a href="tel:+17542334037" className="nav-drawer-call">Call 754-233-4037</a>
       </div>

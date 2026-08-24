@@ -1,14 +1,44 @@
 // SERVICES HUB page — categorized cards into all service detail pages
 
+const KEYWORD_PAGES = [
+  { href: "wordpress.html", t: "WordPress", d: "Build and maintain WordPress and Elementor sites. Fort Lauderdale studio, Lauderhill address." },
+  { href: "contractor-websites.html", t: "Contractor websites", d: "Construction, plumbing, and windows sites — a South Florida studio, not a national factory." },
+  { href: "yacht-websites.html", t: "Yacht websites", d: "We built the live Doctor Yachts site. A studio, not a yacht-advertising firm." },
+];
+
 function ServicesHub() {
   const cats = [...new Set(SERVICES.map(s => s.cat))];
+  React.useEffect(() => {
+    applyPageSeo({
+      title: "Web Design & Digital Marketing Services in Fort Lauderdale",
+      description: "WordPress, custom sites, contractor and yacht websites, hosting, and marketing from a Fort Lauderdale studio. Rated 5.0 on Google. 754-233-4037.",
+      canonical: "services.html",
+      keywords: "web design services fort lauderdale, wordpress development fort lauderdale, contractor website design florida",
+      breadcrumbs: [{ name: "Home", url: "/" }, { name: "Services" }],
+    });
+  }, []);
   return (
     <PageShell active="services">
       <PageHero
         kicker="Services"
         title='Web, WordPress,<br/><span class="gradient-text">marketing, upkeep.</span>'
-        sub="The work Roy actually does. One person accountable. Specialists join when a project needs extra hands."
+        sub="The work the studio actually does. One person accountable. Specialists join when a project needs extra hands."
       />
+      <section className="section">
+        <div className="section-head">
+          <div className="kicker"><span className="kicker-dot"></span>Start here</div>
+          <h2 className="section-title">Three pages worth reading.</h2>
+        </div>
+        <div className="kw-feature-grid">
+          {KEYWORD_PAGES.map(p => (
+            <a key={p.href} href={p.href} className="kw-feature">
+              <h3>{p.t}</h3>
+              <p>{p.d}</p>
+              <span>Read the page →</span>
+            </a>
+          ))}
+        </div>
+      </section>
       {cats.map(cat => {
         const items = SERVICES.filter(s => s.cat === cat);
         return (

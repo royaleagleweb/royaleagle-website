@@ -140,6 +140,7 @@ function applyPageSeo(opts) {
     article,
     service,
     faq,
+    noindex = false,
     extraLd = {},
   } = opts || {};
 
@@ -159,6 +160,10 @@ function applyPageSeo(opts) {
     "Royal Eagle is a hands-on web design, web development, and digital marketing studio in the Fort Lauderdale area. Serving Broward, Miami-Dade, and Palm Beach since 2014. Rated 5.0 on Google.";
   setOrReplaceMeta("name", "description", finalDesc);
   if (keywords) setOrReplaceMeta("name", "keywords", keywords);
+  if (noindex) {
+    setOrReplaceMeta("name", "robots", "noindex,follow");
+    setOrReplaceMeta("name", "googlebot", "noindex,follow");
+  }
 
   // Canonical
   setLinkRel("canonical", canonicalUrl);
