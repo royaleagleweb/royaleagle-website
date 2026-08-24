@@ -1,24 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://royaleagleweb.com/locations.html</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=fort-lauderdale</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=lauderhill</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=plantation</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=sunrise</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=hollywood</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=pembroke-pines</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=pompano-beach</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=coral-springs</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=davie</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=weston</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=miami</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=miami-beach</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=coral-gables</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=aventura</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=doral</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=boca-raton</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=delray-beach</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=boynton-beach</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=west-palm-beach</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://royaleagleweb.com/city.html?c=jupiter</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://royaleagleweb.com/locations.html</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

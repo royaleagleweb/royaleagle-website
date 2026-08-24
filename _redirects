@@ -29,3 +29,8 @@
 /wordpress-hosting /wordpress.html 301
 /wordpress-hosting/ /wordpress.html 301
 /wordpress-hosting.html /wordpress.html 301
+
+# Fake download mill
+/resources /services.html 301
+/resources/ /services.html 301
+/resources.html /services.html 301

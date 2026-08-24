@@ -58,7 +58,7 @@ function ServicesHub() {
             <div className="svc-hub-grid">
               {items.map(s => (
                 <a key={s.slug} href={`service.html?s=${s.slug}`} className="svc-hub-card">
-                  <figure className="svc-hub-img"><img src={s.img} alt={s.title} loading="lazy"/></figure>
+                  {s.img ? <figure className="svc-hub-img"><img src={s.img} alt="A live site from the studio" loading="lazy"/></figure> : null}
                   <div className="svc-hub-body">
                     <h3 className="svc-hub-t">{s.title}</h3>
                     <p className="svc-hub-d">{s.hero}</p>
