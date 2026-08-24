@@ -22,19 +22,24 @@ function ServicesHub() {
       <PageHero
         kicker="Services"
         title='Web, WordPress,<br/><span class="gradient-text">marketing, upkeep.</span>'
-        sub="The work the studio actually does. One person accountable. Specialists join when a project needs extra hands."
+        sub="The work the studio actually does. Start with WordPress, contractor websites, or yacht websites — then the rest of the list."
       />
-      <section className="section">
+      <section className="section" id="keyword-pages">
         <div className="section-head">
           <div className="kicker"><span className="kicker-dot"></span>Start here</div>
           <h2 className="section-title">Three pages worth reading.</h2>
         </div>
-        <div className="kw-feature-grid">
+        <div className="svc-hub-grid">
           {KEYWORD_PAGES.map(p => (
-            <a key={p.href} href={p.href} className="kw-feature">
-              <h3>{p.t}</h3>
-              <p>{p.d}</p>
-              <span>Read the page →</span>
+            <a key={p.href} href={p.href} className="svc-hub-card">
+              <div className="svc-hub-body">
+                <h3 className="svc-hub-t">{p.t}</h3>
+                <p className="svc-hub-d">{p.d}</p>
+                <div className="svc-hub-foot">
+                  <span className="svc-hub-price">Read the page →</span>
+                  <span className="svc-hub-arr">→</span>
+                </div>
+              </div>
             </a>
           ))}
         </div>
