@@ -69,7 +69,7 @@ function setJsonLd(id, data) {
 // LocalBusiness — site-wide schema present on every page
 const LOCAL_BUSINESS_LD = {
   "@context": "https://schema.org",
-  "@type": ["ProfessionalService", "WebDesignCompany"],
+  "@type": "ProfessionalService",
   "@id": SITE.domain + "/#business",
   name: SITE.name,
   alternateName: SITE.shortName,
@@ -79,9 +79,8 @@ const LOCAL_BUSINESS_LD = {
   description: "Hands-on web design, web development, and digital marketing for South Florida businesses. Fort Lauderdale–area studio, founded 2014. WordPress, custom builds, SEO, PPC, and AI services.",
   telephone: SITE.phone,
   email: SITE.email,
-  priceRange: "$$",
   foundingDate: SITE.founded,
-  founder: { "@type": "Person", name: SITE.founder },
+  founder: { "@type": "Person", "@id": SITE.domain + "/#founder", name: SITE.founder, jobTitle: "Founder" },
   address: {
     "@type": "PostalAddress",
     streetAddress: SITE.address.street,
@@ -98,26 +97,7 @@ const LOCAL_BUSINESS_LD = {
     opens: "09:00",
     closes: "18:00",
   }],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "9",
-    bestRating: "5",
-    worstRating: "1",
-  },
   sameAs: SITE.socials,
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Services",
-    itemListElement: [
-      "Web Design", "Web Development", "WordPress Development", "E-commerce Development",
-      "Search Engine Optimization", "Pay-Per-Click Advertising", "Brand & Design",
-      "Marketing Automation", "AI Consultation", "Website Maintenance"
-    ].map(s => ({
-      "@type": "Offer",
-      itemOffered: { "@type": "Service", name: s }
-    })),
-  },
 };
 
 // Stamp <head> with all global SEO tags + LocalBusiness schema
@@ -128,8 +108,12 @@ function applyBaseSeo() {
   setOrReplaceMeta("name", "format-detection", "telephone=no");
   setOrReplaceMeta("name", "author", SITE.name);
   setOrReplaceMeta("name", "publisher", SITE.name);
-  setOrReplaceMeta("name", "robots", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
-  setOrReplaceMeta("name", "googlebot", "index, follow, max-image-preview:large, max-snippet:-1");
+  const robotsMeta = document.head.querySelector('meta[name="robots"]');
+  const alreadyNoindex = robotsMeta && /noindex/i.test(robotsMeta.getAttribute("content") || "");
+  if (!alreadyNoindex) {
+    setOrReplaceMeta("name", "robots", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
+    setOrReplaceMeta("name", "googlebot", "index, follow, max-image-preview:large, max-snippet:-1");
+  }
   // Geo + locality (older but still parsed)
   setOrReplaceMeta("name", "geo.region", "US-FL");
   setOrReplaceMeta("name", "geo.placename", "Lauderhill, Fort Lauderdale, Florida");

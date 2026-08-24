@@ -8787,9 +8787,9 @@ html[data-pal="light"] .fcta-btn {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 200;
-  padding: 18px 40px;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(16px);
+  padding: 22px 40px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(10px);
 }
 .site-nav-inner {
   max-width: 1280px;
@@ -8922,7 +8922,7 @@ body.nav-lock { overflow: hidden; }
 /* --- Homepage hero --- */
 .re-hero {
   position: relative;
-  padding: 108px 40px 56px;
+  padding: 124px 40px 64px;
   overflow: visible;
   max-width: 100%;
 }

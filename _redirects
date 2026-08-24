@@ -1,5 +1,6 @@
 # Friendly root
 /home /index.html 301
+/.well-known/llms.txt /llms.txt 200
 
 # Stale / missing paths
 /wordpress-hosting /service.html?s=domains-hosting 301
