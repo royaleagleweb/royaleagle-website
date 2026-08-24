@@ -16,12 +16,21 @@ function FAQPage() {
   const groups = [...new Set(FAQS.map(f => f.group))];
   const [active, setActive] = React.useState(groups[0]);
   const [open, setOpen] = React.useState(null);
+  React.useEffect(() => {
+    applyPageSeo({
+      title: "FAQ | Common Questions | Royal Eagle",
+      description: "Common questions about web design, WordPress, marketing, and working with Royal Eagle in Fort Lauderdale.",
+      canonical: "faq.html",
+      breadcrumbs: [{ name: "Home", url: "/" }, { name: "FAQ" }],
+      faq: FAQS
+    });
+  }, []);
   return (
     <PageShell active="faq">
       <PageHero
         kicker="FAQ"
         title='Common questions,<br/><span class="gradient-text">straight answers.</span>'
-        sub="A dozen of the questions we hear most often from prospective clients — on engagement, pricing, process, and AI."
+        sub="Questions we hear most often — engagement, pricing, process, and whether AI belongs in the job."
       />
       <section className="section faq-section">
         <div className="faq-grid">

@@ -118,7 +118,7 @@ const SERVICE_LOCAL_HOOKS = {
     "The cost of a maintenance retainer for a year is less than the cost of one emergency restore from a hacked site.",
   ],
   "marketing": [
-    "Full-funnel marketing under one team means your message, channels, and conversion paths actually talk to each other.",
+    "Marketing from the same studio that built the site — so the message and the pages actually match.",
     "Local-market full-funnel work requires understanding the buyer journey at street level — not just the keyword volumes from a national tool.",
     "Most businesses here are working with three or four marketing vendors. Consolidating into one accountable team usually saves 25-40% of the budget.",
   ],

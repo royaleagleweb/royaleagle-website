@@ -45,7 +45,7 @@ function FAQ() {
     { q: "Do you really offer unlimited Help Desk Support?", a: "Yes — once you're on a Professional or Enterprise plan, you can submit unlimited tasks. Each task is capped at ~30 minutes, but there's no limit on the number of tasks per month." },
     { q: "Can multiple websites share one plan?", a: "Each domain requires its own plan. If you have 5+ sites, book a call — we'll put together a multi-site bundle." },
     { q: "What if a task takes more than 30 minutes?", a: "Larger tasks are scoped separately. Most things you'd want — content edits, plugin tweaks, layout changes — fit comfortably inside the 30-minute window." },
-    { q: "What are your hours and response times?", a: "Mon–Fri, 9am–6pm ET. Roy answers the phone. Most notes get a same-day or next-business-day reply." },
+    { q: "What are your hours and response times?", a: "Mon–Fri, 9am–6pm ET. The studio answers the phone. Most notes get a same-day or next-business-day reply." },
     { q: "How does onboarding work?", a: "You'll receive a welcome email with secure credential-collection. Once we have access, your plan is fully implemented within 24–48 hours — backups verified, monitoring connected, updates applied." },
     { q: "Do you support WooCommerce?", a: "Absolutely. E-commerce sites require Professional or Enterprise plans because they need additional resources to keep fast, secure, and at 100% uptime." },
   ];

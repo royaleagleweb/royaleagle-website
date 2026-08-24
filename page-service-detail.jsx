@@ -55,7 +55,8 @@ function ServiceDetail() {
         description: svc.hero,
         offers: svc.price && svc.price !== 'Custom quote' ? { "@type": "Offer", description: svc.price } : undefined,
       },
-      faq: svc.faqs || []
+      faq: svc.index === false ? undefined : (svc.faqs || []),
+      noindex: svc.index === false,
     });
   }, [svc.slug]);
 
@@ -83,13 +84,15 @@ function ServiceDetail() {
             </div>
             <div className="sd-ctas">
               <a href="contact.html" className="btn btn-gold">Schedule a consultation</a>
-              <a href="case-studies.html" className="btn btn-ghost">See case studies</a>
+              <a href="work.html" className="btn btn-ghost">Selected work</a>
             </div>
           </div>
+          {svc.img ? (
           <figure className="sd-hero-img">
-            <img src={svc.img} alt={svc.title} loading="eager"/>
+            <img src={svc.img} alt="A live site from the studio" loading="eager"/>
             <div className="sd-hero-img-overlay"></div>
           </figure>
+          ) : null}
         </div>
       </section>
 
@@ -164,7 +167,7 @@ function ServiceDetail() {
           <div className="sd-related">
             {related.map(r => (
               <a key={r.slug} href={`service.html?s=${r.slug}`} className="sd-rel-card">
-                <div className="sd-rel-img"><img src={r.img} alt={r.title} loading="lazy"/></div>
+                {r.img ? <div className="sd-rel-img"><img src={r.img} alt={r.title} loading="lazy"/></div> : null}
                 <div className="sd-rel-body">
                   <div className="sd-rel-cat">{r.cat}</div>
                   <div className="sd-rel-t">{r.title}</div>
@@ -181,7 +184,7 @@ function ServiceDetail() {
           <div className="sd-faq-head">
             <div className="kicker"><span className="kicker-dot"></span>Frequently asked</div>
             <h2 className="section-title">Questions about<br/><span className="gradient-text">{svc.title.toLowerCase()}.</span></h2>
-            <p className="section-sub">If your question isn't here, just ask — we usually reply within two hours during business hours.</p>
+            <p className="section-sub">If your question isn't here, just ask — we reply within one business day.</p>
           </div>
           <ServiceFAQList faqs={svc.faqs}/>
         </section>

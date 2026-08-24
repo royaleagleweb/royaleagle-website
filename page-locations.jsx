@@ -1,64 +1,37 @@
-// LOCATIONS HUB — all 104 South Florida cities, grouped by county
+// LOCATIONS — studio / Lauderhill / South Florida. No city mill.
 
 function LocationsPage() {
-  const counties = [...new Set(CITIES.map(c => c.c))];
-  const [query, setQuery] = React.useState('');
+  React.useEffect(() => {
+    applyPageSeo({
+      title: "Where we work | Lauderhill & South Florida | Royal Eagle",
+      description: "Royal Eagle is a Fort Lauderdale–area studio at 4440 Inverrary Blvd, Lauderhill. We work across Broward, Miami-Dade, and Palm Beach. Rated 5.0 on Google. 754-233-4037.",
+      canonical: "locations.html",
+      keywords: "web design lauderhill, web design fort lauderdale, south florida web studio",
+      breadcrumbs: [{ name: "Home", url: "/" }, { name: "Where we work" }],
+    });
+  }, []);
+
   return (
     <PageShell active="regions">
       <PageHero
-        kicker="Service areas"
-        title='104 South Florida cities.<br/><span class="gradient-text">One local team.</span>'
-        sub="We serve every incorporated city, town, and village across Broward, Miami-Dade, and Palm Beach County. Find your city below."
+        kicker="Where we work"
+        title='Lauderhill studio.<br/><span class="gradient-text">South Florida work.</span>'
+        sub="4440 Inverrary Blvd, Lauderhill, FL 33319. We work across Broward, Miami-Dade, and Palm Beach — without a hundred city pages."
       />
       <section className="section">
-        <div className="loc-search">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.8"/><path d="M21 21l-4.3-4.3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
-          <input
-            type="text"
-            placeholder="Search your city — Fort Lauderdale, Miami, Boca Raton…"
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-          />
-          {query && <button className="loc-search-clear" onClick={() => setQuery('')}>×</button>}
+        <div className="kw-copy">
+          <p>Royal Eagle is a Fort Lauderdale–area studio. The office is in <strong>Lauderhill</strong>. Most of the work is nearby. Remote is fine when the project fits.</p>
+          <p>We do not publish a directory of 100 cities. If you are in South Florida and need a website, call <a href="tel:+17542334037">754-233-4037</a>.</p>
         </div>
-        <div className="loc-stats">
-          <div><div className="bn-n">{CITIES.length}</div><div className="bn-l">Cities served</div></div>
-          <div><div className="bn-n">3</div><div className="bn-l">Counties</div></div>
-          <div><div className="bn-n">12 yrs</div><div className="bn-l">Local experience</div></div>
-          <div><div className="bn-n">5.0★</div><div className="bn-l">Google rating</div></div>
-        </div>
-
-        {counties.map(co => {
-          const list = CITIES.filter(c => c.c === co && (!query || c.n.toLowerCase().includes(query.toLowerCase())));
-          if (list.length === 0) return null;
-          return (
-            <div key={co} id={co.toLowerCase().replace(/[^a-z]/g,'')} className="loc-county">
-              <div className="loc-county-h">
-                <h2 className="section-title">{co} County</h2>
-                <span className="loc-count">{list.length} cities</span>
-              </div>
-              <div className="loc-grid">
-                {list.map(city => (
-                  <a key={city.slug} href={`city.html?c=${city.slug}`} className="loc-card">
-                    <div className="loc-card-pin">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22s-7-6-7-13a7 7 0 0 1 14 0c0 7-7 13-7 13z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.5"/></svg>
-                    </div>
-                    <div>
-                      <div className="loc-card-n">{city.n}</div>
-                      <div className="loc-card-pop">{city.pop.toLocaleString()} pop</div>
-                    </div>
-                    <span className="loc-card-arr">→</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          );
-        })}
+        <ul className="kw-list">
+          <li><strong>The studio</strong> 4440 Inverrary Blvd, Lauderhill — about eight minutes from the Sawgrass, twenty from downtown Fort Lauderdale.</li>
+          <li><strong>The work</strong> WordPress, custom sites, and marketing. See <a href="wordpress.html">WordPress</a>, <a href="contractor-websites.html">contractor websites</a>, and <a href="yacht-websites.html">yacht websites</a>.</li>
+          <li><strong>The proof</strong> Six live sites on <a href="work.html">selected work</a>. Rated 5.0 on Google.</li>
+        </ul>
       </section>
-
-      <CTA title="Don't see your <em>city?</em>" sub="We probably serve it anyway — just give us a call and we'll confirm same-day."/>
+      <CTA title="In South Florida?" sub="Call 754-233-4037 or send a note. We reply within one business day."/>
     </PageShell>
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<LocationsPage/>);
+ReactDOM.createRoot(document.getElementById("root")).render(<LocationsPage/>);

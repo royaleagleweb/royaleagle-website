@@ -48,7 +48,7 @@ function ServiceFinder() {
     {
       key: 'scale',
       q: "How big is the project, roughly?",
-      sub: "A rough sense of scale helps us match you with the right team and timeline. No commitment — just orientation.",
+      sub: "A rough sense of scale helps us match you with the studio and a realistic timeline. No commitment — just orientation.",
       options: [
         { id: 'small', t: 'Small / single-page', d: 'Landing page or quick refresh', emoji: '🌱', icon: 'dollar1' },
         { id: 'medium', t: 'Standard marketing site', d: '5 – 15 pages, brand-driven', emoji: '🪴', icon: 'dollar2' },
@@ -170,12 +170,12 @@ function ServiceFinder() {
                 <label><span>Your email</span><input type="email" required value={answers.email || ''} onChange={e => setAnswers({...answers, email: e.target.value})}/></label>
               </div>
               <label><span>Phone (optional but helpful)</span><input type="tel" value={answers.phone || ''} onChange={e => setAnswers({...answers, phone: e.target.value})}/></label>
-              <label><span>Anything else we should know?</span><textarea rows="3" placeholder="A few sentences about your business or what you're trying to do"></textarea></label>
+              <label><span>Anything else we should know?</span><textarea rows="3" placeholder="A few sentences about your business or what you're trying to do" value={answers.notes || ''} onChange={e => setAnswers({...answers, notes: e.target.value})}></textarea></label>
               {formError && <p style={{ color: '#e55', fontSize: '0.85rem', margin: '0' }}>{formError}</p>}
               <button type="submit" className="btn btn-gold sf-submit" disabled={sending}>{sending ? "Sending…" : "Get my tailored plan →"}</button>
               <div className="sf-form-foot">
                 <span className="kicker-dot"></span>
-                <span>No spam. Roy replies himself — usually the same day.</span>
+                <span>No spam. Roy replies himself — within one business day.</span>
               </div>
             </form>
           )}
