@@ -65,7 +65,7 @@ function OurStoryPage() {
       <PageHero
         kicker="Our story"
         title='Founded in Fort Lauderdale,<br/><span class="gradient-text">in 2014.</span>'
-        sub="Roy Bachar's shop. Websites and marketing for South Florida businesses — still at 4440 Inverrary Blvd in Lauderhill."
+        sub="A Fort Lauderdale studio, since 2014. Websites and marketing for South Florida businesses — still at 4440 Inverrary Blvd in Lauderhill."
       />
       <FoundersLetter/>
       <Timeline/>

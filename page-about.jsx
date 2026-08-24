@@ -1,17 +1,42 @@
-// ABOUT page — Roy, small shop, no invented org chart
+// ABOUT page — company first, founder once. Real Google reviews only.
 
 function AboutStory() {
   return (
-    <section className="section about-story">
-      <div className="about-grid">
+    <section className="re-studio">
+      <div className="re-studio-grid">
         <div>
-          <div className="kicker"><span className="kicker-dot"></span>Our story</div>
-          <h2 className="section-title">A Fort Lauderdale shop<br/><span className="gradient-text">that actually picks up.</span></h2>
+          <p className="re-studio-kicker">The studio</p>
+          <h2 className="re-studio-title">A Fort Lauderdale practice, since 2014.</h2>
+          <div className="re-studio-copy">
+            <p>Royal Eagle is a senior-level studio for thoughtful WordPress and custom websites. We work with South Florida businesses that want a site that holds up — and a studio that stays in the work after launch.</p>
+            <p>The practice sits at 4440 Inverrary Blvd in Lauderhill, about eight minutes from the Sawgrass. Websites, WordPress, custom builds, marketing, and a little AI when it actually helps.</p>
+            <p>When a project needs extra hands, we bring in senior specialists — without inventing a leadership grid or a headcount. That is the whole company story.</p>
+          </div>
+          <div className="re-studio-founder">
+            <div className="founder-mark"><EagleMark/></div>
+            <div className="re-studio-founder-meta">
+              Founded by Roy Bachar<br/>
+              Fort Lauderdale, Florida
+            </div>
+          </div>
+          <div className="re-studio-ctas">
+            <a href="contact.html" className="btn btn-gold">Book a conversation</a>
+            <a href="tel:+17542334037" className="btn btn-ghost">754-233-4037</a>
+          </div>
         </div>
-        <div className="about-prose">
-          <p>Royal Eagle started in 2014. Roy Bachar still runs it from 4440 Inverrary Blvd in Lauderhill — Fort Lauderdale area, about eight minutes from the Sawgrass.</p>
-          <p>The work is websites, WordPress, custom builds, marketing, and a little AI when it actually helps. Roy answers the phone. When a project needs extra hands, he works with senior specialists — without inventing a leadership grid or a headcount.</p>
-          <p>That is the whole company story. Same shop, same number, same person on the other end.</p>
+        <div className="re-reviews">
+          {GOOGLE_REVIEWS.map((q, i) => (
+            <figure key={i} className="testi-card">
+              <div className="trust-stars">★★★★★</div>
+              <blockquote>"{q.q}"</blockquote>
+              <figcaption>
+                <div>
+                  <div className="testi-a">{q.a}</div>
+                  <div className="re-review-mark"><span className="re-review-check" aria-hidden="true">✓</span> Verified Google Review</div>
+                </div>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>
@@ -21,7 +46,7 @@ function AboutStory() {
 function FactStrip() {
   const facts = [
     { n: "2014", l: "Founded" },
-    { n: "Roy", l: "Answers the phone" },
+    { n: "Studio", l: "Fort Lauderdale" },
     { n: "Lauderhill", l: "4440 Inverrary Blvd" },
     { n: "5.0★", l: "Google rating" },
   ];
@@ -65,44 +90,17 @@ function Values() {
   );
 }
 
-function Founder() {
-  return (
-    <section className="section">
-      <div className="meth-head">
-        <div>
-          <div className="kicker"><span className="kicker-dot"></span>Who you'll work with</div>
-          <h2 className="section-title">Roy Bachar.<br/>Founder, since 2014.</h2>
-        </div>
-        <p className="meth-aside">No stock-photo team grid. When a project needs extra hands, Roy brings in senior specialists he already works with — and tells you first.</p>
-      </div>
-      <div className="founder-card">
-        <div className="founder-mark"><EagleMark/></div>
-        <div>
-          <div className="team-pc-n">Roy Bachar</div>
-          <div className="team-pc-r">Founder</div>
-          <p className="team-pc-bio-txt">Hands-on through every engagement — first call, design reviews, launch. WordPress, custom sites, marketing, and AI when it is useful. Call 754-233-4037.</p>
-          <div className="founder-actions">
-            <a href="tel:+17542334037" className="btn btn-gold">Call Roy</a>
-            <a href="mailto:roy@royaleagleweb.com" className="btn btn-ghost">roy@royaleagleweb.com</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function AboutPage() {
   return (
     <PageShell active="about">
       <PageHero
-        kicker="About us"
-        title='A small shop.<br/><span class="gradient-text">On purpose.</span>'
-        sub="Roy Bachar's Fort Lauderdale–area web and marketing shop. Founded 2014. 4440 Inverrary Blvd, Lauderhill. He answers the phone."
+        kicker="The studio"
+        title='A Fort Lauderdale practice,<br/><span class="gradient-text">since 2014.</span>'
+        sub="Royal Eagle. WordPress, custom sites, and marketing for South Florida businesses. 4440 Inverrary Blvd, Lauderhill."
       />
       <FactStrip/>
       <AboutStory/>
       <Values/>
-      <Founder/>
       <CTA/>
     </PageShell>
   );

@@ -1,14 +1,17 @@
 // Shared chrome — mega-menu nav + sitemap footer + page shell
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "palette": "light"
+  "palette": "atelier"
 }/*EDITMODE-END*/;
 
+const ATELIER = { bg: "#0B0C0F", bg2: "#111318", surface: "#16181E", ink: "#F4F1EA", inkDim: "#A39E91", gold: "#C4A35A", goldHi: "#D0B36A", accent: "#C4A35A", line: "rgba(196,163,90,0.16)" };
+
 const PALETTES = {
-  light: { bg: "#FAF7F0", bg2: "#FFFFFF", surface: "#F2EEDF", ink: "#1A1410", inkDim: "#6B5B3F", gold: "#B8893A", goldHi: "#C9A227", accent: "#B8893A", line: "rgba(26, 20, 16, 0.10)" },
-  midnight: { bg: "#07080B", bg2: "#0C0D11", surface: "#121318", ink: "#F4F1EA", inkDim: "#A8A59C", gold: "#E8B84A", goldHi: "#F2C85C", accent: "#E8B84A", line: "rgba(232,184,74,0.18)" },
-  obsidian: { bg: "#07080B", bg2: "#0C0D11", surface: "#121318", ink: "#F4F1EA", inkDim: "#A8A59C", gold: "#E8B84A", goldHi: "#F2C85C", accent: "#E8B84A", line: "rgba(232,184,74,0.18)" },
-  imperial: { bg: "#07080B", bg2: "#0C0D11", surface: "#121318", ink: "#F4F1EA", inkDim: "#A8A59C", gold: "#E8B84A", goldHi: "#F2C85C", accent: "#E8B84A", line: "rgba(232,184,74,0.18)" },
+  atelier: ATELIER,
+  light: ATELIER,
+  midnight: ATELIER,
+  obsidian: ATELIER,
+  imperial: ATELIER,
 };
 
 function applyPalette(p, name) {
@@ -17,8 +20,8 @@ function applyPalette(p, name) {
   Object.entries({ '--bg': p.bg, '--bg2': p.bg2, '--surface': p.surface, '--ink': p.ink, '--ink-dim': p.inkDim, '--gold': p.gold, '--gold-hi': p.goldHi, '--accent': p.accent, '--line': p.line }).forEach(([k, v]) => r.style.setProperty(k, v));
 }
 
-const EagleCrest = ({ size = 280, glow = true }) => (
-  <svg viewBox="0 0 200 200" width={size} height={size} style={{ filter: glow ? `drop-shadow(0 0 40px var(--gold))` : 'none' }}>
+const EagleCrest = ({ size = 280, glow = false }) => (
+  <svg viewBox="0 0 200 200" width={size} height={size} style={{ filter: glow ? `drop-shadow(0 0 24px var(--gold))` : 'none' }}>
     <defs><linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="var(--gold-hi)"/><stop offset="100%" stopColor="var(--gold)"/></linearGradient></defs>
     <circle cx="100" cy="100" r="92" fill="none" stroke="url(#goldGrad)" strokeWidth="1" opacity="0.4"/>
     <circle cx="100" cy="100" r="86" fill="none" stroke="url(#goldGrad)" strokeWidth="0.5" opacity="0.3"/>
@@ -43,7 +46,7 @@ const EagleMark = () => (
 const NAV_LINKS = [
   { t: "Work", h: "work.html", keys: ["work", "case-studies", "portfolio"] },
   { t: "Services", h: "services.html", keys: ["services", "service"] },
-  { t: "About", h: "about.html", keys: ["about", "our-story", "team"] },
+  { t: "Studio", h: "about.html", keys: ["about", "our-story", "team"] },
   { t: "Contact", h: "contact.html", keys: ["contact"] },
 ];
 
@@ -71,7 +74,7 @@ function Nav({ active }) {
               <a key={l.t} href={l.h} className={l.keys.includes(active) ? "is-active" : ""}>{l.t}</a>
             ))}
           </div>
-          <a href="tel:+17542334037" className="site-nav-cta">Call Roy</a>
+          <a href="tel:+17542334037" className="site-nav-cta">Call the studio</a>
           <button
             type="button"
             className={`nav-burger ${open ? "is-open" : ""}`}
@@ -139,17 +142,17 @@ function PageHero({ kicker, title, sub, eyebrow }) {
   );
 }
 
-function CTA({ title = "Want to talk to Roy?", sub = "Call 754-233-4037 or send a note. He answers." } = {}) {
+function CTA({ title = "Book a conversation.", sub = "A Fort Lauderdale studio, since 2014. Call 754-233-4037 or send a note." } = {}) {
   return (
     <section className="section cta">
       <div className="cta-card">
         <div className="cta-eagle"><EagleCrest size={120} glow={false}/></div>
-        <div className="kicker kicker-center"><span className="kicker-dot"></span>Let's build something worth bookmarking</div>
+        <div className="kicker kicker-center"><span className="kicker-dot"></span>The studio</div>
         <h2 className="cta-title" dangerouslySetInnerHTML={{ __html: title }}></h2>
         <p className="cta-sub">{sub}</p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap', position: 'relative', zIndex: 2 }}>
-          <a href="contact.html" className="btn btn-gold">Book 20 minutes</a>
-          <a href="tel:+17542334037" className="btn btn-ghost">Call Roy</a>
+          <a href="contact.html" className="btn btn-gold">Book a conversation</a>
+          <a href="tel:+17542334037" className="btn btn-ghost">Call the studio</a>
         </div>
       </div>
     </section>
@@ -183,7 +186,7 @@ function FloatingCTA() {
             <button className="fcta-close" onClick={() => setOpen(false)} aria-label="Close">×</button>
           </div>
           <div className="fcta-greeting">
-            <strong>Hi, I'm Roy.</strong> I founded Royal Eagle in 2014. Ask anything — I answer the phone and the inbox.
+            <strong>Royal Eagle, since 2014.</strong> Ask anything — the studio answers the phone and the inbox.
           </div>
           <div className="fcta-actions">
             <a href="tel:+17542334037" className="fcta-action">
@@ -196,7 +199,7 @@ function FloatingCTA() {
             <a href="mailto:roy@royaleagleweb.com" className="fcta-action">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 8l9 6 9-6M3 7h18v10c0 1-.4 1.4-1.4 1.4H4.4C3.4 18.4 3 18 3 17z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
               <div>
-                <div className="fcta-action-t">Email Roy</div>
+                <div className="fcta-action-t">Email the studio</div>
                 <div className="fcta-action-s">roy@royaleagleweb.com</div>
               </div>
             </a>
@@ -210,7 +213,7 @@ function FloatingCTA() {
           </div>
           <div className="fcta-foot">
             <span className="kicker-dot"></span>
-            <span>Roy replies himself — usually the same day</span>
+            <span>A person replies — usually the same day</span>
           </div>
         </div>
       )}
@@ -248,7 +251,7 @@ function CTAStrip({ variant = "default", heading, sub, primary, secondary, prima
 }
 
 // ---- Inline "ask a human" callout — drop mid-content in long pages ----
-function MeetYourLead({ name = "Roy Bachar", role = "Founder", quote = "I answer the phone. Send a note and you'll hear back from me — not a chatbot — within one business day." }) {
+function MeetYourLead({ name = "Royal Eagle", role = "Fort Lauderdale studio", quote = "Send a note and you'll hear back from the studio — not a chatbot — within one business day." }) {
   return (
     <aside className="meet-lead">
       <figure className="ml-photo ml-photo-mark">
@@ -274,12 +277,19 @@ function MeetYourLead({ name = "Roy Bachar", role = "Founder", quote = "I answer
 
 function WorkCard({ cs, index }) {
   const n = String((index ?? 0) + 1).padStart(2, "0");
+  const host = (cs.url || "").replace(/^https?:\/\//, "").replace(/\/$/, "");
   return (
     <a href={cs.url} target="_blank" rel="noopener" className="re-card" style={{ "--brand-color": cs.color }}>
-      <div className="re-card-shot">
-        {cs.shot
-          ? <img src={cs.shot} alt={`${cs.brand} live website`} loading="lazy"/>
-          : <div className="re-card-shot-fallback">{cs.brand}</div>}
+      <div className="re-card-frame">
+        <div className="re-chrome" aria-hidden="true">
+          <span></span><span></span><span></span>
+          {host && <div className="re-chrome-url">{host}</div>}
+        </div>
+        <div className="re-card-shot">
+          {cs.shot
+            ? <img src={cs.shot} alt={`${cs.brand} live website`} loading="lazy"/>
+            : <div className="re-card-shot-fallback">{cs.brand}</div>}
+        </div>
       </div>
       <div className="re-card-body">
         <div className="re-card-title-row">
@@ -299,7 +309,7 @@ function Counter({ to, prefix = "", suffix = "", decimals = 0 }) {
 }
 
 function PageShell({ active, children }) {
-  React.useEffect(() => { applyPalette(PALETTES.light, "light"); }, []);
+  React.useEffect(() => { applyPalette(PALETTES.atelier, "atelier"); }, []);
   return (
     <>
       <ScrollProgress/>
@@ -312,6 +322,6 @@ function PageShell({ active, children }) {
   );
 }
 
-applyPalette(PALETTES.light, "light");
+applyPalette(PALETTES.atelier, "atelier");
 
 Object.assign(window, { EagleCrest, EagleMark, Nav, Footer, PageHero, CTA, CTAStrip, MeetYourLead, FloatingCTA, WorkCard, Counter, PageShell, PALETTES, applyPalette, TWEAK_DEFAULTS, getSlug });

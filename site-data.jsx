@@ -256,15 +256,6 @@ const CASE_STUDIES = [
     shot: "work/yellow-plumbing.png",
     imgs: []
   },
-  {
-    slug: "space-roofing", brand: "Space Roofing", tag: "Roofing", year: "2026", color: "#3D4A2A",
-    url: "https://spaceroofing.com/", location: "Flower Mound, TX",
-    services: ["Web Design"],
-    summary: "Residential and commercial roofing, gutters, and fencing in Flower Mound, TX.",
-    facts: [["Flower Mound, TX", "Based"], ["(469) 397-4600", "Phone"], ["Live site", "spaceroofing.com"]],
-    shot: "work/space-roofing.png",
-    imgs: []
-  },
 ];
 
 const BLOG_POSTS = [
@@ -306,7 +297,7 @@ const FAQS = [
 ];
 
 const TEAM = [
-  { n: "Roy Bachar", r: "Founder", bio: "Founded Royal Eagle in the Fort Lauderdale area in 2014. Hands-on through every engagement — from first call to post-launch. WordPress, custom sites, marketing, and AI when it actually helps. He answers the phone.", img: "" },
+  { n: "Roy Bachar", r: "Founder", bio: "Founded Royal Eagle in the Fort Lauderdale area in 2014. Hands-on through every engagement — from first call to post-launch. WordPress, custom sites, marketing, and AI when it actually helps.", img: "" },
 ];
 
 // Real Google review excerpts (from royaleagleweb.com Google Business profile)
