@@ -16,8 +16,6 @@
 /our-story.html /about.html 301
 
 # Stale WordPress leftovers
-/contact /contact.html 301
-/contact/ /contact.html 301
 /accessibility /legal.html?s=accessibility 301
 /accessibility/ /legal.html?s=accessibility 301
 /wordpress-web-design-fort-lauderdale /wordpress.html 301
