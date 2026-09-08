@@ -22,11 +22,11 @@ function YachtWebsitesPage() {
     applyPageSeo({
       title: "Yacht Website Design Fort Lauderdale | Royal Eagle",
       description: "Yacht website design in Fort Lauderdale from a studio that built Doctor Yachts (doctoryachts.com). Not a yacht-marketing agency. Rated 5.0 on Google. 754-233-4037.",
-      canonical: "yacht-websites.html",
+      canonical: "yacht-websites",
       keywords: "yacht website design fort lauderdale, yacht website, marine website fort lauderdale",
       breadcrumbs: [
         { name: "Home", url: "/" },
-        { name: "Services", url: "services.html" },
+        { name: "Services", url: "services" },
         { name: "Yacht websites" },
       ],
       service: {
