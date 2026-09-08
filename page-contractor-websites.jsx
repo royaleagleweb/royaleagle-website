@@ -24,11 +24,11 @@ function ContractorWebsitesPage() {
     applyPageSeo({
       title: "Contractor Website Design Florida | Royal Eagle",
       description: "Contractor, plumber, and construction company websites from a South Florida studio. Construction 95, Yellow Plumbing, Florida Impact Windows. Rated 5.0 on Google. 754-233-4037.",
-      canonical: "contractor-websites.html",
+      canonical: "contractor-websites",
       keywords: "contractor website design florida, plumber website, construction company website, contractor website fort lauderdale",
       breadcrumbs: [
         { name: "Home", url: "/" },
-        { name: "Services", url: "services.html" },
+        { name: "Services", url: "services" },
         { name: "Contractor websites" },
       ],
       service: {
