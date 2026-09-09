@@ -30,13 +30,21 @@
 /wordpress-hosting/ /wordpress.html 301
 /wordpress-hosting.html /wordpress.html 301
 
-# Google-indexed WordPress slugs that now 404 (extensionless targets; html_handling serves them as 200)
+# Google-indexed WordPress slugs + obvious WP leftovers (extensionless 200 targets)
 /creative-service-suite /services 301
 /creative-service-suite/ /services 301
 /professional-plan /pricing 301
 /professional-plan/ /pricing 301
 /about-us /about 301
 /about-us/ /about 301
+/our-team /team 301
+/our-team/ /team 301
+/privacy-policy /legal?s=privacy 301
+/privacy-policy/ /legal?s=privacy 301
+/terms-of-service /legal?s=terms 301
+/terms-of-service/ /legal?s=terms 301
+/web-design-fort-lauderdale /services 301
+/web-design-fort-lauderdale/ /services 301
 /support /contact 301
 /support/ /contact 301
 
