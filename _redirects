@@ -30,6 +30,16 @@
 /wordpress-hosting/ /wordpress.html 301
 /wordpress-hosting.html /wordpress.html 301
 
+# Google-indexed WordPress slugs that now 404 (extensionless targets; html_handling serves them as 200)
+/creative-service-suite /services 301
+/creative-service-suite/ /services 301
+/professional-plan /pricing 301
+/professional-plan/ /pricing 301
+/about-us /about 301
+/about-us/ /about 301
+/support /contact 301
+/support/ /contact 301
+
 # Fake download mill
 /resources /services.html 301
 /resources/ /services.html 301
