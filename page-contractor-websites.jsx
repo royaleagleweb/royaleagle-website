@@ -44,7 +44,7 @@ function ContractorWebsitesPage() {
       <PageHero
         kicker="Trades"
         title='Contractor websites<br/><span class="gradient-text">in Florida.</span>'
-        sub="Construction, plumbing, and windows sites from a South Florida studio — not a national contractor-marketing factory. 754-233-4037."
+        sub={<>Construction, plumbing, and windows sites from a South Florida studio — not a national contractor-marketing factory. 754-233-4037. <a href="services">Services</a> · <a href="wordpress">WordPress</a> · <a href="yacht-websites">Yacht websites</a> · <a href="work">Selected work</a></>}
       />
 
       <section className="section">
