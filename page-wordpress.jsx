@@ -44,7 +44,7 @@ function WordpressPage() {
       <PageHero
         kicker="WordPress"
         title='WordPress web design<br/><span class="gradient-text">in Fort Lauderdale.</span>'
-        sub="We build and maintain WordPress and Elementor sites. The studio is at 4440 Inverrary Blvd in Lauderhill. 754-233-4037."
+        sub={<>We build and maintain WordPress and Elementor sites. The studio is at 4440 Inverrary Blvd in Lauderhill. 754-233-4037. <a href="services">Services</a> · <a href="contractor-websites">Contractor websites</a> · <a href="yacht-websites">Yacht websites</a> · <a href="work">Selected work</a></>}
       />
 
       <section className="section">
