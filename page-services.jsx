@@ -1,6 +1,7 @@
 // SERVICES HUB page — categorized cards into all service detail pages
 
 const KEYWORD_PAGES = [
+  { href: "web-design.html", t: "Web design", d: "Web design in Fort Lauderdale. WordPress and custom sites from a Lauderhill studio, since 2014." },
   { href: "wordpress.html", t: "WordPress", d: "Build and maintain WordPress and Elementor sites. Fort Lauderdale studio, Lauderhill address." },
   { href: "contractor-websites.html", t: "Contractor websites", d: "Construction, plumbing, and windows sites — a South Florida studio, not a national factory." },
   { href: "yacht-websites.html", t: "Yacht websites", d: "We built the live Doctor Yachts site. A studio, not a yacht-advertising firm." },
@@ -22,12 +23,12 @@ function ServicesHub() {
       <PageHero
         kicker="Services"
         title='Web, WordPress,<br/><span class="gradient-text">marketing, upkeep.</span>'
-        sub="The work the studio actually does. Start with WordPress, contractor websites, or yacht websites — then the rest of the list."
+        sub="The work the studio actually does. Start with web design, WordPress, contractor websites, or yacht websites — then the rest of the list."
       />
       <section className="section" id="keyword-pages">
         <div className="section-head">
           <div className="kicker"><span className="kicker-dot"></span>Start here</div>
-          <h2 className="section-title">Three pages worth reading.</h2>
+          <h2 className="section-title">Four pages worth reading.</h2>
         </div>
         <div className="svc-hub-grid">
           {KEYWORD_PAGES.map(p => (

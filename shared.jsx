@@ -48,9 +48,10 @@ const NAV_LINKS = [
   {
     t: "Services",
     h: "services.html",
-    keys: ["services", "service", "wordpress", "contractor-websites", "yacht-websites"],
+    keys: ["services", "service", "web-design", "wordpress", "contractor-websites", "yacht-websites"],
     children: [
       { t: "All services", h: "services.html" },
+      { t: "Web design", h: "web-design.html" },
       { t: "WordPress", h: "wordpress.html" },
       { t: "Contractor websites", h: "contractor-websites.html" },
       { t: "Yacht websites", h: "yacht-websites.html" },
