@@ -30,7 +30,7 @@ function FAQPage() {
       <PageHero
         kicker="FAQ"
         title='Common questions,<br/><span class="gradient-text">straight answers.</span>'
-        sub="Questions we hear most often — engagement, pricing, process, and whether AI belongs in the job."
+        sub={<>Questions we hear most often — engagement, pricing, process, and whether AI belongs in the job. <a href="services">Services</a> · <a href="about">About</a> · <a href="work">Selected work</a></>}
       />
       <section className="section faq-section">
         <div className="faq-grid">
