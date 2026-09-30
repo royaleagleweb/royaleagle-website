@@ -9008,6 +9008,22 @@ body.nav-lock { overflow: hidden; }
   font-size: 16px;
   font-weight: 500;
 }
+/* Homepage hero: one primary action, thumb-sized on phones */
+.re-hero-cta {
+  min-height: 56px;
+  font-size: 16px;
+  justify-content: center;
+}
+.re-hero-alt {
+  display: inline-block;
+  padding: 10px 0;
+  color: var(--ink);
+  font-size: 15px;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 5px;
+}
+.re-hero-alt:hover { color: var(--gold); }
 .re-device {
   position: relative;
   max-width: 100%;

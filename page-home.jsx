@@ -9,12 +9,11 @@ function Hero() {
             Websites that work.
             <span className="gold">Built for South Florida.</span>
           </h1>
-          <p className="re-hero-sub">A web studio with twelve years in the work. WordPress, custom sites, marketing.</p>
+          <p className="re-hero-sub">We design and build websites for small businesses, contractors, and marine companies in Fort Lauderdale and South Florida.</p>
           <div className="re-hero-ctas">
-            <a href="contact.html" className="btn btn-gold">Book a conversation</a>
-            <a href="work.html" className="btn btn-ghost">Selected work</a>
+            <a href="tel:+17542334037" className="btn btn-gold re-hero-cta" aria-label="Call Royal Eagle at 754-233-4037">Call 754-233-4037</a>
           </div>
-          <a href="tel:+17542334037" className="re-hero-phone">754-233-4037</a>
+          <a href="mailto:roy@royaleagleweb.com" className="re-hero-alt">Or email roy@royaleagleweb.com</a>
         </div>
         <div className="re-device">
           <a href={featured.url} target="_blank" rel="noopener" className="re-device-frame" aria-label={`Visit ${featured.brand}`}>
