@@ -6,15 +6,15 @@ function Hero() {
         <div>
           <p className="re-hero-kicker">Est. 2014 · Fort Lauderdale</p>
           <h1 className="re-hero-title">
-            Websites that work.
-            <span className="gold">Built for South Florida.</span>
+            More calls
+            <span className="gold">from the web.</span>
           </h1>
-          <p className="re-hero-sub">We do websites, SEO, and ads for small businesses, contractors, and marine companies in Fort Lauderdale and South Florida.</p>
-          <p className="re-hero-services"><span>Web design</span> · <span>WordPress</span> · <span>SEO</span> · <span>Google &amp; Meta ads</span> · <span>Hosting &amp; care</span></p>
-          <div className="re-hero-ctas">
-            <a href="tel:+17542334037" className="btn btn-gold re-hero-cta" aria-label="Call Royal Eagle at 754-233-4037">Call 754-233-4037</a>
-          </div>
+          <p className="re-hero-sub">Websites, SEO, and ads for South Florida small businesses, contractors, and marine companies.</p>
+          <ul className="re-hero-chips" aria-label="Services"><li>Web design</li><li>WordPress</li><li>SEO</li><li>Google &amp; Meta ads</li><li>Hosting &amp; care</li></ul>
+          <div className="re-hero-ctas"><a href="tel:+17542334037" className="btn btn-gold re-hero-cta" aria-label="Call Royal Eagle at 754-233-4037">Call 754-233-4037</a></div>
+          <p className="re-hero-reassure">Talk to Roy directly · Mon–Fri, 9–6</p>
           <a href="mailto:roy@royaleagleweb.com" className="re-hero-alt">Or email roy@royaleagleweb.com</a>
+          <p className="re-hero-trust"><span className="re-hero-trust-k">Sites for</span> Doctor Yachts · Construction 95 · Florida Impact Windows &amp; Doors</p>
         </div>
         <div className="re-device">
           <a href={featured.url} target="_blank" rel="noopener" className="re-device-frame" aria-label={`Visit ${featured.brand}`}>
