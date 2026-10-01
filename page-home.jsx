@@ -1,7 +1,8 @@
 function Hero() {
   const featured = CASE_STUDIES[0];
   return (
-    <section className="re-hero">
+    <section className="re-hero re-hero-x">
+      <div className="re-hero-fx" aria-hidden="true"></div>
       <div className="re-hero-inner">
         <div>
           <p className="re-hero-kicker">Est. 2014 · Fort Lauderdale</p>
@@ -11,7 +12,7 @@ function Hero() {
           </h1>
           <p className="re-hero-sub">Websites, SEO, and ads for South Florida small businesses, contractors, and marine companies.</p>
           <ul className="re-hero-chips" aria-label="Services"><li>Web design</li><li>WordPress</li><li>SEO</li><li>Google &amp; Meta ads</li><li>Hosting &amp; care</li></ul>
-          <div className="re-hero-ctas"><a href="tel:+17542334037" className="btn btn-gold re-hero-cta" aria-label="Call Royal Eagle at 754-233-4037">Call 754-233-4037</a></div>
+          <div className="re-hero-ctas"><a href="tel:+17542334037" className="btn btn-gold re-hero-cta" aria-label="Call Royal Eagle at 754-233-4037"><svg className="re-hero-cta-ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Call 754-233-4037</span></a></div>
           <p className="re-hero-reassure">Talk to Roy directly · Mon–Fri, 9–6</p>
           <a href="mailto:roy@royaleagleweb.com" className="re-hero-alt">Or email roy@royaleagleweb.com</a>
           <p className="re-hero-trust"><span className="re-hero-trust-k">Sites for</span> Doctor Yachts · Construction 95 · Florida Impact Windows &amp; Doors</p>
@@ -29,15 +30,38 @@ function Hero() {
   );
 }
 
+function HomeWorkCard({ cs, index }) {
+  const n = String((index ?? 0) + 1).padStart(2, "0");
+  const place = [cs.tag, cs.location].filter(Boolean).join(" · ");
+  return (
+    <a href={cs.url} target="_blank" rel="noopener" className="hx-card" aria-label={`${cs.brand} live website (opens in a new tab)`}>
+      <div className="hx-card-shot">
+        <img src={cs.shot} alt={`${cs.brand} live website`} loading="lazy"/>
+      </div>
+      <div className="hx-card-label">
+        <span className="hx-card-num">{n}</span>
+        <div className="hx-card-meta">
+          <h3 className="hx-card-brand">{cs.brand}</h3>
+          <p className="hx-card-place">{place}</p>
+        </div>
+        <span className="hx-card-go" aria-hidden="true">↗</span>
+      </div>
+    </a>
+  );
+}
+
 function SelectWork() {
   return (
-    <section className="re-select" id="work">
-      <div className="re-select-head">
-        <div className="re-select-k">Selected work</div>
-        <a href="work.html" className="re-select-all">View the portfolio →</a>
+    <section className="re-select hx-work" id="work">
+      <div className="hx-head">
+        <div>
+          <p className="hx-kicker">{String(CASE_STUDIES.length).padStart(2, "0")} live sites</p>
+          <h2 className="hx-h2">Selected <span className="hx-gold">work.</span></h2>
+        </div>
+        <a href="work.html" className="hx-head-link">View the portfolio <span aria-hidden="true">→</span></a>
       </div>
-      <div className="re-work-grid">
-        {CASE_STUDIES.map((cs, i) => <WorkCard key={cs.slug} cs={cs} index={i}/>)}
+      <div className="hx-work-grid">
+        {CASE_STUDIES.map((cs, i) => <HomeWorkCard key={cs.slug} cs={cs} index={i}/>)}
       </div>
     </section>
   );
@@ -127,11 +151,13 @@ function HomePage() {
   }, []);
   return (
     <PageShell active="home">
-      <Hero/>
-      <SelectWork/>
-      <Studio/>
-      <SEOBlock/>
-      <CTA/>
+      <div className="home-x">
+        <Hero/>
+        <SelectWork/>
+        <Studio/>
+        <SEOBlock/>
+        <CTA/>
+      </div>
     </PageShell>
   );
 }
