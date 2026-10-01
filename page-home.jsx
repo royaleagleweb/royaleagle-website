@@ -9,7 +9,8 @@ function Hero() {
             Websites that work.
             <span className="gold">Built for South Florida.</span>
           </h1>
-          <p className="re-hero-sub">We design and build websites for small businesses, contractors, and marine companies in Fort Lauderdale and South Florida.</p>
+          <p className="re-hero-sub">We do websites, SEO, and ads for small businesses, contractors, and marine companies in Fort Lauderdale and South Florida.</p>
+          <p className="re-hero-services"><span>Web design</span> · <span>WordPress</span> · <span>SEO</span> · <span>Google &amp; Meta ads</span> · <span>Hosting &amp; care</span></p>
           <div className="re-hero-ctas">
             <a href="tel:+17542334037" className="btn btn-gold re-hero-cta" aria-label="Call Royal Eagle at 754-233-4037">Call 754-233-4037</a>
           </div>

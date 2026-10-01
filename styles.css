@@ -9024,6 +9024,17 @@ body.nav-lock { overflow: hidden; }
   text-underline-offset: 5px;
 }
 .re-hero-alt:hover { color: var(--gold); }
+.re-hero-sub:has(+ .re-hero-services) { margin-bottom: 12px; }
+.re-hero-services {
+  margin: 0 0 28px;
+  max-width: 460px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+}
+.re-hero-services span { white-space: nowrap; }
 .re-device {
   position: relative;
   max-width: 100%;
