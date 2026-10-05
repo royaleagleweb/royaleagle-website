@@ -20,7 +20,7 @@ function FAQPage() {
     applyPageSeo({
       title: "FAQ | Common Questions | Royal Eagle",
       description: "Common questions about web design, WordPress, marketing, and working with Royal Eagle in Fort Lauderdale.",
-      canonical: "faq.html",
+      canonical: "faq",
       breadcrumbs: [{ name: "Home", url: "/" }, { name: "FAQ" }],
       faq: FAQS
     });

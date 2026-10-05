@@ -33,6 +33,19 @@ const SITE = {
   ],
 };
 
+// Workers Assets html_handling serves extensionless paths at 200 and 307s *.html.
+// Declared canonical / og:url / JSON-LD page URLs must match the 200 URL.
+function toCanonicalUrl(canonical) {
+  let raw = canonical || "";
+  if (raw.startsWith("http")) {
+    return raw.replace(/\.html(?=\?|$|#)/, "").replace(/\/index$/, "/");
+  }
+  let path = raw.replace(/^\.?\//, "");
+  if (!path || path === "index.html" || path === "index") path = "";
+  path = path.replace(/\.html(?=\?|$|#)/, "");
+  return path ? `${SITE.domain}/${path}` : `${SITE.domain}/`;
+}
+
 function setOrReplaceMeta(attr, key, content) {
   if (!content) return;
   let m = document.head.querySelector(`meta[${attr}="${key}"]`);
@@ -144,10 +157,8 @@ function applyPageSeo(opts) {
     extraLd = {},
   } = opts || {};
 
-  // Build absolute canonical — homepage is / not index.html
-  let path = (canonical || (location.pathname + location.search)).replace(/^\.?\//, "");
-  if (!path || path === "index.html" || path === "/index.html") path = "";
-  const canonicalUrl = path.startsWith("http") ? path : (path ? `${SITE.domain}/${path}` : `${SITE.domain}/`);
+  // Build absolute canonical. Workers Assets 307s *.html → extensionless 200 URLs.
+  const canonicalUrl = toCanonicalUrl(canonical || (location.pathname + location.search));
 
   // Document title — strip duplicated brand
   const finalTitle = title
@@ -194,7 +205,7 @@ function applyPageSeo(opts) {
         "@type": "ListItem",
         position: i + 1,
         name: b.name,
-        item: b.url ? (b.url.startsWith("http") ? b.url : `${SITE.domain}/${b.url.replace(/^\//, "")}`) : undefined,
+        item: b.url ? toCanonicalUrl(b.url) : undefined,
       })),
     });
   }
@@ -255,4 +266,4 @@ function applyPageSeo(opts) {
 // Run base SEO immediately
 applyBaseSeo();
 
-Object.assign(window, { SITE, applyBaseSeo, applyPageSeo, LOCAL_BUSINESS_LD });
+Object.assign(window, { SITE, applyBaseSeo, applyPageSeo, LOCAL_BUSINESS_LD, toCanonicalUrl });
