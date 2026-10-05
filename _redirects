@@ -1,36 +1,44 @@
 # Friendly root
-/home /index.html 301
+/home / 301
 /.well-known/llms.txt /llms.txt 200
 
 # Work duplicates
-/portfolio /work.html 301
-/portfolio/ /work.html 301
-/portfolio.html /work.html 301
-/case-studies /work.html 301
-/case-studies/ /work.html 301
-/case-studies.html /work.html 301
+/portfolio /work 301
+/portfolio/ /work 301
+/portfolio.html /work 301
+/case-studies /work 301
+/case-studies/ /work 301
+/case-studies.html /work 301
 
 # Story duplicate
-/our-story /about.html 301
-/our-story/ /about.html 301
-/our-story.html /about.html 301
+/our-story /about 301
+/our-story/ /about 301
+/our-story.html /about 301
 
-# Stale WordPress leftovers
-/contact /contact.html 301
-/contact/ /contact.html 301
-/accessibility /legal.html?s=accessibility 301
-/accessibility/ /legal.html?s=accessibility 301
-/wordpress-web-design-fort-lauderdale /wordpress.html 301
-/wordpress-web-design-fort-lauderdale/ /wordpress.html 301
-/theme-migrations /wordpress.html 301
-/theme-migrations/ /wordpress.html 301
-/wordpress-page-speed-optimization /wordpress.html 301
-/wordpress-page-speed-optimization/ /wordpress.html 301
-/wordpress-hosting /wordpress.html 301
-/wordpress-hosting/ /wordpress.html 301
-/wordpress-hosting.html /wordpress.html 301
+# Stale WordPress leftovers.
+# /contact and /contact/ are omitted: Workers html_handling serves contact.html at /contact (200).
+# A 301 back to /contact.html loops with the *.html → extensionless 307.
+# /web-design, /web-design-fort-lauderdale, and /fort-lauderdale-web-design are omitted
+# so a later landing page can own those paths. This file does not shadow /web-design.
+/accessibility /legal?s=accessibility 301
+/accessibility/ /legal?s=accessibility 301
+/wordpress-web-design-fort-lauderdale /wordpress 301
+/wordpress-web-design-fort-lauderdale/ /wordpress 301
+/theme-migrations /wordpress 301
+/theme-migrations/ /wordpress 301
+/wordpress-page-speed-optimization /wordpress 301
+/wordpress-page-speed-optimization/ /wordpress 301
+/wordpress-page-speed /wordpress 301
+/wordpress-page-speed/ /wordpress 301
+/wordpress-hosting /wordpress 301
+/wordpress-hosting/ /wordpress 301
+/wordpress-hosting.html /wordpress 301
+/creative-service-suite /services 301
+/creative-service-suite/ /services 301
+/professional-plan /pricing 301
+/professional-plan/ /pricing 301
 
 # Fake download mill
-/resources /services.html 301
-/resources/ /services.html 301
-/resources.html /services.html 301
+/resources /services 301
+/resources/ /services 301
+/resources.html /services 301
