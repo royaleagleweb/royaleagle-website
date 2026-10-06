@@ -310,6 +310,7 @@ const SITE_MAP = [
   ]},
   { title: "Services", links: [
     { t: "All services", h: "services" },
+    { t: "Web design", h: "web-design" },
     { t: "WordPress", h: "wordpress" },
     { t: "Contractor websites", h: "contractor-websites" },
     { t: "Yacht websites", h: "yacht-websites" },

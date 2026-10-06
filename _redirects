@@ -18,8 +18,12 @@
 # Stale WordPress leftovers.
 # /contact and /contact/ are omitted: Workers html_handling serves contact.html at /contact (200).
 # A 301 back to /contact.html loops with the *.html → extensionless 307.
-# /web-design, /web-design-fort-lauderdale, and /fort-lauderdale-web-design are omitted
-# so a later landing page can own those paths. This file does not shadow /web-design.
+# /web-design is the landing page (web-design.html via html_handling). Do not redirect it.
+# Fort Lauderdale aliases 301 once to that extensionless URL.
+/web-design-fort-lauderdale /web-design 301
+/web-design-fort-lauderdale/ /web-design 301
+/fort-lauderdale-web-design /web-design 301
+/fort-lauderdale-web-design/ /web-design 301
 /accessibility /legal?s=accessibility 301
 /accessibility/ /legal?s=accessibility 301
 /wordpress-web-design-fort-lauderdale /wordpress 301
