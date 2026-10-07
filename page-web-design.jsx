@@ -27,7 +27,7 @@ function WebDesignPage() {
   React.useEffect(() => {
     applyPageSeo({
       title: "Web Design Fort Lauderdale | Royal Eagle",
-      description: "Web design in Fort Lauderdale from a studio at 4440 Inverrary Blvd, Lauderhill. WordPress and custom sites since 2014. 754-233-4037.",
+      description: "Web design in Fort Lauderdale from a studio at 4440 Inverrary Blvd, Lauderhill. WordPress and custom sites since 2014. Rated 5.0 on Google. 754-233-4037.",
       canonical: "web-design",
       keywords: "web design fort lauderdale, web designer fort lauderdale, website design fort lauderdale, south florida web design",
       breadcrumbs: [
