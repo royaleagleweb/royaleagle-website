@@ -45,15 +45,39 @@ const LEGAL_PAGES = {
 function LegalPage() {
   const slug = getSlug() || "privacy";
   const page = LEGAL_PAGES[slug] || LEGAL_PAGES.privacy;
+  const canonicalSlug = LEGAL_PAGES[slug] ? slug : "privacy";
+
+  React.useEffect(() => {
+    const seo = {
+      privacy: {
+        title: "Privacy Policy — Royal Eagle Web Design",
+        description: "Privacy Policy for Royal Eagle Web Design & Marketing: what we collect, how we use it, cookies, and your rights.",
+      },
+      terms: {
+        title: "Terms of Service — Royal Eagle Web Design",
+        description: "Terms of Service for Royal Eagle Web Design & Marketing: engagement scope, payment, ownership, and governing law.",
+      },
+      accessibility: {
+        title: "Accessibility Statement — Royal Eagle Web Design",
+        description: "Accessibility Statement for Royal Eagle Web Design: WCAG 2.2 Level AA status, our process, and how to send feedback.",
+      },
+    }[canonicalSlug];
+    applyPageSeo({
+      title: seo.title,
+      description: seo.description,
+      canonical: `legal?s=${canonicalSlug}`,
+    });
+  }, [canonicalSlug]);
+
   return (
     <PageShell active="legal">
       <section className="section legal-hero">
         <div className="legal-eyebrow">{page.eyebrow}</div>
         <h1 className="legal-title">{page.title}</h1>
         <div className="legal-nav">
-          <a href="legal.html?s=privacy" className={slug === "privacy" ? "is-active" : ""}>Privacy</a>
-          <a href="legal.html?s=terms" className={slug === "terms" ? "is-active" : ""}>Terms</a>
-          <a href="legal.html?s=accessibility" className={slug === "accessibility" ? "is-active" : ""}>Accessibility</a>
+          <a href="legal?s=privacy" className={slug === "privacy" ? "is-active" : ""}>Privacy</a>
+          <a href="legal?s=terms" className={slug === "terms" ? "is-active" : ""}>Terms</a>
+          <a href="legal?s=accessibility" className={slug === "accessibility" ? "is-active" : ""}>Accessibility</a>
         </div>
       </section>
       <section className="section legal-body">

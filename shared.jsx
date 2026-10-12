@@ -137,8 +137,8 @@ function Footer() {
       </div>
       <div className="site-foot-legal">
         <span>© 2026 Royal Eagle · Mon–Fri 9–6 ET</span>
-        <a href="legal.html?s=privacy">Privacy</a>
-        <a href="legal.html?s=terms">Terms</a>
+        <a href="legal?s=privacy">Privacy</a>
+        <a href="legal?s=terms">Terms</a>
         <a href="sitemap.html">Sitemap</a>
       </div>
     </footer>

@@ -166,7 +166,7 @@ function ServiceDetail() {
           </div>
           <div className="sd-related">
             {related.map(r => (
-              <a key={r.slug} href={`service.html?s=${r.slug}`} className="sd-rel-card">
+              <a key={r.slug} href={`service?s=${r.slug}`} className="sd-rel-card">
                 {r.img ? <div className="sd-rel-img"><img src={r.img} alt={r.title} loading="lazy"/></div> : null}
                 <div className="sd-rel-body">
                   <div className="sd-rel-cat">{r.cat}</div>

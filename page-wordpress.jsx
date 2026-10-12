@@ -71,7 +71,7 @@ function WordpressPage() {
         <div className="kw-copy">
           <p>A WordPress site is not done at launch. Core, themes, and plugins need updates. Backups need to exist. Someone has to notice when a form stops sending.</p>
           <p>We offer that as ongoing care — a monthly conversation with the studio, not a productized factory. Small content edits are part of it. Larger work gets scoped.</p>
-          <p><a href="service.html?s=maintenance">Maintenance</a> · <a href="service.html?s=wordpress-elementor">WordPress / Elementor</a> · <a href="work.html">Selected work</a></p>
+          <p><a href="service?s=maintenance">Maintenance</a> · <a href="service?s=wordpress-elementor">WordPress / Elementor</a> · <a href="work.html">Selected work</a></p>
         </div>
       </section>
 
