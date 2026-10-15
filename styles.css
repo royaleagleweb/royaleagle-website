@@ -9703,6 +9703,29 @@ body.nav-lock { overflow: hidden; }
   padding: 0;
 }
 .re-hero-x .re-hero-trust { border-top-color: var(--hx-hair); }
+.re-hero-x .re-hero-trail {
+  margin: 14px 0 0;
+  max-width: 34rem;
+  color: color-mix(in srgb, var(--ink) 48%, transparent);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.re-hero-x .re-hero-trail a {
+  color: color-mix(in srgb, var(--ink) 88%, transparent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--gold) 72%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.re-hero-x .re-hero-trail a:hover {
+  color: var(--gold-hi);
+  text-decoration-color: var(--gold);
+}
+.re-hero-x .re-hero-trail a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
 
 /* ---------- Hero: device mockup ---------- */
 .re-hero-x .re-device { animation: hxFade .6s var(--hx-ease) both; }
@@ -9744,6 +9767,7 @@ body.nav-lock { overflow: hidden; }
 .re-hero-anim .re-hero-inner > div > :nth-child(6) { animation-delay: .19s; }
 .re-hero-anim .re-hero-inner > div > :nth-child(7) { animation-delay: .20s; }
 .re-hero-anim .re-hero-inner > div > :nth-child(8) { animation-delay: .21s; }
+.re-hero-anim .re-hero-inner > div > :nth-child(9) { animation-delay: .22s; }
 
 /* ---------- Shared section rhythm ---------- */
 .home-x .hx-kicker,

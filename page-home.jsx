@@ -59,6 +59,7 @@ function Hero() {
           <p className="re-hero-reassure">Talk to Roy directly · Mon–Fri, 9–6</p>
           <a href="mailto:roy@royaleagleweb.com" className="re-hero-alt">Or email roy@royaleagleweb.com</a>
           <p className="re-hero-trust"><span className="re-hero-trust-k">Sites for</span> Doctor Yachts · Construction 95 · Florida Impact Windows &amp; Doors</p>
+          <p className="re-hero-trail"><a href="services">Services</a> · <a href="wordpress">WordPress</a> · <a href="contractor-websites">Contractor websites</a> · <a href="yacht-websites">Yacht websites</a> · <a href="work">Selected work</a></p>
         </div>
         <div className="re-device">
           <a href={featured.url} target="_blank" rel="noopener" className="re-device-frame" aria-label={`Visit ${featured.brand}`}>
