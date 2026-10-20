@@ -27,7 +27,7 @@ function SitemapPage() {
             <h3 className="sitemap-col-t">Selected work</h3>
             <div className="sitemap-links">
               {CASE_STUDIES.map(c => (
-                <a key={c.slug} href={`case.html?s=${c.slug}`} className="sitemap-link">
+                <a key={c.slug} href={`case?s=${c.slug}`} className="sitemap-link">
                   <span>{c.brand}</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>

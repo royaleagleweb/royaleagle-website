@@ -24,11 +24,11 @@ function WordpressPage() {
     applyPageSeo({
       title: "WordPress Web Design Fort Lauderdale | Royal Eagle",
       description: "WordPress and Elementor sites from a Fort Lauderdale studio. Build and maintenance. 4440 Inverrary Blvd, Lauderhill. Rated 5.0 on Google. 754-233-4037.",
-      canonical: "wordpress.html",
+      canonical: "wordpress",
       keywords: "wordpress web design fort lauderdale, wordpress developer fort lauderdale, elementor, wordpress maintenance",
       breadcrumbs: [
         { name: "Home", url: "/" },
-        { name: "Services", url: "services.html" },
+        { name: "Services", url: "services" },
         { name: "WordPress" },
       ],
       service: {

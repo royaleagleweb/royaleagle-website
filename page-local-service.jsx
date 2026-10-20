@@ -20,13 +20,13 @@ function LocalServicePage() {
     applyPageSeo({
       title: `${svc.title} in ${city.n}, ${city.c} County FL`,
       description: `${svc.hero} Local ${svc.title.toLowerCase()} for ${city.n}, ${city.c} County businesses. Royal Eagle is rated 5.0 on Google.`,
-      canonical: `local-service.html?c=${city.slug}&s=${svc.slug}`,
+      canonical: `local-service?c=${city.slug}&s=${svc.slug}`,
       image: svc.img,
       keywords: `${svc.title.toLowerCase()} ${city.n}, ${svc.title.toLowerCase()} ${city.c} County, ${svc.title.toLowerCase()} near me, ${city.n} ${svc.cat.toLowerCase()}`,
       breadcrumbs: [
         { name: "Home", url: "/" },
-        { name: "Locations", url: "locations.html" },
-        { name: city.n, url: `city.html?c=${city.slug}` },
+        { name: "Locations", url: "locations" },
+        { name: city.n, url: `city?c=${city.slug}` },
         { name: svc.title }
       ],
       service: {

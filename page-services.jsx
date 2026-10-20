@@ -12,7 +12,7 @@ function ServicesHub() {
     applyPageSeo({
       title: "Web Design & Digital Marketing Services in Fort Lauderdale",
       description: "WordPress, custom sites, contractor and yacht websites, hosting, and marketing from a Fort Lauderdale studio. Rated 5.0 on Google. 754-233-4037.",
-      canonical: "services.html",
+      canonical: "services",
       keywords: "web design services fort lauderdale, wordpress development fort lauderdale, contractor website design florida",
       breadcrumbs: [{ name: "Home", url: "/" }, { name: "Services" }],
     });

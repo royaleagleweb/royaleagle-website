@@ -5,7 +5,7 @@ function LocationsPage() {
     applyPageSeo({
       title: "Where we work | Lauderhill & South Florida | Royal Eagle",
       description: "Royal Eagle is a Fort Lauderdale–area studio at 4440 Inverrary Blvd, Lauderhill. We work across Broward, Miami-Dade, and Palm Beach. Rated 5.0 on Google. 754-233-4037.",
-      canonical: "locations.html",
+      canonical: "locations",
       keywords: "web design lauderhill, web design fort lauderdale, south florida web studio",
       breadcrumbs: [{ name: "Home", url: "/" }, { name: "Where we work" }],
     });

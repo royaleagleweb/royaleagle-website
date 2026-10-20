@@ -42,12 +42,12 @@ function ServiceDetail() {
     applyPageSeo({
       title: `${svc.title} in Fort Lauderdale, FL`,
       description: `${svc.hero} Royal Eagle — hands-on ${svc.title.toLowerCase()} for South Florida businesses since 2014. 5.0 ★ on Google.`,
-      canonical: `service.html?s=${svc.slug}`,
+      canonical: `service?s=${svc.slug}`,
       image: svc.img,
       keywords: `${svc.title.toLowerCase()}, ${svc.title.toLowerCase()} Fort Lauderdale, ${svc.cat.toLowerCase()}, web design Fort Lauderdale, web development South Florida`,
       breadcrumbs: [
         { name: "Home", url: "/" },
-        { name: "Services", url: "services.html" },
+        { name: "Services", url: "services" },
         { name: svc.title }
       ],
       service: {
