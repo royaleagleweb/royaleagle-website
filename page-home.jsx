@@ -9,7 +9,7 @@ function Hero() {
             Websites that work.
             <span className="gold">Built for South Florida.</span>
           </h1>
-          <p className="re-hero-sub">A web studio with twelve years in the work. WordPress, custom sites, marketing.</p>
+          <p className="re-hero-sub">A web studio with twelve years in the work. <a href="services">Services</a> · <a href="wordpress">WordPress</a> · <a href="contractor-websites">Contractor websites</a> · <a href="yacht-websites">Yacht websites</a> · <a href="work">Selected work</a></p>
           <div className="re-hero-ctas">
             <a href="contact.html" className="btn btn-gold">Book a conversation</a>
             <a href="work.html" className="btn btn-ghost">Selected work</a>
