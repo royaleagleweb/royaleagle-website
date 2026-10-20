@@ -8993,6 +8993,31 @@ body.nav-lock { overflow: hidden; }
   margin: 0 0 32px;
   max-width: 460px;
 }
+.re-hero-sub:has(.re-hub-trail) { max-width: 40rem; }
+.re-hub-trail {
+  display: block;
+  margin-top: 14px;
+  max-width: 40rem;
+  color: color-mix(in srgb, var(--ink) 62%, transparent);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.re-hub-trail a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--gold) 75%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.re-hub-trail a:hover {
+  color: var(--gold-hi);
+  text-decoration-color: var(--gold);
+}
+.re-hub-trail a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
 .re-hero-ctas {
   display: flex;
   flex-wrap: wrap;
