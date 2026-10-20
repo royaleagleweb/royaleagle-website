@@ -83,8 +83,8 @@ function ServiceDetail() {
               </div>
             </div>
             <div className="sd-ctas">
-              <a href="contact.html" className="btn btn-gold">Schedule a consultation</a>
-              <a href="work.html" className="btn btn-ghost">Selected work</a>
+              <a href="/contact" className="btn btn-gold">Schedule a consultation</a>
+              <a href="/work" className="btn btn-ghost">Selected work</a>
             </div>
           </div>
           {svc.img ? (
@@ -166,7 +166,7 @@ function ServiceDetail() {
           </div>
           <div className="sd-related">
             {related.map(r => (
-              <a key={r.slug} href={`service?s=${r.slug}`} className="sd-rel-card">
+              <a key={r.slug} href={`/service?s=${r.slug}`} className="sd-rel-card">
                 {r.img ? <div className="sd-rel-img"><img src={r.img} alt={r.title} loading="lazy"/></div> : null}
                 <div className="sd-rel-body">
                   <div className="sd-rel-cat">{r.cat}</div>

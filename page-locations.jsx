@@ -25,8 +25,8 @@ function LocationsPage() {
         </div>
         <ul className="kw-list">
           <li><strong>The studio</strong> 4440 Inverrary Blvd, Lauderhill — about eight minutes from the Sawgrass, twenty from downtown Fort Lauderdale.</li>
-          <li><strong>The work</strong> WordPress, custom sites, and marketing. See <a href="wordpress.html">WordPress</a>, <a href="contractor-websites.html">contractor websites</a>, and <a href="yacht-websites.html">yacht websites</a>.</li>
-          <li><strong>The proof</strong> Six live sites on <a href="work.html">selected work</a>. Rated 5.0 on Google.</li>
+          <li><strong>The work</strong> WordPress, custom sites, and marketing. See <a href="/wordpress">WordPress</a>, <a href="/contractor-websites">contractor websites</a>, and <a href="/yacht-websites">yacht websites</a>.</li>
+          <li><strong>The proof</strong> Six live sites on <a href="/work">selected work</a>. Rated 5.0 on Google.</li>
         </ul>
       </section>
       <CTA title="In South Florida?" sub="Call 754-233-4037 or send a note. We reply within one business day."/>

@@ -12,9 +12,9 @@ function ResourcesPage() {
         <div className="kw-copy">
           <p>This URL used to list templates that did not exist. We will not invent files to download.</p>
           <p>
-            <a href="services.html" className="btn btn-gold">Services</a>
+            <a href="/services" className="btn btn-gold">Services</a>
             {" "}
-            <a href="contact.html" className="btn btn-ghost">Book a conversation</a>
+            <a href="/contact" className="btn btn-ghost">Book a conversation</a>
           </p>
         </div>
       </section>

@@ -97,7 +97,7 @@ function ServiceFinder() {
           <p className="sf-success-p">We've got your brief. Based on your answers we think <strong>{recSvc.title}</strong> is your best fit.</p>
           <p className="sf-success-p sf-success-p-quiet">Roy will reach out within one business day. In the meantime — feel free to read up on what's coming, or call 754-233-4037.</p>
           <div className="sf-success-actions">
-            <a href={`service?s=${recSvc.slug}`} className="btn btn-gold">Read about {recSvc.title} →</a>
+            <a href={`/service?s=${recSvc.slug}`} className="btn btn-gold">Read about {recSvc.title} →</a>
             <a href="tel:+17542334037" className="btn btn-ghost">Or call now: 754-233-4037</a>
           </div>
         </div>

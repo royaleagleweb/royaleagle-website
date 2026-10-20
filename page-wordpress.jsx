@@ -44,7 +44,7 @@ function WordpressPage() {
       <PageHero
         kicker="WordPress"
         title='WordPress web design<br/><span class="gradient-text">in Fort Lauderdale.</span>'
-        sub={<>We build and maintain WordPress and Elementor sites. The studio is at 4440 Inverrary Blvd in Lauderhill. 754-233-4037. <span className="re-hub-trail"><a href="services">Services</a> · <a href="contractor-websites">Contractor websites</a> · <a href="yacht-websites">Yacht websites</a> · <a href="service?s=wordpress-elementor">WordPress and Elementor</a> · <a href="work">Selected work</a></span></>}
+        sub={<>We build and maintain WordPress and Elementor sites. The studio is at 4440 Inverrary Blvd in Lauderhill. 754-233-4037. <span className="re-hub-trail"><a href="/services">Services</a> · <a href="/contractor-websites">Contractor websites</a> · <a href="/yacht-websites">Yacht websites</a> · <a href="/service?s=wordpress-elementor">WordPress and Elementor</a> · <a href="/work">Selected work</a></span></>}
       />
 
       <section className="section">
@@ -71,7 +71,7 @@ function WordpressPage() {
         <div className="kw-copy">
           <p>A WordPress site is not done at launch. Core, themes, and plugins need updates. Backups need to exist. Someone has to notice when a form stops sending.</p>
           <p>We offer that as ongoing care — a monthly conversation with the studio, not a productized factory. Small content edits are part of it. Larger work gets scoped.</p>
-          <p><a href="service?s=maintenance">Maintenance</a> · <a href="service?s=wordpress-elementor">WordPress / Elementor</a> · <a href="work.html">Selected work</a></p>
+          <p><a href="/service?s=maintenance">Maintenance</a> · <a href="/service?s=wordpress-elementor">WordPress / Elementor</a> · <a href="/work">Selected work</a></p>
         </div>
       </section>
 
@@ -81,7 +81,7 @@ function WordpressPage() {
           <h2 className="section-title">Sites we shipped.</h2>
         </div>
         <p className="kw-proof-note">We do not claim a CMS for a client unless we have verified it here. See the live sites on the work page — then decide if the studio is a fit.</p>
-        <p><a href="work.html" className="btn btn-gold">Selected work</a></p>
+        <p><a href="/work" className="btn btn-gold">Selected work</a></p>
       </section>
 
       <section className="section faq-section">
