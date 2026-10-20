@@ -6,6 +6,20 @@ function CaseDetail() {
   const i = CASE_STUDIES.findIndex(c => c.slug === cs.slug);
   const next = CASE_STUDIES[(i + 1) % CASE_STUDIES.length];
 
+  React.useEffect(() => {
+    const description = `${cs.brand} — ${cs.tag}. ${cs.summary}`;
+    applyPageSeo({
+      title: `${cs.brand} — ${cs.tag}`,
+      description: description.length <= 160 ? description : description.slice(0, 157).trimEnd() + "...",
+      canonical: `case?s=${cs.slug}`,
+      breadcrumbs: [
+        { name: "Home", url: "/" },
+        { name: "Work", url: "work" },
+        { name: cs.brand },
+      ],
+    });
+  }, [cs.slug]);
+
   return (
     <PageShell active="case-studies">
       <section className="case-hero" style={{ background: `linear-gradient(180deg, ${cs.color} 0%, var(--bg) 100%)` }}>
@@ -73,7 +87,7 @@ function CaseDetail() {
       />
 
       <section className="section case-next">
-        <a href={`case.html?s=${next.slug}`} className="case-next-card" style={{ background: `linear-gradient(135deg, ${next.color} 0%, ${next.color}aa 100%)` }}>
+        <a href={`case?s=${next.slug}`} className="case-next-card" style={{ background: `linear-gradient(135deg, ${next.color} 0%, ${next.color}aa 100%)` }}>
           <div className="case-next-meta">Next project</div>
           <div className="case-next-brand">{next.brand}</div>
           <div className="case-next-tag">{next.tag}{next.location ? ` · ${next.location}` : ""}</div>
