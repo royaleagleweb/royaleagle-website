@@ -20,7 +20,7 @@ function AboutStory() {
             </div>
           </div>
           <div className="re-studio-ctas">
-            <a href="contact.html" className="btn btn-gold">Book a conversation</a>
+            <a href="/contact" className="btn btn-gold">Book a conversation</a>
             <a href="tel:+17542334037" className="btn btn-ghost">754-233-4037</a>
           </div>
         </div>

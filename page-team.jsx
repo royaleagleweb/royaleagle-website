@@ -19,7 +19,7 @@ function TeamPage() {
             </p>
             <div className="founder-actions">
               <a href="tel:+17542334037" className="btn btn-gold">Call the studio</a>
-              <a href="contact.html" className="btn btn-ghost">Book a conversation</a>
+              <a href="/contact" className="btn btn-ghost">Book a conversation</a>
             </div>
           </div>
         </div>

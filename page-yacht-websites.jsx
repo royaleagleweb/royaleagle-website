@@ -42,7 +42,7 @@ function YachtWebsitesPage() {
       <PageHero
         kicker="Marine"
         title='Yacht website design<br/><span class="gradient-text">in Fort Lauderdale.</span>'
-        sub={<>We built the live site for Doctor Yachts. We are a studio — not a yacht-advertising firm. 754-233-4037. <span className="re-hub-trail"><a href="services">Services</a> · <a href="wordpress">WordPress</a> · <a href="contractor-websites">Contractor websites</a> · <a href="case?s=doctor-yachts">Doctor Yachts</a> · <a href="work">Selected work</a></span></>}
+        sub={<>We built the live site for Doctor Yachts. We are a studio — not a yacht-advertising firm. 754-233-4037. <span className="re-hub-trail"><a href="/services">Services</a> · <a href="/wordpress">WordPress</a> · <a href="/contractor-websites">Contractor websites</a> · <a href="/case?s=doctor-yachts">Doctor Yachts</a> · <a href="/work">Selected work</a></span></>}
       />
 
       <section className="section">

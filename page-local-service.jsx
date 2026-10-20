@@ -68,7 +68,7 @@ function LocalServicePage() {
               </div>
             </div>
             <div className="sd-ctas">
-              <a href={`contact.html?city=${city.slug}&svc=${svc.slug}`} className="btn btn-gold">Get a {city.n} quote</a>
+              <a href={`/contact?city=${city.slug}&svc=${svc.slug}`} className="btn btn-gold">Get a {city.n} quote</a>
               <a href="tel:+17542334037" className="btn btn-ghost">📞 754-233-4037</a>
             </div>
           </div>
@@ -118,7 +118,7 @@ function LocalServicePage() {
         sub={`Tell us what you're trying to do. We'll let you know within a day whether we're the right fit — honestly.`}
         primary={`Get my ${city.n} quote →`}
         secondary="See pricing"
-        primaryHref={`contact.html?city=${city.slug}&svc=${svc.slug}`}
+        primaryHref={`/contact?city=${city.slug}&svc=${svc.slug}`}
       />
 
       {otherSvcs.length > 0 && (
@@ -129,7 +129,7 @@ function LocalServicePage() {
           </div>
           <div className="sd-related">
             {otherSvcs.map(r => (
-              <a key={r.slug} href={`local-service.html?c=${city.slug}&s=${r.slug}`} className="sd-rel-card">
+              <a key={r.slug} href={`/local-service?c=${city.slug}&s=${r.slug}`} className="sd-rel-card">
                 <div className="sd-rel-img"><img src={r.img} alt={`${r.title} in ${city.n}`} loading="lazy"/></div>
                 <div className="sd-rel-body">
                   <div className="sd-rel-cat">{r.cat} · {city.n}</div>
@@ -148,11 +148,11 @@ function LocalServicePage() {
             <div className="kicker"><span className="kicker-dot"></span>{svc.title} in other {city.c} cities</div>
             <h2 className="section-title">Nearby service areas.</h2>
           </div>
-          <a href={`city.html?c=${city.slug}`} className="link-arrow">All services in {city.n} →</a>
+          <a href={`/city?c=${city.slug}`} className="link-arrow">All services in {city.n} →</a>
         </div>
         <div className="city-nearby">
           {nearby.map(o => (
-            <a key={o.slug} href={`local-service.html?c=${o.slug}&s=${svc.slug}`} className="city-nearby-card">
+            <a key={o.slug} href={`/local-service?c=${o.slug}&s=${svc.slug}`} className="city-nearby-card">
               <div className="cnc-n">{svc.title}</div>
               <div className="cnc-c">in {o.n}</div>
             </a>

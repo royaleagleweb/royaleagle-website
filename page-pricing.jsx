@@ -24,7 +24,7 @@ function Pricing() {
                 </li>
               ))}
             </ul>
-            <a href="contact.html" className={`btn ${p.best ? 'btn-gold' : 'btn-ghost'}`} style={{ width: '100%', justifyContent: 'center' }}>{p.cta}</a>
+            <a href="/contact" className={`btn ${p.best ? 'btn-gold' : 'btn-ghost'}`} style={{ width: '100%', justifyContent: 'center' }}>{p.cta}</a>
           </div>
         ))}
       </div>

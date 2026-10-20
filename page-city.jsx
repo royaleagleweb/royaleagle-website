@@ -15,7 +15,7 @@ function CityPage() {
           <div className="city-hero-overlay"></div>
         </div>
         <div className="city-hero-inner">
-          <a href="locations.html" className="case-back">← All service areas</a>
+          <a href="/locations" className="case-back">← All service areas</a>
           <div className="kicker kicker-light">
             <span className="kicker-dot"></span>
             {city.c} County · Population {city.pop.toLocaleString()}
@@ -28,7 +28,7 @@ function CityPage() {
             {city.n}{city.anchor ? ` — ${city.anchor} —` : ","} {city.c} County is in our home market. Roy builds websites and marketing for South Florida businesses. Call 754-233-4037 if you want the same in {city.n}.
           </p>
           <div className="city-cta-row">
-            <a href={`contact.html?city=${city.slug}`} className="btn btn-gold btn-lg">Get a {city.n} quote →</a>
+            <a href={`/contact?city=${city.slug}`} className="btn btn-gold btn-lg">Get a {city.n} quote →</a>
             <a href="tel:+17542334037" className="hero-luxe-secondary hero-luxe-secondary-light">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
               754-233-4037 (we answer)
@@ -44,7 +44,7 @@ function CityPage() {
         </div>
         <div className="svc-hub-grid">
           {SERVICES.map(s => (
-            <a key={s.slug} href={`local-service.html?c=${city.slug}&s=${s.slug}`} className="svc-hub-card">
+            <a key={s.slug} href={`/local-service?c=${city.slug}&s=${s.slug}`} className="svc-hub-card">
               <figure className="svc-hub-img"><img src={s.img} alt={`${s.title} in ${city.n}`} loading="lazy"/></figure>
               <div className="svc-hub-body">
                 <h3 className="svc-hub-t">{s.title} <span className="svc-hub-loc">in {city.n}</span></h3>
@@ -86,11 +86,11 @@ function CityPage() {
             <div className="kicker"><span className="kicker-dot"></span>Nearby cities we also serve in {city.c} County</div>
             <h2 className="section-title">More {city.c} markets.</h2>
           </div>
-          <a href={`locations.html#${city.c.toLowerCase().replace(/[^a-z]/g,'')}`} className="link-arrow">See all {city.c} cities →</a>
+          <a href={`/locations#${city.c.toLowerCase().replace(/[^a-z]/g,'')}`} className="link-arrow">See all {city.c} cities →</a>
         </div>
         <div className="city-nearby">
           {nearby.map(o => (
-            <a key={o.slug} href={`city.html?c=${o.slug}`} className="city-nearby-card">
+            <a key={o.slug} href={`/city?c=${o.slug}`} className="city-nearby-card">
               <div className="cnc-n">{o.n}</div>
               <div className="cnc-c">{o.c} · {o.pop.toLocaleString()} pop</div>
             </a>
@@ -105,7 +105,7 @@ function CityPage() {
         </div>
         <div className="city-county-row">
           {otherCounties.map(co => (
-            <a key={co} href={`locations.html#${co.toLowerCase().replace(/[^a-z]/g,'')}`} className="city-county-card">
+            <a key={co} href={`/locations#${co.toLowerCase().replace(/[^a-z]/g,'')}`} className="city-county-card">
               <div className="ccc-c">{co} County</div>
               <div className="ccc-count">{CITIES.filter(c => c.c === co).length} cities served</div>
             </a>
