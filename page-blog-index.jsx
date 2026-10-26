@@ -25,7 +25,7 @@ function BlogIndex() {
           ))}
         </div>
         {featured && (
-          <a href={`blog-post.html?s=${featured.slug}`} className="blog-featured">
+          <a href={`/blog-post?s=${featured.slug}`} className="blog-featured">
             <figure className="bf-img"><img src={featured.img} alt={featured.title} loading="lazy"/></figure>
             <div className="bf-body">
               <div className="bf-meta">
@@ -46,7 +46,7 @@ function BlogIndex() {
         )}
         <div className="blog-grid">
           {rest.map(p => (
-            <a key={p.slug} href={`blog-post.html?s=${p.slug}`} className="bp-card">
+            <a key={p.slug} href={`/blog-post?s=${p.slug}`} className="bp-card">
               <figure className="bp-card-img"><img src={p.img} alt={p.title} loading="lazy"/></figure>
               <div className="bp-card-body">
                 <div className="bf-meta">

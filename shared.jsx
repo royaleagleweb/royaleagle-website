@@ -44,21 +44,21 @@ const EagleMark = () => (
 );
 
 const NAV_LINKS = [
-  { t: "Work", h: "work.html", keys: ["work", "case-studies", "portfolio"] },
+  { t: "Work", h: "/work", keys: ["work", "case-studies", "portfolio"] },
   {
     t: "Services",
-    h: "services",
+    h: "/services",
     keys: ["services", "service", "web-design", "wordpress", "contractor-websites", "yacht-websites"],
     children: [
-      { t: "All services", h: "services" },
-      { t: "Web design", h: "web-design" },
-      { t: "WordPress", h: "wordpress" },
-      { t: "Contractor websites", h: "contractor-websites" },
-      { t: "Yacht websites", h: "yacht-websites" },
+      { t: "All services", h: "/services" },
+      { t: "Web design", h: "/web-design" },
+      { t: "WordPress", h: "/wordpress" },
+      { t: "Contractor websites", h: "/contractor-websites" },
+      { t: "Yacht websites", h: "/yacht-websites" },
     ],
   },
-  { t: "Studio", h: "about.html", keys: ["about", "our-story", "team"] },
-  { t: "Contact", h: "contact.html", keys: ["contact"] },
+  { t: "Studio", h: "/about", keys: ["about", "our-story", "team"] },
+  { t: "Contact", h: "/contact", keys: ["contact"] },
 ];
 
 function Nav({ active }) {
@@ -76,7 +76,7 @@ function Nav({ active }) {
     <>
       <nav className="site-nav" aria-label="Primary">
         <div className="site-nav-inner">
-          <a href="index.html" className="brand">
+          <a href="/" className="brand">
             <EagleMark/>
             <span className="brand-lockup">Royal Eagle</span>
           </a>
@@ -137,9 +137,9 @@ function Footer() {
       </div>
       <div className="site-foot-legal">
         <span>© 2026 Royal Eagle · Mon–Fri 9–6 ET</span>
-        <a href="legal?s=privacy">Privacy</a>
-        <a href="legal?s=terms">Terms</a>
-        <a href="sitemap.html">Sitemap</a>
+        <a href="/legal?s=privacy">Privacy</a>
+        <a href="/legal?s=terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
       </div>
     </footer>
   );
@@ -171,7 +171,7 @@ function CTA({ title = "Book a conversation.", sub = "A Fort Lauderdale studio, 
         <h2 className="cta-title" dangerouslySetInnerHTML={{ __html: title }}></h2>
         <p className="cta-sub">{sub}</p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap', position: 'relative', zIndex: 2 }}>
-          <a href="contact.html" className="btn btn-gold">Book a conversation</a>
+          <a href="/contact" className="btn btn-gold">Book a conversation</a>
           <a href="tel:+17542334037" className="btn btn-ghost">Call the studio</a>
         </div>
       </div>
@@ -223,7 +223,7 @@ function FloatingCTA() {
                 <div className="fcta-action-s">roy@royaleagleweb.com</div>
               </div>
             </a>
-            <a href="contact.html" className="fcta-action fcta-action-primary">
+            <a href="/contact" className="fcta-action fcta-action-primary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
               <div>
                 <div className="fcta-action-t">Send a project brief</div>
@@ -253,7 +253,7 @@ function FloatingCTA() {
 }
 
 // ---- Mid-page inline CTA strip — drop between sections ----
-function CTAStrip({ variant = "default", heading, sub, primary, secondary, primaryHref = "contact.html", secondaryHref = "pricing.html" }) {
+function CTAStrip({ variant = "default", heading, sub, primary, secondary, primaryHref = "/contact", secondaryHref = "/pricing" }) {
   return (
     <section className={`cta-strip cta-strip-${variant}`}>
       <div className="cta-strip-inner">

@@ -12,7 +12,7 @@ function BlogPost() {
       <article className="bp">
         <header className="bp-header">
           <div className="bp-header-inner">
-            <a href="blog.html" className="case-back">← All articles</a>
+            <a href="/blog" className="case-back">← All articles</a>
             <div className="bp-meta">
               <span className="bp-cat">{post.cat}</span>
               <span className="bp-dot">·</span>
@@ -97,7 +97,7 @@ function BlogPost() {
           </div>
           <div className="bp-related">
             {related.map(r => (
-              <a key={r.slug} href={`blog-post.html?s=${r.slug}`} className="bp-rel-card">
+              <a key={r.slug} href={`/blog-post?s=${r.slug}`} className="bp-rel-card">
                 <div className="bp-rel-img"><img src={r.img} alt={r.title} loading="lazy"/></div>
                 <div className="bp-rel-body">
                   <div className="bp-rel-meta">{r.cat} · {r.read}</div>
@@ -115,7 +115,7 @@ function BlogPost() {
         sub="We're happy to be a sounding board even if there's no engagement at the end of it. Send us a note."
         primary="Start a conversation"
         secondary="More articles"
-        secondaryHref="blog.html"
+        secondaryHref="/blog"
       />
 
       <CTA/>
