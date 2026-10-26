@@ -48,7 +48,7 @@ function WebDesignPage() {
       <PageHero
         kicker="Web design"
         title='Web design<br/><span class="gradient-text">in Fort Lauderdale.</span>'
-        sub={<>A Fort Lauderdale studio, since 2014. WordPress and custom sites. 754-233-4037. <a href="services">Services</a> · <a href="wordpress">WordPress</a> · <a href="contractor-websites">Contractor websites</a> · <a href="yacht-websites">Yacht websites</a> · <a href="work">Work</a> · <a href="contact">Contact</a></>}
+        sub={<>A Fort Lauderdale studio, since 2014. WordPress and custom sites. 754-233-4037. <a href="/services">Services</a> · <a href="/wordpress">WordPress</a> · <a href="/contractor-websites">Contractor websites</a> · <a href="/yacht-websites">Yacht websites</a> · <a href="/work">Work</a> · <a href="/contact">Contact</a></>}
       />
 
       <section className="section">
@@ -61,7 +61,7 @@ function WebDesignPage() {
           <p>We design and build websites for South Florida businesses. Then we stay reachable. That is the whole offer. No invented headcount. No awards wall.</p>
         </div>
         <ul className="kw-list">
-          <li><strong>WordPress</strong> When the people who will live in the site need to edit pages. See <a href="wordpress">WordPress</a>.</li>
+          <li><strong>WordPress</strong> When the people who will live in the site need to edit pages. See <a href="/wordpress">WordPress</a>.</li>
           <li><strong>Custom sites</strong> When a theme would fight the brand, or the job is not a CMS job.</li>
           <li><strong>Care after launch</strong> Updates, backups, and small edits. A monthly conversation with the studio — not a factory plan.</li>
         </ul>
@@ -74,7 +74,7 @@ function WebDesignPage() {
         </div>
         <div className="kw-copy">
           <p>The portfolio already on this site is the proof — yachts, contractors, plumbing, impact windows, and two funding sites. Visit them. Then decide if the studio is a fit.</p>
-          <p><a href="contractor-websites">Contractor websites</a> · <a href="yacht-websites">Yacht websites</a> · <a href="work">Selected work</a> · <a href="services">All services</a></p>
+          <p><a href="/contractor-websites">Contractor websites</a> · <a href="/yacht-websites">Yacht websites</a> · <a href="/work">Selected work</a> · <a href="/services">All services</a></p>
         </div>
       </section>
 

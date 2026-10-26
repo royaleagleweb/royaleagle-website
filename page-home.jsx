@@ -11,8 +11,8 @@ function Hero() {
           </h1>
           <p className="re-hero-sub">A web studio with twelve years in the work. WordPress, custom sites, marketing.</p>
           <div className="re-hero-ctas">
-            <a href="contact.html" className="btn btn-gold">Book a conversation</a>
-            <a href="work.html" className="btn btn-ghost">Selected work</a>
+            <a href="/contact" className="btn btn-gold">Book a conversation</a>
+            <a href="/work" className="btn btn-ghost">Selected work</a>
           </div>
           <a href="tel:+17542334037" className="re-hero-phone">754-233-4037</a>
         </div>
@@ -34,7 +34,7 @@ function SelectWork() {
     <section className="re-select" id="work">
       <div className="re-select-head">
         <div className="re-select-k">Selected work</div>
-        <a href="work.html" className="re-select-all">View the portfolio →</a>
+        <a href="/work" className="re-select-all">View the portfolio →</a>
       </div>
       <div className="re-work-grid">
         {CASE_STUDIES.map((cs, i) => <WorkCard key={cs.slug} cs={cs} index={i}/>)}
@@ -63,7 +63,7 @@ function Studio() {
             </div>
           </div>
           <div className="re-studio-ctas">
-            <a href="contact.html" className="btn btn-gold">Book a conversation</a>
+            <a href="/contact" className="btn btn-gold">Book a conversation</a>
             <a href="tel:+17542334037" className="btn btn-ghost">754-233-4037</a>
           </div>
         </div>
@@ -103,11 +103,11 @@ function SEOBlock() {
           <h2>What we actually ship</h2>
           <p>Based in Lauderhill. Working across Broward, Miami-Dade, and Palm Beach — without a city-page mill.</p>
           <ul>
-            <li><a href="wordpress.html">WordPress web design</a></li>
-            <li><a href="contractor-websites.html">Contractor websites</a></li>
-            <li><a href="yacht-websites.html">Yacht websites</a></li>
-            <li><a href="work.html">Selected work</a></li>
-            <li><a href="contact.html">Book a conversation →</a></li>
+            <li><a href="/wordpress">WordPress web design</a></li>
+            <li><a href="/contractor-websites">Contractor websites</a></li>
+            <li><a href="/yacht-websites">Yacht websites</a></li>
+            <li><a href="/work">Selected work</a></li>
+            <li><a href="/contact">Book a conversation →</a></li>
           </ul>
         </div>
       </div>

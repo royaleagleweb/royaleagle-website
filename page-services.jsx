@@ -1,10 +1,10 @@
 // SERVICES HUB page — categorized cards into all service detail pages
 
 const KEYWORD_PAGES = [
-  { href: "web-design", t: "Web design", d: "Web design in Fort Lauderdale. WordPress and custom sites from a Lauderhill studio, since 2014." },
-  { href: "wordpress", t: "WordPress", d: "Build and maintain WordPress and Elementor sites. Fort Lauderdale studio, Lauderhill address." },
-  { href: "contractor-websites", t: "Contractor websites", d: "Construction, plumbing, and windows sites — a South Florida studio, not a national factory." },
-  { href: "yacht-websites", t: "Yacht websites", d: "We built the live Doctor Yachts site. A studio, not a yacht-advertising firm." },
+  { href: "/web-design", t: "Web design", d: "Web design in Fort Lauderdale. WordPress and custom sites from a Lauderhill studio, since 2014." },
+  { href: "/wordpress", t: "WordPress", d: "Build and maintain WordPress and Elementor sites. Fort Lauderdale studio, Lauderhill address." },
+  { href: "/contractor-websites", t: "Contractor websites", d: "Construction, plumbing, and windows sites — a South Florida studio, not a national factory." },
+  { href: "/yacht-websites", t: "Yacht websites", d: "We built the live Doctor Yachts site. A studio, not a yacht-advertising firm." },
 ];
 
 function ServicesHub() {
@@ -58,7 +58,7 @@ function ServicesHub() {
             </div>
             <div className="svc-hub-grid">
               {items.map(s => (
-                <a key={s.slug} href={`service?s=${s.slug}`} className="svc-hub-card">
+                <a key={s.slug} href={`/service?s=${s.slug}`} className="svc-hub-card">
                   {s.img ? <figure className="svc-hub-img"><img src={s.img} alt="A live site from the studio" loading="lazy"/></figure> : null}
                   <div className="svc-hub-body">
                     <h3 className="svc-hub-t">{s.title}</h3>

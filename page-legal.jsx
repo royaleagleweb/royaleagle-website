@@ -75,9 +75,9 @@ function LegalPage() {
         <div className="legal-eyebrow">{page.eyebrow}</div>
         <h1 className="legal-title">{page.title}</h1>
         <div className="legal-nav">
-          <a href="legal?s=privacy" className={slug === "privacy" ? "is-active" : ""}>Privacy</a>
-          <a href="legal?s=terms" className={slug === "terms" ? "is-active" : ""}>Terms</a>
-          <a href="legal?s=accessibility" className={slug === "accessibility" ? "is-active" : ""}>Accessibility</a>
+          <a href="/legal?s=privacy" className={slug === "privacy" ? "is-active" : ""}>Privacy</a>
+          <a href="/legal?s=terms" className={slug === "terms" ? "is-active" : ""}>Terms</a>
+          <a href="/legal?s=accessibility" className={slug === "accessibility" ? "is-active" : ""}>Accessibility</a>
         </div>
       </section>
       <section className="section legal-body">
@@ -95,7 +95,7 @@ function LegalPage() {
             </div>
           ))}
           <div className="legal-contact">
-            Questions? <a href="contact.html">Get in touch →</a>
+            Questions? <a href="/contact">Get in touch →</a>
           </div>
         </div>
       </section>
