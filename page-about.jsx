@@ -96,7 +96,7 @@ function AboutPage() {
       <PageHero
         kicker="The studio"
         title='A Fort Lauderdale practice,<br/><span class="gradient-text">since 2014.</span>'
-        sub="Royal Eagle. WordPress, custom sites, and marketing for South Florida businesses. 4440 Inverrary Blvd, Lauderhill."
+        sub={<>Royal Eagle. WordPress, custom sites, and marketing for South Florida businesses. 4440 Inverrary Blvd, Lauderhill. <a href="services">Services</a> · <a href="wordpress">WordPress</a> · <a href="work">Selected work</a></>}
       />
       <FactStrip/>
       <AboutStory/>
