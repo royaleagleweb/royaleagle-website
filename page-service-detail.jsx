@@ -37,11 +37,13 @@ function ServiceDetail() {
   const svc = SERVICES.find(s => s.slug === slug) || SERVICES[0];
   const related = SERVICES.filter(s => s.cat === svc.cat && s.slug !== svc.slug).slice(0, 3);
 
-  // SEO + structured data
+  // SEO + structured data. Title and description come from detail-seo.js,
+  // the same helper worker.js writes into the raw HTML.
   React.useEffect(() => {
+    const head = serviceDetailHead(svc);
     applyPageSeo({
-      title: `${svc.title} in Fort Lauderdale, FL`,
-      description: `${svc.hero} Royal Eagle — hands-on ${svc.title.toLowerCase()} for South Florida businesses since 2014. 5.0 ★ on Google.`,
+      title: head.title,
+      description: head.description,
       canonical: `service?s=${svc.slug}`,
       image: svc.img,
       keywords: `${svc.title.toLowerCase()}, ${svc.title.toLowerCase()} Fort Lauderdale, ${svc.cat.toLowerCase()}, web design Fort Lauderdale, web development South Florida`,

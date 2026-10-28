@@ -1,14 +1,35 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "royaleagle-website",
+  "main": "worker.js",
   "compatibility_date": "2026-05-29",
   "observability": {
-    "enabled": true
+    "enabled": true,
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.01
+    }
   },
+  "rules": [
+    {
+      "type": "Text",
+      "globs": ["**/site-data.jsx"],
+      "fallthrough": true
+    }
+  ],
   "assets": {
     "directory": ".",
+    "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "html_handling": "auto-trailing-slash"
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": [
+      "/service",
+      "/service/",
+      "/case",
+      "/case/",
+      "/legal",
+      "/legal/"
+    ]
   },
   "compatibility_flags": [
     "nodejs_compat"

@@ -48,23 +48,10 @@ function LegalPage() {
   const canonicalSlug = LEGAL_PAGES[slug] ? slug : "privacy";
 
   React.useEffect(() => {
-    const seo = {
-      privacy: {
-        title: "Privacy Policy — Royal Eagle Web Design",
-        description: "Privacy Policy for Royal Eagle Web Design & Marketing: what we collect, how we use it, cookies, and your rights.",
-      },
-      terms: {
-        title: "Terms of Service — Royal Eagle Web Design",
-        description: "Terms of Service for Royal Eagle Web Design & Marketing: engagement scope, payment, ownership, and governing law.",
-      },
-      accessibility: {
-        title: "Accessibility Statement — Royal Eagle Web Design",
-        description: "Accessibility Statement for Royal Eagle Web Design: WCAG 2.2 Level AA status, our process, and how to send feedback.",
-      },
-    }[canonicalSlug];
+    const head = legalDetailHead(canonicalSlug);
     applyPageSeo({
-      title: seo.title,
-      description: seo.description,
+      title: head.title,
+      description: head.description,
       canonical: `legal?s=${canonicalSlug}`,
     });
   }, [canonicalSlug]);
