@@ -1,0 +1,11 @@
+# Not part of the public site. The asset directory is the repo root.
+.git/
+.wrangler/
+node_modules/
+
+# Bundled into the Worker. Not public site files.
+worker.js
+site-data-parse.js
+detail-seo.test.mjs
+package.json
+package-lock.json
