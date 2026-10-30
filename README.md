@@ -28,6 +28,16 @@ Connected to this repo via Cloudflare Pages. Every push to `main` auto-deploys.
 - favicon / og-image / logo / manifest — brand assets
 - `project/` — unused archive of an older copy. **Root files are what deploy.** Do not treat `project/` as source of truth.
 
+## Prerendered page body
+
+`/`, `/web-design`, `/wordpress`, `/contractor-websites`, `/yacht-websites`, and `/locations` ship the React tree inside `#root`, so the first HTML response contains the same copy the app renders. `scripts/prerender.cjs` renders those page components with React and writes the markup. `mountPage` in `shared.jsx` hydrates it. Deploy does not run the script — the committed HTML is what ships.
+
+After editing one of those pages, the shared chrome, or the data they read:
+
+```
+cd scripts && npm install && node prerender.cjs
+```
+
 ## Post-deploy checklist
 
 1. Confirm `https://royaleagleweb.com/sitemap_index.xml` loads

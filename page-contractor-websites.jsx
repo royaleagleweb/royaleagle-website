@@ -94,4 +94,4 @@ function ContractorWebsitesPage() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<ContractorWebsitesPage/>);
+mountPage(<ContractorWebsitesPage/>);

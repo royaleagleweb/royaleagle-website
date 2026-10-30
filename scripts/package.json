@@ -1,0 +1,12 @@
+{
+  "name": "royaleagle-prerender",
+  "private": true,
+  "description": "Render money-page React trees into the static HTML #root. Not part of the Cloudflare deploy.",
+  "dependencies": {
+    "@babel/core": "7.29.0",
+    "@babel/preset-react": "7.28.5",
+    "jsdom": "25.0.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}
