@@ -136,4 +136,4 @@ function HomePage() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<HomePage/>);
+mountPage(<HomePage/>);

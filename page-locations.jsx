@@ -69,4 +69,4 @@ function LocationsPage() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<LocationsPage/>);
+mountPage(<LocationsPage/>);
