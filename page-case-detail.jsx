@@ -7,10 +7,10 @@ function CaseDetail() {
   const next = CASE_STUDIES[(i + 1) % CASE_STUDIES.length];
 
   React.useEffect(() => {
-    const description = `${cs.brand} — ${cs.tag}. ${cs.summary}`;
+    const head = caseDetailHead(cs);
     applyPageSeo({
-      title: `${cs.brand} — ${cs.tag}`,
-      description: description.length <= 160 ? description : description.slice(0, 157).trimEnd() + "...",
+      title: head.title,
+      description: head.description,
       canonical: `case?s=${cs.slug}`,
       breadcrumbs: [
         { name: "Home", url: "/" },

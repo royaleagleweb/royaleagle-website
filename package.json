@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test detail-seo.test.mjs",
+    "dev": "wrangler dev",
+    "check": "wrangler deploy --dry-run"
+  },
+  "dependencies": {
+    "acorn": "^8.15.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.45.0"
+  }
+}
