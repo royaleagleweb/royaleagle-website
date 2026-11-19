@@ -109,4 +109,4 @@ function WebDesignPage() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<WebDesignPage/>);
+mountPage(<WebDesignPage/>);

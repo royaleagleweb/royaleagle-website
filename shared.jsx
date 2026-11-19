@@ -337,4 +337,15 @@ function PageShell({ active, children }) {
 
 applyPalette(PALETTES.atelier, "atelier");
 
-Object.assign(window, { EagleCrest, EagleMark, Nav, Footer, PageHero, CTA, CTAStrip, MeetYourLead, FloatingCTA, WorkCard, Counter, PageShell, PALETTES, applyPalette, TWEAK_DEFAULTS, getSlug });
+// Hydrate when #root was filled by scripts/prerender.cjs; otherwise mount fresh.
+function mountPage(element) {
+  const rootEl = document.getElementById("root");
+  if (!rootEl) return;
+  if (rootEl.hasAttribute("data-prerender")) {
+    ReactDOM.hydrateRoot(rootEl, element);
+  } else {
+    ReactDOM.createRoot(rootEl).render(element);
+  }
+}
+
+Object.assign(window, { EagleCrest, EagleMark, Nav, Footer, PageHero, CTA, CTAStrip, MeetYourLead, FloatingCTA, WorkCard, Counter, PageShell, PALETTES, applyPalette, TWEAK_DEFAULTS, getSlug, mountPage });

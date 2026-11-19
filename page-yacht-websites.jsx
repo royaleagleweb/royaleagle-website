@@ -87,4 +87,4 @@ function YachtWebsitesPage() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<YachtWebsitesPage/>);
+mountPage(<YachtWebsitesPage/>);
